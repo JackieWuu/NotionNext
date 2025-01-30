@@ -58,6 +58,37 @@ const Catalog = ({ post }) => {
     return <></>
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return <div className='px-3 '>
+    <div className='dark:text-white'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
+
+    <div className='overflow-y-auto overscroll-none max-h-36 lg:max-h-96 scroll-hidden' ref={tRef}>
+      <nav className='h-full  text-black'>
+        {post?.toc?.map((tocItem) => {
+          const id = uuidToId(tocItem.id)
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`notion-table-of-contents-item duration-300 transform font-light dark:text-gray-200
+            notion-table-of-contents-item-indent-level-${tocItem.indentLevel} `}
+            >
+              <span style={{ display: 'inline-block', marginLeft: tocItem.indentLevel * 16 }}
+                className={`${activeSection === id && ' font-bold text-red-500 underline overflow-ellipsis truncate'}`}
+              >
+                {tocItem.text}
+              </span>
+            </a>
+          )
+        })}
+      </nav>
+
+    </div>
+  </div>
+=======
+>>>>>>> tangly1024-main
   return (
     <div className='px-3 '>
       <div className='dark:text-white mb-2'>
@@ -92,6 +123,10 @@ const Catalog = ({ post }) => {
       </div>
     </div>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 export default Catalog

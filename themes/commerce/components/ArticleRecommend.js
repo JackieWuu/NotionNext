@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import CONFIG from '../config'
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
+=======
+<<<<<<< HEAD:themes/heo/components/ArticleRecommend.js
+import BLOG from '@/blog.config'
+=======
+import { siteConfig } from '@/lib/config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0:themes/commerce/components/ArticleRecommend.js
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import LazyImage from '@/components/LazyImage'
 

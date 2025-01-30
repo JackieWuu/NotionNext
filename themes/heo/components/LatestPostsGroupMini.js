@@ -24,6 +24,43 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
           <i className='mr-2 fas fas fa-history' />
           {locale.COMMON.LATEST_POSTS}
         </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        {latestPosts.map(post => {
+          const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+
+          const headerImage = post?.pageCoverThumbnail ? post.pageCoverThumbnail : siteInfo?.pageCover
+
+          return (
+            (<Link
+                    key={post.id}
+                    title={post.title}
+                    href={`${BLOG.SUB_PATH}/${post.slug}`}
+                    passHref
+                    className={'my-3 flex'}>
+
+                    <div className="w-20 h-14 overflow-hidden relative">
+                            <LazyImage src={`${headerImage}`} className='object-cover w-full h-full rounded-lg'/>
+                    </div>
+                    <div
+                        className={
+                            (selected ? ' text-indigo-400 ' : 'dark:text-gray-400 ') +
+                            ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
+                            ' hover:text-indigo-400 cursor-pointer items-center flex'
+                        }
+                    >
+                        <div>
+                            <div className='line-clamp-2 menu-link'>{post.title}</div>
+                            <div className="text-gray-500">{post.lastEditedDay}</div>
+                        </div>
+                    </div>
+
+                </Link>)
+          )
+        })}
+=======
+>>>>>>> tangly1024-main
       </div>
       {latestPosts.map(post => {
         const selected =
@@ -59,6 +96,10 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
           </Link>
         )
       })}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   ) : null
 }

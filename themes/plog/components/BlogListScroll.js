@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import throttle from 'lodash.throttle'
 import Link from 'next/link'
 import { useCallback, useEffect, useRef, useState } from 'react'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+import { siteConfig } from '@/lib/config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+import { useGlobal } from '@/lib/global'
+import throttle from 'lodash.throttle'
+import Link from 'next/link'
+<<<<<<< HEAD
+import React from 'react'
+import throttle from 'lodash.throttle'
+=======
+import { useCallback, useEffect, useRef, useState } from 'react'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 export const BlogListScroll = props => {
   const { posts } = props
@@ -12,17 +29,38 @@ export const BlogListScroll = props => {
 
   let hasMore = false
   const postsToShow = posts
+<<<<<<< HEAD
     ? Object.assign(posts).slice(
       0,
       parseInt(siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)) * page
     )
+=======
+<<<<<<< HEAD
+    ? Object.assign(posts).slice(0, BLOG.POSTS_PER_PAGE * page)
+=======
+    ? Object.assign(posts).slice(
+        0,
+        parseInt(siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)) * page
+      )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     : []
 
   if (posts) {
     const totalCount = posts.length
+<<<<<<< HEAD
     hasMore =
       page * parseInt(siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)) <
       totalCount
+=======
+<<<<<<< HEAD
+    hasMore = page * BLOG.POSTS_PER_PAGE < totalCount
+=======
+    hasMore =
+      page * parseInt(siteConfig('POSTS_PER_PAGE', 12, props?.NOTION_CONFIG)) <
+      totalCount
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
   const handleGetMore = () => {
     if (!hasMore) return
@@ -32,6 +70,18 @@ export const BlogListScroll = props => {
   const targetRef = React.useRef(null)
 
   // 监听滚动自动分页加载
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const scrollTrigger = React.useCallback(throttle(() => {
+    const scrollS = window.scrollY + window.outerHeight
+    const clientHeight = targetRef ? (targetRef.current ? (targetRef.current.clientHeight) : 0) : 0
+    if (scrollS > clientHeight + 100) {
+      handleGetMore()
+    }
+  }, 500))
+=======
+>>>>>>> tangly1024-main
   const scrollTrigger = useCallback(
     throttle(() => {
       const scrollS = window.scrollY + window.outerHeight
@@ -45,6 +95,10 @@ export const BlogListScroll = props => {
       }
     }, 500)
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollTrigger)
@@ -55,6 +109,43 @@ export const BlogListScroll = props => {
   })
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <div id="posts-wrapper" className="w-full md:pr-12 mb-12" ref={targetRef}>
+              {postsToShow.map(p => (
+                  <article key={p.id} className="mb-12" >
+                      <h2 className="mb-4">
+                          <Link
+                              href={`/${p.slug}`}
+                              className="text-black text-xl md:text-2xl no-underline hover:underline">
+                                {p.title}
+                          </Link>
+                      </h2>
+
+                      <div className="mb-4 text-sm text-gray-700">
+                          by <a href="#" className="text-gray-700">{BLOG.AUTHOR}</a> on {p.date?.start_date || p.createdTime}
+                          <span className="font-bold mx-1"> | </span>
+                          <a href="#" className="text-gray-700">{p.category}</a>
+                          <span className="font-bold mx-1"> | </span>
+                          {/* <a href="#" className="text-gray-700">2 Comments</a> */}
+                      </div>
+
+                      <p className="text-gray-700 leading-normal">
+                          {p.summary}
+                      </p>
+                  </article>
+              ))}
+
+              <div
+                  onClick={handleGetMore}
+                  className="w-full my-4 py-4 text-center cursor-pointer "
+              >
+                  {' '}
+                  {hasMore ? locale.COMMON.MORE : `${locale.COMMON.NO_MORE} 😰`}{' '}
+              </div>
+=======
+>>>>>>> tangly1024-main
     <div id='posts-wrapper' className='w-full md:pr-12 mb-12' ref={targetRef}>
       {postsToShow.map(p => (
         <article key={p.id} className='mb-12'>
@@ -65,6 +156,10 @@ export const BlogListScroll = props => {
               {p.title}
             </Link>
           </h2>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
           <div className='mb-4 text-sm text-gray-700'>
             by{' '}

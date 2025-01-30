@@ -11,6 +11,7 @@ export default function FeaturesBlocks() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
 
+<<<<<<< HEAD
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4 dark:text-white">{siteConfig('LANDING_FEATURES_BLOCK_HEADER', null, CONFIG)}</h2>
@@ -35,6 +36,17 @@ export default function FeaturesBlocks() {
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">{CONFIG.FEATURES_BLOCK_1_TITLE}</h4>
               <p className="text-gray-600 text-center">{CONFIG.FEATURES_BLOCK_1_P}</p>
+=======
+            {/* Section header */}
+            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+<<<<<<< HEAD
+              <h2 className="h2 mb-4">{CONFIG.FEATURES_BLOCK_HEADER}</h2>
+              <p className="text-xl text-gray-600" dangerouslySetInnerHTML={{ __html: CONFIG.FEATURES_BLOCK_P }}></p>
+=======
+              <h2 className="h2 mb-4 dark:text-white">{siteConfig('LANDING_FEATURES_BLOCK_HEADER', null, CONFIG)}</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: siteConfig('LANDING_FEATURES_BLOCK_P', null, CONFIG) }}></p>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
             </div>
 
             {/* 2nd item */}

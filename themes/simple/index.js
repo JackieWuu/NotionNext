@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+import { BlogListPage } from './components/BlogListPage'
+import { BlogListScroll } from './components/BlogListScroll'
+import { useEffect } from 'react'
+import { isBrowser, loadExternalResource } from '@/lib/utils'
+import BlogArchiveItem from './components/BlogArchiveItem'
+import { ArticleLock } from './components/ArticleLock'
+import NotionPage from '@/components/NotionPage'
+import { ArticleInfo } from './components/ArticleInfo'
+import Comment from '@/components/Comment'
+import ArticleAround from './components/ArticleAround'
+import ShareBar from '@/components/ShareBar'
+import { AdSlot } from '@/components/GoogleAdsense'
+import Link from 'next/link'
+import { TopBar } from './components/TopBar'
+import { Header } from './components/Header'
+import { NavBar } from './components/NavBar'
+import BLOG from '@/blog.config'
+import { SideBar } from './components/SideBar'
+import JumpToTopButton from './components/JumpToTopButton'
+import { Footer } from './components/Footer'
+import { useGlobal } from '@/lib/global'
+import SearchInput from './components/SearchInput'
+import { Transition } from '@headlessui/react'
+import { Style } from './style'
+import replaceSearchResult from '@/components/Mark'
+import CommonHead from '@/components/CommonHead'
+=======
+>>>>>>> tangly1024-main
 import { AdSlot } from '@/components/GoogleAdsense'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
@@ -58,6 +90,10 @@ const RecommendPosts = dynamic(() => import('./components/RecommendPosts'), {
 // 主题全局状态
 const ThemeGlobalSimple = createContext()
 export const useSimpleGlobal = () => useContext(ThemeGlobalSimple)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局
@@ -80,7 +116,15 @@ const LayoutBase = props => {
         className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`}>
         <Style />
 
+<<<<<<< HEAD
         {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
+=======
+<<<<<<< HEAD
+            {CONFIG.TOP_BAR && <TopBar {...props} />}
+=======
+        {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
         {/* 顶部LOGO */}
         <Header {...props} />
@@ -88,6 +132,26 @@ const LayoutBase = props => {
         {/* 导航栏 */}
         <NavBar {...props} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            {/* 主体 */}
+            <div id='container-wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'}>
+                <div id='container-inner ' className='w-full flex-grow min-h-fit'>
+                    <Transition
+                        show={!onLoading}
+                        appear={true}
+                        enter="transition ease-in-out duration-700 transform order-first"
+                        enterFrom="opacity-0 translate-y-16"
+                        enterTo="opacity-100"
+                        leave="transition ease-in-out duration-300 transform"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 -translate-y-16"
+                        unmount={false}
+                    >
+                        {slotTop}
+=======
+>>>>>>> tangly1024-main
         {/* 主体 */}
         <div
           id='container-wrapper'
@@ -108,6 +172,10 @@ const LayoutBase = props => {
               leaveTo='opacity-0 -translate-y-16'
               unmount={false}>
               {slotTop}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
               {children}
             </Transition>
@@ -152,6 +220,14 @@ const LayoutIndex = props => {
  */
 const LayoutPostList = props => {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props}>
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       <BlogPostBar {...props} />
       {siteConfig('POST_LIST_STYLE') === 'page' ? (
@@ -160,6 +236,10 @@ const LayoutPostList = props => {
         <BlogListScroll {...props} />
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -241,8 +321,18 @@ const LayoutSlug = props => {
             {!lock && <NotionPage post={post} />}
           </div>
 
+<<<<<<< HEAD
           {/* 分享 */}
           <ShareBar post={post} />
+=======
+<<<<<<< HEAD
+                {/* 广告嵌入 */}
+                <AdSlot type={'in-article'} />
+=======
+          {/* 分享 */}
+          <ShareBar post={post} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
           {/* 广告嵌入 */}
           <AdSlot type={'in-article'} />

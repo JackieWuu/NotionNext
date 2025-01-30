@@ -6,9 +6,19 @@ import { useEffect } from 'react'
 
 export default function Live2D() {
   const { theme, switchTheme } = useGlobal()
+<<<<<<< HEAD
   const showPet = JSON.parse(siteConfig('WIDGET_PET'))
   const petLink = siteConfig('WIDGET_PET_LINK')
   const petSwitchTheme = siteConfig('WIDGET_PET_SWITCH_THEME')
+=======
+<<<<<<< HEAD
+  const showPet = JSON.parse(BLOG.WIDGET_PET)
+=======
+  const showPet = JSON.parse(siteConfig('WIDGET_PET'))
+  const petLink = siteConfig('WIDGET_PET_LINK')
+  const petSwitchTheme = siteConfig('WIDGET_PET_SWITCH_THEME')
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   useEffect(() => {
     if (showPet && !isMobile()) {
@@ -31,7 +41,15 @@ export default function Live2D() {
   }, [theme])
 
   function handleClick() {
+<<<<<<< HEAD
     if (petSwitchTheme) {
+=======
+<<<<<<< HEAD
+    if (JSON.parse(BLOG.WIDGET_PET_SWITCH_THEME)) {
+=======
+    if (petSwitchTheme) {
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
       switchTheme()
     }
   }

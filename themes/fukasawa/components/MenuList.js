@@ -1,6 +1,16 @@
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+<<<<<<< HEAD
 import CONFIG from '../config'
+=======
+<<<<<<< HEAD
+import CONFIG_FUKA from '../config'
+import BLOG from '@/blog.config'
+import { MenuItemDrop } from './MenuItemDrop'
+=======
+import CONFIG from '../config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { MenuItemCollapse } from './MenuItemCollapse'
 import { MenuItemDrop } from './MenuItemDrop'
 /**
@@ -13,6 +23,16 @@ export const MenuList = props => {
   const { locale } = useGlobal()
 
   let links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { name: locale.NAV.INDEX, to: '/' || '/', show: true },
+    { name: locale.COMMON.CATEGORY, to: '/category', show: CONFIG_FUKA.MENU_CATEGORY },
+    { name: locale.COMMON.TAGS, to: '/tag', show: CONFIG_FUKA.MENU_TAG },
+    { name: locale.NAV.ARCHIVE, to: '/archive', show: CONFIG_FUKA.MENU_ARCHIVE },
+    { name: locale.NAV.SEARCH, to: '/search', show: CONFIG_FUKA.MENU_SEARCH }
+=======
+>>>>>>> tangly1024-main
     { name: locale.NAV.INDEX, href: '/' || '/', show: true },
     {
       name: locale.COMMON.CATEGORY,
@@ -29,6 +49,10 @@ export const MenuList = props => {
       href: '/archive',
       show: siteConfig('FUKASAWA_MENU_ARCHIVE', null, CONFIG)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
 
   if (customNav) {

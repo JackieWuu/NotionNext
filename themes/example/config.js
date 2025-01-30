@@ -8,7 +8,15 @@ const CONFIG = {
   MENU_ARCHIVE: true, // 显示归档
   MENU_SEARCH: true, // 显示搜索
 
+<<<<<<< HEAD
   EXAMPLE_POST_LIST_COVER: true, // 列表显示文章封面
+=======
+<<<<<<< HEAD
+  POST_LIST_COVER: true // 列表显示文章封面
+=======
+  EXAMPLE_POST_LIST_COVER: true, // 列表显示文章封面
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   EXAMPLE_TITLE_IMAGE: false, // 标题栏，是否背景图片
 

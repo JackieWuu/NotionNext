@@ -6,7 +6,15 @@
  * 2. 内容大部分是在此文件中写死，notion数据从props参数中传进来
  * 3. 您可在此网站找到更多喜欢的组件 https://www.tailwind-kit.com/
  */
+<<<<<<< HEAD
 import Loading from '@/components/Loading'
+=======
+<<<<<<< HEAD
+/* eslint-disable*/
+=======
+import Loading from '@/components/Loading'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import NotionPage from '@/components/NotionPage'
 import { siteConfig } from '@/lib/config'
 import { isBrowser } from '@/lib/utils'
@@ -21,6 +29,19 @@ import Newsletter from './components/Newsletter'
 import { Pricing } from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import CONFIG from './config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import Loading from '@/components/Loading'
+import { isBrowser } from '@/lib/utils'
+
+/**
+ * 这是个配置文件，可以方便在此统一配置信息
+ */
+const THEME_CONFIG = { THEME: 'landing' }
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 布局框架
@@ -29,6 +50,15 @@ import CONFIG from './config'
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutBase = (props) => {
+    const { meta, siteInfo, children } = props
+
+    return <div id='theme-landing' className="overflow-hidden flex flex-col justify-between bg-white">
+=======
+>>>>>>> tangly1024-main
 const LayoutBase = props => {
   const { children } = props
 
@@ -38,6 +68,10 @@ const LayoutBase = props => {
       className={`${siteConfig('FONT_STYLE')} scroll-smooth overflow-hidden flex flex-col justify-between bg-white dark:bg-black`}>
       {/* 顶部导航栏 */}
       <Header />
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
       {/* 内容 */}
       <div id='content-wrapper'>{children}</div>
@@ -54,6 +88,21 @@ const LayoutBase = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutIndex = (props) => {
+    return (
+        <LayoutBase {...props}>
+            <Hero />
+            <Features />
+            <FeaturesBlocks />
+            <Testimonials />
+            <Newsletter />
+        </LayoutBase>
+    )
+=======
+>>>>>>> tangly1024-main
 const LayoutIndex = props => {
   return (
     <>
@@ -65,6 +114,10 @@ const LayoutIndex = props => {
       <Newsletter />
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -72,6 +125,28 @@ const LayoutIndex = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutSlug = (props) => {
+    // 如果 是 /article/[slug] 的文章路径则进行重定向到另一个域名
+    const router = useRouter()
+    if (JSON.parse(CONFIG.POST_REDIRECT_ENABLE) && isBrowser && router.route == '/[prefix]/[slug]') {
+        const redirectUrl = CONFIG.POST_REDIRECT_URL + router.asPath.replace('?theme=landing', '')
+        router.push(redirectUrl)
+        return  <div id='theme-landing'><Loading /></div>
+    }
+
+    return <LayoutBase {...props}>
+
+        <div id='container-inner' className='mx-auto max-w-screen-lg p-12'>
+            <NotionPage {...props} />
+        </div>
+    </LayoutBase>
+
+
+=======
+>>>>>>> tangly1024-main
 const LayoutSlug = props => {
   const { post } = props
 
@@ -122,6 +197,10 @@ const LayoutSlug = props => {
       </div>
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 // 其他布局暂时留空
@@ -157,6 +236,20 @@ const LayoutTagIndex = props => (
 )
 
 export {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    THEME_CONFIG,
+    LayoutIndex,
+    LayoutSearch,
+    LayoutArchive,
+    LayoutSlug,
+    Layout404,
+    LayoutPostList,
+    LayoutCategoryIndex,
+    LayoutTagIndex
+=======
+>>>>>>> tangly1024-main
   Layout404,
   LayoutArchive,
   LayoutBase,
@@ -167,4 +260,8 @@ export {
   LayoutSlug,
   LayoutTagIndex,
   CONFIG as THEME_CONFIG
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }

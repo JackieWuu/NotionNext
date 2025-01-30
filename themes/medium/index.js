@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+
+import { useState, createContext, useContext, useEffect } from 'react'
+import Footer from './components/Footer'
+import InfoCard from './components/InfoCard'
+import RevolverMaps from './components/RevolverMaps'
+import Tabs from '@/components/Tabs'
+import TopNavBar from './components/TopNavBar'
+import SearchInput from './components/SearchInput'
+import BottomMenuBar from './components/BottomMenuBar'
+import { useGlobal } from '@/lib/global'
+import { useRouter } from 'next/router'
+import Live2D from '@/components/Live2D'
+import BLOG from '@/blog.config'
+import Announcement from './components/Announcement'
+import JumpToTopButton from './components/JumpToTopButton'
+import BlogPostListPage from './components/BlogPostListPage'
+import BlogPostListScroll from './components/BlogPostListScroll'
+import Catalog from './components/Catalog'
+import { ArticleLock } from './components/ArticleLock'
+import TagGroups from './components/TagGroups'
+import CategoryGroup from './components/CategoryGroup'
+=======
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import Live2D from '@/components/Live2D'
 import replaceSearchResult from '@/components/Mark'
@@ -6,6 +33,10 @@ import ShareBar from '@/components/ShareBar'
 import Tabs from '@/components/Tabs'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
@@ -34,6 +65,15 @@ import TocDrawer from './components/TocDrawer'
 import TopNavBar from './components/TopNavBar'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+import ArticleInfo from './components/ArticleInfo'
+import CommonHead from '@/components/CommonHead'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 // 主题全局状态
 const ThemeGlobalMedium = createContext()
@@ -46,7 +86,15 @@ export const useMediumGlobal = () => useContext(ThemeGlobalMedium)
  * @constructor
  */
 const LayoutBase = props => {
+<<<<<<< HEAD
   const { children, showInfoCard = true, post, notice } = props
+=======
+<<<<<<< HEAD
+  const { children, showInfoCard = true, slotRight, slotTop, siteInfo, notice, meta } = props
+=======
+  const { children, showInfoCard = true, post, notice } = props
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const { locale } = useGlobal()
   const router = useRouter()
   const [tocVisible, changeTocVisible] = useState(false)
@@ -85,10 +133,22 @@ const LayoutBase = props => {
           {/* 桌面端左侧菜单 */}
           {/* <LeftMenuBar/> */}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + 'relative flex justify-between w-full h-full mx-auto'}>
+                    {/* 桌面端左侧菜单 */}
+                    {/* <LeftMenuBar/> */}
+=======
+>>>>>>> tangly1024-main
           {/* 主区 */}
           <div id='container-wrapper' className='w-full relative z-10'>
             {/* 顶部导航栏 */}
             <TopNavBar {...props} />
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
             <div
               id='container-inner'
@@ -107,7 +167,59 @@ const LayoutBase = props => {
                 {children}
               </Transition>
 
+<<<<<<< HEAD
               <JumpToTopButton />
+=======
+<<<<<<< HEAD
+                        {/* 顶部导航栏 */}
+                        <TopNavBar {...props} />
+
+                        <div id='container-inner' className='px-7 max-w-5xl justify-center mx-auto min-h-screen'>
+                            <Transition
+                                show={!onLoading}
+                                appear={true}
+                                enter="transition ease-in-out duration-700 transform order-first"
+                                enterFrom="opacity-0 translate-y-16"
+                                enterTo="opacity-100"
+                                leave="transition ease-in-out duration-300 transform"
+                                leaveFrom="opacity-100"
+                                leaveTo="opacity-0 -translate-y-16"
+                                unmount={false}
+                            >
+                                {slotTop}
+                                {children}
+                            </Transition>
+
+                            <JumpToTopButton />
+                        </div>
+
+                        {/* 底部 */}
+                        <Footer title={siteInfo?.title} />
+                    </div>
+
+                    {/* 桌面端右侧 */}
+                    <div className={`hidden xl:block border-l dark:border-transparent w-96 relative z-10 ${CONFIG.RIGHT_PANEL_DARK ? 'bg-hexo-black-gray dark' : ''}`}>
+                        <div className='py-14 px-6 sticky top-0'>
+                            <Tabs>
+                                {slotRight}
+                                <div key={locale.NAV.ABOUT}>
+                                    {router.pathname !== '/search' && <SearchInput className='mt-6  mb-12' />}
+                                    {showInfoCard && <InfoCard {...props} />}
+                                    {CONFIG.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
+                                </div>
+                            </Tabs>
+                            <Announcement post={notice} />
+                            <Live2D />
+                        </div>
+                    </div>
+                </main>
+
+                {/* 移动端底部导航栏 */}
+                <BottomMenuBar {...props} className='block md:hidden' />
+=======
+              <JumpToTopButton />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
             </div>
 
             {/* 底部 */}
@@ -158,6 +270,16 @@ const LayoutIndex = props => {
  * 博客列表
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutPostList = (props) => {
+  const slotTop = <BlogPostBar {...props} />
+  return <LayoutBase {...props} slotTop={slotTop}>
+        {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 const LayoutPostList = props => {
   return (
     <>
@@ -168,6 +290,10 @@ const LayoutPostList = props => {
       )}
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -243,11 +369,41 @@ const LayoutSlug = props => {
             <Comment frontMatter={post} />
           </section>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                {/* 文章底部区域  */}
+                <section>
+                    {/* 分享 */}
+                    <ShareBar post={post} />
+                    {/* 文章分类和标签信息 */}
+                    <div className='flex justify-between'>
+                        {CONFIG.POST_DETAIL_CATEGORY && post?.category && <CategoryItem category={post?.category} />}
+                        <div>
+                            {CONFIG.POST_DETAIL_TAG && post?.tagItems?.map(tag => <TagItemMini key={tag.name} tag={tag} />)}
+                        </div>
+                    </div>
+                    {/* 上一篇下一篇文章 */}
+                    {post?.type === 'Post' && <ArticleAround prev={prev} next={next} />}
+                    {/* 评论区 */}
+                    <Comment frontMatter={post} />
+                </section>
+
+                {/* 移动端目录 */}
+                <TocDrawer {...props} />
+            </div>}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
           {/* 移动端目录 */}
           <TocDrawer {...props} />
         </div>
       )}
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -298,9 +454,24 @@ const LayoutSearch = props => {
             <BlogPostListScroll {...props} />
           )}
         </div>
+<<<<<<< HEAD
       )}
     </>
   )
+=======
+<<<<<<< HEAD
+
+        {/* 文章列表 */}
+        {currentSearch && <div>
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+        </div>}
+    </LayoutBase>
+=======
+      )}
+    </>
+  )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**

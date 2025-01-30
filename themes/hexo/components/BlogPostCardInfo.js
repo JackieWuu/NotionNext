@@ -1,16 +1,51 @@
 import NotionIcon from '@/components/NotionIcon'
 import NotionPage from '@/components/NotionPage'
 import TwikooCommentCount from '@/components/TwikooCommentCount'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import { formatDateFmt } from '@/lib/formatDate'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { formatDateFmt } from '@/lib/utils/formatDate'
 import Link from 'next/link'
 import TagItemMini from './TagItemMini'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 博客列表的文字内容
  * @param {*} param0
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary }) => {
+  return <div className={`flex flex-col justify-between lg:p-6 p-4  ${showPageCover && !showPreview ? 'md:w-7/12 w-full md:max-h-60' : 'w-full'}`}>
+       <div>
+         {/* 标题 */}
+         <Link
+            href={`${BLOG.SUB_PATH}/${post.slug}`}
+            passHref
+            className={`line-clamp-2 replace cursor-pointer text-2xl ${showPreview ? 'text-center' : ''
+                } leading-tight font-normal text-gray-600 dark:text-gray-100 hover:text-indigo-700 dark:hover:text-indigo-400`}>
+
+            <span className='menu-link '>{post.title}</span>
+
+        </Link>
+
+        {/* 分类 */}
+        { post?.category && <div
+            className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'
+                } flex-wrap dark:text-gray-500 text-gray-400 `}
+        >
+=======
+>>>>>>> tangly1024-main
 export const BlogPostCardInfo = ({
   post,
   showPreview,
@@ -24,6 +59,10 @@ export const BlogPostCardInfo = ({
         <header>
           <h2>
             {/* 标题 */}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
             <Link
               href={post?.href}
               passHref

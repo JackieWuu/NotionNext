@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import { useEffect } from 'react'
+=======
+import { useEffect, useState } from 'react'
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 评论插件
@@ -15,9 +26,35 @@ const Utterances = ({ issueTerm, layout }) => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+<<<<<<< HEAD
     const anchor = document.getElementById('comments');
     if (!anchor) {
       return
+=======
+<<<<<<< HEAD
+    const theme =
+      BLOG.APPEARANCE === 'auto'
+        ? 'preferred-color-scheme'
+        : BLOG.APPEARANCE === 'light'
+          ? 'github-light'
+          : 'github-dark'
+    const script = document.createElement('script')
+    const anchor = document.getElementById('comments')
+    script.setAttribute('src', 'https://utteranc.es/client.js')
+    script.setAttribute('crossorigin', 'anonymous')
+    script.setAttribute('async', true)
+    script.setAttribute('repo', BLOG.COMMENT_UTTERRANCES_REPO)
+    script.setAttribute('issue-term', 'title')
+    script.setAttribute('theme', theme)
+    anchor.appendChild(script)
+    return () => {
+      anchor.innerHTML = ''
+=======
+    const anchor = document.getElementById('comments');
+    if (!anchor) {
+      return
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     }
     const script = document.createElement('script');
     script.onload = () => setLoading(false);

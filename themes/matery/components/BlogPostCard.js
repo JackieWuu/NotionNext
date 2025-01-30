@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import Link from 'next/link'
+import React from 'react'
+import TagItemMini from './TagItemMini'
+import CONFIG from '../config'
+import TwikooCommentCount from '@/components/TwikooCommentCount'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import LazyImage from '@/components/LazyImage'
 import NotionIcon from '@/components/NotionIcon'
 import TwikooCommentCount from '@/components/TwikooCommentCount'
@@ -13,18 +25,65 @@ import TagItemMini from './TagItemMini'
  * @returns
  */
 const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
+<<<<<<< HEAD
   const showPreview =
     siteConfig('MATERY_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
+=======
+<<<<<<< HEAD
+  const showPreview = CONFIG.POST_LIST_PREVIEW && post.blockMap
+=======
+  const showPreview =
+    siteConfig('MATERY_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   // matery 主题默认强制显示图片
   if (post && !post.pageCoverThumbnail) {
     post.pageCoverThumbnail = siteInfo?.pageCover
   }
+<<<<<<< HEAD
   const showPageCover =
     siteConfig('MATERY_POST_LIST_COVER', null, CONFIG) &&
     post?.pageCoverThumbnail
   const delay = (index % 3) * 300
 
   return (
+=======
+<<<<<<< HEAD
+  const showPageCover = CONFIG.POST_LIST_COVER && post?.pageCoverThumbnail
+=======
+  const showPageCover =
+    siteConfig('MATERY_POST_LIST_COVER', null, CONFIG) &&
+    post?.pageCoverThumbnail
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+  const delay = (index % 3) * 300
+
+  return (
+<<<<<<< HEAD
+        <div
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            data-aos-delay={delay}
+            data-aos-once="true"
+            data-aos-anchor-placement="top-bottom"
+            className="w-full mb-4 overflow-hidden shadow-md border dark:border-black rounded-xl bg-white dark:bg-hexo-black-gray">
+
+            {/* 固定高度 ，空白用图片拉升填充 */}
+            <div className="group flex flex-col h-80 justify-between">
+
+                {/* 头部图片 填充卡片 */}
+                {showPageCover && (
+                    <Link href={`${BLOG.SUB_PATH}/${post.slug}`} passHref legacyBehavior>
+                        <div className="flex flex-grow w-full relative duration-200 = rounded-t-md cursor-pointer transform overflow-hidden">
+                            <LazyImage
+                                src={post?.pageCoverThumbnail}
+                                alt={post.title}
+                                className="h-full w-full group-hover:scale-125 group-hover:brightness-50 brightness-90 rounded-t-md transform object-cover duration-500"
+                            />
+                            <div className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text'>{post.title}</div>
+                        </div>
+                    </Link>
+=======
+>>>>>>> tangly1024-main
     <div
       data-aos='zoom-in'
       data-aos-duration='500'
@@ -46,6 +105,10 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
               <h2 className='absolute bottom-0 left-0 text-white p-6 text-2xl replace break-words w-full shadow-text z-30'>
                 {siteConfig('POST_TITLE_ICON') && (
                   <NotionIcon icon={post.pageIcon} />
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
                 )}
                 {post.title}
               </h2>

@@ -1,6 +1,12 @@
 import Comment from '@/components/Comment'
 import { AdSlot } from '@/components/GoogleAdsense'
 import LazyImage from '@/components/LazyImage'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { formatDateFmt } from '@/lib/formatDate'
+=======
+>>>>>>> tangly1024-main
 import NotionIcon from '@/components/NotionIcon'
 import NotionPage from '@/components/NotionPage'
 import ShareBar from '@/components/ShareBar'
@@ -11,6 +17,10 @@ import { formatDateFmt } from '@/lib/utils/formatDate'
 import Link from 'next/link'
 import ArticleAround from './ArticleAround'
 import TagItemMini from './TagItemMini'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  *
@@ -93,7 +103,16 @@ export default function ArticleDetail(props) {
             </div>
           </section>
 
+<<<<<<< HEAD
           <WWAds className='w-full' orientation='horizontal' />
+=======
+<<<<<<< HEAD
+          <AdSlot type='in-article'/>
+
+=======
+          <WWAds className='w-full' orientation='horizontal' />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         </header>
 
         {/* Notion文章主体 */}
@@ -102,9 +121,20 @@ export default function ArticleDetail(props) {
         </section>
 
         <section>
+<<<<<<< HEAD
           <AdSlot type='in-article' />
           {/* 分享 */}
           <ShareBar post={post} />
+=======
+<<<<<<< HEAD
+           {/* 分享 */}
+           <ShareBar post={post} />
+=======
+          <AdSlot type='in-article' />
+          {/* 分享 */}
+          <ShareBar post={post} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         </section>
       </article>
 

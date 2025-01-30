@@ -1,5 +1,13 @@
 import DarkModeButton from '@/components/DarkModeButton'
 import { AdSlot } from '@/components/GoogleAdsense'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+// import { debounce } from 'lodash'
+// import { useEffect } from 'react'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
@@ -17,6 +25,10 @@ import { MenuList } from './MenuList'
 import SearchInput from './SearchInput'
 import SiteInfo from './SiteInfo'
 import SocialButton from './SocialButton'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 侧边栏
@@ -24,6 +36,12 @@ import SocialButton from './SocialButton'
  * @returns
  */
 function AsideLeft(props) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const { tagOptions, currentTag, categoryOptions, currentCategory, post, slot, siteInfo, notice } = props
+=======
+>>>>>>> tangly1024-main
   const {
     tagOptions,
     currentTag,
@@ -33,6 +51,10 @@ function AsideLeft(props) {
     slot,
     notice
   } = props
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const router = useRouter()
   const { fullWidth } = useGlobal()
 
@@ -110,6 +132,78 @@ function AsideLeft(props) {
       window.addEventListener('scroll', handleResize, { passive: true })
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  //     return () => {
+  //       if (router.pathname === '/[...slug]') {
+  //         window.removeEventListener('resize', handleResize)
+  //         window.removeEventListener('scroll', handleResize, { passive: true })
+  //       }
+  //     }
+  //   }, [])
+
+  return <div className={`sideLeft relative ${isCollapsed ? 'w-0' : 'w-80'} duration-150 transition-all bg-white dark:bg-hexo-black-gray min-h-screen hidden lg:block z-20`}>
+        {/* 折叠按钮 */}
+        {CONFIG.SIDEBAR_COLLAPSE_BUTTON && <div className={`${isCollapsed ? '' : 'ml-80'} hidden lg:block sticky top-0 mx-2 cursor-pointer hover:scale-110 duration-150 px-3 py-2`} onClick={toggleOpen}>
+            {isCollapsed ? <i className="fa-solid fa-indent text-xl"></i> : <i className='fas fa-bars text-xl'></i>}
+        </div>}
+
+        <div className={`h-full ${isCollapsed ? 'hidden' : 'px-8'}`}>
+
+            <Logo {...props} />
+
+            <section className='siteInfo flex flex-col dark:text-gray-300 pt-8'>
+                {siteInfo?.description}
+            </section>
+
+            <section className='flex flex-col text-gray-600'>
+                <div className='w-12 my-4' />
+                <MenuList {...props} />
+            </section>
+
+            <section className='flex flex-col text-gray-600'>
+                <div className='w-12 my-4' />
+                <SearchInput {...props} />
+            </section>
+
+            <section className='flex flex-col dark:text-gray-300'>
+                <div className='w-12 my-4' />
+                <Announcement post={notice} />
+            </section>
+
+            <section>
+                 <AdSlot type='in-article'/>
+            </section>
+
+            {router.asPath !== '/tag' && <section className='flex flex-col'>
+                <div className='w-12 my-4' />
+                <GroupTag tags={tagOptions} currentTag={currentTag} />
+            </section>}
+
+            {router.asPath !== '/category' && <section className='flex flex-col'>
+                <div className='w-12 my-4' />
+                <GroupCategory categories={categoryOptions} currentCategory={currentCategory} />
+            </section>}
+
+            <section className='flex flex-col'>
+                <div className='w-12 my-4' />
+                <SocialButton />
+                <SiteInfo />
+            </section>
+
+            <section className='flex justify-center dark:text-gray-200 pt-4'>
+                <DarkModeButton />
+            </section>
+
+            <section className='sticky top-0 pt-12'>
+                <Catalog toc={post?.toc} />
+                <div className='flex justify-center'>
+                    <div>{slot}</div>
+                </div>
+            </section>
+=======
+>>>>>>> tangly1024-main
     return () => {
       if (post) {
         window.removeEventListener('resize', handleResize)
@@ -117,6 +211,10 @@ function AsideLeft(props) {
       }
     }
   }, [])
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   return (
     <div

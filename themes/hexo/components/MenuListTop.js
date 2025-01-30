@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
+=======
+<<<<<<< HEAD
+import React from 'react'
+import { useGlobal } from '@/lib/global'
+import CONFIG from '../config'
+import BLOG from '@/blog.config'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import CONFIG from '../config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { MenuItemDrop } from './MenuItemDrop'
 
 export const MenuListTop = props => {
@@ -8,6 +21,16 @@ export const MenuListTop = props => {
   const { locale } = useGlobal()
 
   let links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { id: 1, icon: 'fa-solid fa-house', name: locale.NAV.INDEX, to: '/', show: CONFIG.MENU_INDEX },
+    { id: 2, icon: 'fas fa-search', name: locale.NAV.SEARCH, to: '/search', show: CONFIG.MENU_SEARCH },
+    { id: 3, icon: 'fas fa-archive', name: locale.NAV.ARCHIVE, to: '/archive', show: CONFIG.MENU_ARCHIVE }
+    // { icon: 'fas fa-folder', name: locale.COMMON.CATEGORY, to: '/category', show: CONFIG.MENU_CATEGORY },
+    // { icon: 'fas fa-tag', name: locale.COMMON.TAGS, to: '/tag', show: CONFIG.MENU_TAG }
+=======
+>>>>>>> tangly1024-main
     {
       id: 1,
       icon: 'fa-solid fa-house',
@@ -31,6 +54,10 @@ export const MenuListTop = props => {
     }
     // { icon: 'fas fa-folder', name: locale.COMMON.CATEGORY, href: '/category', show: siteConfig('MENU_CATEGORY', null, CONFIG) },
     // { icon: 'fas fa-tag', name: locale.COMMON.TAGS, href: '/tag', show: siteConfig('MENU_TAG', null, CONFIG) }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
 
   if (customNav) {
@@ -46,6 +73,16 @@ export const MenuListTop = props => {
     return null
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return (<>
+        <nav id='nav-mobile' className='leading-8 justify-center font-light w-full flex'>
+            {links?.map(link => link && link.show && <MenuItemDrop key={link?.id} link={link} />)}
+        </nav>
+    </>)
+=======
+>>>>>>> tangly1024-main
   return (
     <>
       <nav
@@ -58,4 +95,8 @@ export const MenuListTop = props => {
       </nav>
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }

@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import BlogPostCard from './BlogPostCard'
+import BlogPostListEmpty from './BlogPostListEmpty'
+import { useGlobal } from '@/lib/global'
+import React, { useCallback } from 'react'
+import CONFIG from '../config'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { getListByPage } from '@/lib/utils'
 import throttle from 'lodash.throttle'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -14,6 +28,15 @@ import BlogPostListEmpty from './BlogPostListEmpty'
  * @returns {JSX.Element}
  * @constructor
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const BlogPostListScroll = ({ posts = [], currentSearch, showSummary = CONFIG.POST_LIST_SUMMARY, siteInfo }) => {
+  const postsPerPage = BLOG.POSTS_PER_PAGE
+  const [page, updatePage] = React.useState(1)
+  const postsToShow = getListByPage(posts, page, postsPerPage)
+=======
+>>>>>>> tangly1024-main
 const BlogPostListScroll = ({
   posts = [],
   currentSearch,
@@ -31,6 +54,10 @@ const BlogPostListScroll = ({
       window.removeEventListener('scroll', scrollTrigger)
     }
   })
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   let hasMore = false
   if (posts) {
@@ -44,6 +71,30 @@ const BlogPostListScroll = ({
   }
 
   const throttleMs = 200
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const scrollTrigger = useCallback(throttle(() => {
+    requestAnimationFrame(() => {
+      const scrollS = window.scrollY + window.outerHeight
+      const clientHeight = targetRef ? (targetRef.current ? (targetRef.current.clientHeight) : 0) : 0
+      if (scrollS > clientHeight + 100) {
+        handleGetMore()
+      }
+    })
+  }, throttleMs))
+  // 监听滚动
+  React.useEffect(() => {
+    window.addEventListener('scroll', scrollTrigger)
+    return () => {
+      window.removeEventListener('scroll', scrollTrigger)
+    }
+  })
+
+  const targetRef = React.useRef(null)
+  const { locale } = useGlobal()
+=======
+>>>>>>> tangly1024-main
   const scrollTrigger = useCallback(
     throttle(() => {
       requestAnimationFrame(() => {
@@ -59,6 +110,10 @@ const BlogPostListScroll = ({
       })
     }, throttleMs)
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   if (!postsToShow || postsToShow.length === 0) {
     return <BlogPostListEmpty currentSearch={currentSearch} />

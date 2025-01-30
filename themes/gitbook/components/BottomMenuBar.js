@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 import { useGlobal } from '@/lib/global'
 import { useGitBookGlobal } from '..'
+=======
+<<<<<<< HEAD
+import { useGitBookGlobal } from '@/themes/gitbook'
+import React from 'react'
+import JumpToTopButton from './JumpToTopButton'
+=======
+import { useGlobal } from '@/lib/global'
+import { useGitBookGlobal } from '..'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 移动端底部导航

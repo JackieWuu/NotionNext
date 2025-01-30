@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import BlogPostCard from './BlogPostCard'
+import BlogPostListEmpty from './BlogPostListEmpty'
+import { useGlobal } from '@/lib/global'
+import React, { useEffect, useRef, useState } from 'react'
+import CONFIG from '../config'
+import { getListByPage } from '@/lib/utils'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { getListByPage } from '@/lib/utils'
@@ -5,6 +17,10 @@ import { useEffect, useRef, useState } from 'react'
 import CONFIG from '../config'
 import BlogPostCard from './BlogPostCard'
 import BlogPostListEmpty from './BlogPostListEmpty'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 博客列表滚动分页
@@ -13,6 +29,13 @@ import BlogPostListEmpty from './BlogPostListEmpty'
  * @returns {JSX.Element}
  * @constructor
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const BlogPostListScroll = ({ posts = [], currentSearch, showSummary = CONFIG.POST_LIST_SUMMARY, siteInfo }) => {
+  const postsPerPage = BLOG.POSTS_PER_PAGE
+=======
+>>>>>>> tangly1024-main
 const BlogPostListScroll = ({
   posts = [],
   currentSearch,
@@ -20,6 +43,10 @@ const BlogPostListScroll = ({
   siteInfo
 }) => {
   const { locale, NOTION_CONFIG } = useGlobal()
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const [page, updatePage] = useState(1)
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   const postsToShow = getListByPage(posts, page, POSTS_PER_PAGE)

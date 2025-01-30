@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 import Comment from '@/components/Comment'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import CONFIG from './config'
+import React, { createContext, useEffect, useState, useContext, useRef } from 'react'
+import Nav from './components/Nav'
+import { Footer } from './components/Footer'
+import JumpToTopButton from './components/JumpToTopButton'
+=======
+import Comment from '@/components/Comment'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Live2D from '@/components/Live2D'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
@@ -26,11 +39,23 @@ import Nav from './components/Nav'
 import SearchNavBar from './components/SearchNavBar'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+import CommonHead from '@/components/CommonHead'
+import AlgoliaSearchModal from '@/components/AlgoliaSearchModal'
+=======
+>>>>>>> tangly1024-main
 
 const AlgoliaSearchModal = dynamic(
   () => import('@/components/AlgoliaSearchModal'),
   { ssr: false }
 )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 // 主题全局状态
 const ThemeGlobalNobelium = createContext()
@@ -133,6 +158,15 @@ const LayoutPostList = props => {
   }
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} topSlot={<BlogListBar {...props} setFilterKey={setFilterKey} />}>
+            {topSlot}
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} posts={filteredBlogPosts} /> : <BlogListScroll {...props} posts={filteredBlogPosts} />}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       {topSlot}
       {tag && <SearchNavBar {...props} />}
@@ -142,6 +176,10 @@ const LayoutPostList = props => {
         <BlogListScroll {...props} posts={filteredBlogPosts} />
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -180,6 +218,15 @@ const LayoutSearch = props => {
   }
   console.log('posts', props, posts, filteredBlogPosts)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return <LayoutBase {...props} topSlot={<BlogListBar {...props} setFilterKey={setFilterKey} />}>
+    <SearchNavBar {...props} />
+    {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} posts={filteredBlogPosts} /> : <BlogListScroll {...props} posts={filteredBlogPosts} />}
+  </LayoutBase>
+=======
+>>>>>>> tangly1024-main
   return (
     <>
       <SearchNavBar {...props} />
@@ -190,6 +237,10 @@ const LayoutSearch = props => {
       )}
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**

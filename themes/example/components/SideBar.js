@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
@@ -43,11 +50,70 @@ export const SideBar = props => {
         </aside>
       )}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <aside className="rounded shadow overflow-hidden mb-6">
+                <h3 className="text-sm bg-gray-100 text-gray-700 dark:bg-hexo-black-gray dark:text-gray-200 py-3 px-4 dark:border-hexo-black-gray border-b">{locale.COMMON.CATEGORY}</h3>
+
+                <div className="p-4">
+                    <ul className="list-reset leading-normal">
+                        {categoryOptions?.map(category => {
+                          return (
+                              <Link
+                                  key={category.name}
+                                  href={`/category/${category.name}`}
+                                  passHref
+                                  legacyBehavior>
+                                    <li>  <a href={`/category/${category.name}`} className="text-gray-darkest text-sm">{category.name}({category.count})</a></li>
+                                </Link>
+                          )
+                        })}
+                    </ul>
+                </div>
+
+            </aside>
+
+            <aside className="rounded shadow overflow-hidden mb-6">
+                <h3 className="text-sm bg-gray-100 text-gray-700 dark:bg-hexo-black-gray dark:text-gray-200 py-3 px-4 dark:border-hexo-black-gray border-b">{locale.COMMON.LATEST_POSTS}</h3>
+
+                <div className="p-4">
+                    <ul className="list-reset leading-normal">
+                        {latestPosts?.map(p => {
+                          return (
+                              <Link key={p.id} href={`/${p.slug}`} passHref legacyBehavior>
+                                    <li>  <a href={`/${p.slug}`} className="text-gray-darkest text-sm">{p.title}</a></li>
+                                </Link>
+                          )
+                        })}
+                    </ul>
+                </div>
+            </aside>
+
+            <Announcement post={notice}/>
+
+            {BLOG.COMMENT_WALINE_SERVER_URL && BLOG.COMMENT_WALINE_RECENT && <aside className="rounded shadow overflow-hidden mb-6">
+                <h3 className="text-sm bg-gray-100 text-gray-700 dark:bg-hexo-black-gray dark:text-gray-200 py-3 px-4 dark:border-hexo-black-gray border-b">{locale.COMMON.RECENT_COMMENTS}</h3>
+
+                <div className="p-4">
+                    <ExampleRecentComments/>
+                </div>
+            </aside>}
+
+            <aside className="rounded  overflow-hidden mb-6">
+                <Live2D />
+            </aside>
+=======
+>>>>>>> tangly1024-main
       {/* 分类 */}
       <aside className='w-full rounded shadow overflow-hidden mb-6'>
         <h3 className='text-sm bg-gray-100 text-gray-700 dark:bg-hexo-black-gray dark:text-gray-200 py-3 px-4 dark:border-hexo-black-gray border-b'>
           {locale.COMMON.CATEGORY}
         </h3>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
         <div className='p-4'>
           <ul className='list-reset leading-normal'>

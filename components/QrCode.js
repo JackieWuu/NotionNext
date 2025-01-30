@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { loadExternalResource } from '@/lib/utils'
 import { useEffect } from 'react'
 
@@ -5,10 +12,19 @@ import { useEffect } from 'react'
  * 二维码生成
  */
 export default function QrCode({ value }) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> tangly1024-main
   const qrCodeCDN =
     process.env.NEXT_PUBLIC_QR_CODE_CDN ||
     'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'
 
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   useEffect(() => {
     let qrcode
     if (!value) {

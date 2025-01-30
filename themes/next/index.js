@@ -20,6 +20,18 @@ import JumpToBottomButton from './components/JumpToBottomButton'
 import JumpToTopButton from './components/JumpToTopButton'
 import SideAreaLeft from './components/SideAreaLeft'
 import SideAreaRight from './components/SideAreaRight'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import TopNav from './components/TopNav'
+import { useGlobal } from '@/lib/global'
+import { useEffect, useRef, useState } from 'react'
+import BLOG from '@/blog.config'
+import BlogPostListScroll from './components/BlogPostListScroll'
+import BlogPostListPage from './components/BlogPostListPage'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import StickyBar from './components/StickyBar'
 import TagItem from './components/TagItem'
 import TocDrawer from './components/TocDrawer'
@@ -27,6 +39,13 @@ import TocDrawerButton from './components/TocDrawerButton'
 import TopNav from './components/TopNav'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+import CommonHead from '@/components/CommonHead'
+=======
+>>>>>>> tangly1024-main
 
 const AlgoliaSearchModal = dynamic(
   () => import('@/components/AlgoliaSearchModal'),
@@ -36,14 +55,29 @@ const AlgoliaSearchModal = dynamic(
 // 主题全局状态
 const ThemeGlobalNext = createContext()
 export const useNextGlobal = () => useContext(ThemeGlobalNext)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局 采用左中右三栏布局，移动端使用顶部导航栏
  * @returns {JSX.Element}
  * @constructor
  */
+<<<<<<< HEAD
 const LayoutBase = props => {
   const { children, headerSlot, rightAreaSlot, post } = props
+=======
+<<<<<<< HEAD
+const LayoutBase = (props) => {
+  const { children, headerSlot, floatSlot, rightAreaSlot, siteInfo, meta } = props
+  const { onLoading } = useGlobal()
+=======
+const LayoutBase = props => {
+  const { children, headerSlot, rightAreaSlot, post } = props
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const targetRef = useRef(null)
   const floatButtonGroup = useRef(null)
   const [showRightFloat, switchShow] = useState(false)
@@ -106,6 +140,36 @@ const LayoutBase = props => {
 
         <>{headerSlot}</>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            {/* 主区 */}
+            <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' next relative flex justify-center flex-1 pb-12'}>
+                {/* 左侧栏样式 */}
+                <SideAreaLeft targetRef={targetRef} {...props} />
+
+                {/* 中央内容 */}
+                <section id='container-inner' className={`${CONFIG.NAV_TYPE !== 'normal' ? 'mt-24' : ''} lg:max-w-3xl xl:max-w-4xl flex-grow md:mt-0 min-h-screen w-full relative z-10`} ref={targetRef}>
+                    <Transition
+                        show={!onLoading}
+                        appear={true}
+                        enter="transition ease-in-out duration-700 transform order-first"
+                        enterFrom="opacity-0 translate-y-16"
+                        enterTo="opacity-100"
+                        leave="transition ease-in-out duration-300 transform"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0 -translate-y-16"
+                        unmount={false}
+                    >
+                        {children}
+                    </Transition>
+                </section>
+
+                {/* 右侧栏样式 */}
+                {CONFIG.RIGHT_BAR && <SideAreaRight targetRef={targetRef} slot={rightAreaSlot} {...props} />}
+            </main>
+=======
+>>>>>>> tangly1024-main
         {/* 顶部黑线装饰 */}
         <div className='h-0.5 w-full bg-gray-700 dark:bg-gray-600 hidden lg:block' />
 
@@ -127,6 +191,10 @@ const LayoutBase = props => {
             ref={targetRef}>
             {children}
           </section>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
           {/* 右侧栏样式 */}
           {siteConfig('NEXT_RIGHT_BAR', null, CONFIG) && (
@@ -138,6 +206,13 @@ const LayoutBase = props => {
           )}
         </main>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            {/* 页脚 */}
+            <Footer title={siteInfo?.title} />
+=======
+>>>>>>> tangly1024-main
         {/* 悬浮目录按钮 */}
         {post && (
           <div className='block lg:hidden'>
@@ -159,6 +234,10 @@ const LayoutBase = props => {
             <FloatDarkModeButton />
             {floatSlot}
           </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         </div>
 
         {/* 页脚 */}
@@ -204,6 +283,18 @@ const LayoutPostList = props => {
     <>
       <BlogListBar {...props} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <BlogListBar {...props} />
+
+        {BLOG.POST_LIST_STYLE !== 'page'
+          ? <BlogPostListScroll {...props} showSummary={true} />
+          : <BlogPostListPage {...props} />
+        }
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
       {siteConfig('POST_LIST_STYLE') !== 'page' ? (
         <BlogPostListScroll {...props} showSummary={true} />
       ) : (
@@ -211,6 +302,10 @@ const LayoutPostList = props => {
       )}
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -236,6 +331,25 @@ const LayoutSearch = props => {
   }, [])
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} >
+            <StickyBar>
+                <div className="p-4 dark:text-gray-200">
+                    <i className="mr-1 fas fa-search" />{' '}
+                    {posts?.length} {locale.COMMON.RESULT_OF_SEARCH}
+                </div>
+            </StickyBar>
+            <div className="md:mt-5">
+                {BLOG.POST_LIST_STYLE !== 'page'
+                  ? <BlogPostListScroll {...props} showSummary={true} />
+                  : <BlogPostListPage {...props} />
+                }
+            </div>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       <StickyBar>
         <div className='p-4 dark:text-gray-200'>
@@ -251,6 +365,10 @@ const LayoutSearch = props => {
         )}
       </div>
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -380,12 +498,39 @@ const LayoutCategoryIndex = props => {
                   <i className='mr-4 fas fa-folder' />
                   {category.name}({category.count})
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <div id='category-list' className='duration-200 flex flex-wrap'>
+                    {categoryOptions.map(category => {
+                      return (
+                            <Link
+                                key={category.name}
+                                href={`/category/${category.name}`}
+                                passHref
+                                legacyBehavior>
+                                <div
+                                    className={'hover:text-black dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'}>
+                                    <i className='mr-4 fas fa-folder' />{category.name}({category.count})
+                                </div>
+                            </Link>
+                      )
+                    })}
+                </div>
+            </div>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
               </Link>
             )
           })}
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

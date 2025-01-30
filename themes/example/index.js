@@ -1,5 +1,12 @@
 'use client'
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import CONFIG from './config'
+=======
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
@@ -10,6 +17,10 @@ import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useEffect } from 'react'
 import BlogListArchive from './components/BlogListArchive'
 import { BlogListPage } from './components/BlogListPage'
@@ -23,6 +34,13 @@ import { SideBar } from './components/SideBar'
 import TitleBar from './components/TitleBar'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CommonHead from '@/components/CommonHead'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局框架
@@ -53,6 +71,50 @@ const LayoutBase = props => {
       {/* 标题栏 */}
       <TitleBar {...props} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <Style/>
+
+            {/* 页头 */}
+            <Header {...props} />
+
+            {/* 菜单 */}
+            <Nav {...props} />
+
+            {/* 主体 */}
+            <div id='container-inner' className="w-full relative z-10">
+
+                {/* 标题栏 */}
+                <Title {...props} />
+
+                <div id='container-wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + 'relative container mx-auto justify-center md:flex items-start py-8 px-2'}>
+
+                    {/* 内容 */}
+                    <div className='w-full max-w-3xl xl:px-14 lg:px-4 '>
+                        <Transition
+                            show={!onLoading}
+                            appear={true}
+                            enter="transition ease-in-out duration-700 transform order-first"
+                            enterFrom="opacity-0 translate-y-16"
+                            enterTo="opacity-100"
+                            leave="transition ease-in-out duration-300 transform"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 -translate-y-16"
+                            unmount={false}
+                        >
+                            {/* 嵌入模块 */}
+                            {slotTop}
+                            {children}
+                        </Transition>
+                    </div>
+
+                    {/* 侧边栏 */}
+                    <SideBar {...props} />
+
+                </div>
+=======
+>>>>>>> tangly1024-main
       {/* 主体 */}
       <div id='container-inner' className='w-full relative z-10'>
         <div
@@ -79,6 +141,10 @@ const LayoutBase = props => {
               {children}
             </Transition>
           </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
           {/* 侧边栏 */}
           {!fullWidth && (
@@ -127,6 +193,14 @@ const LayoutPostList = props => {
   const { category, tag } = props
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} slotTop={slotTop}>
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       {/* 显示分类 */}
       {category && (
@@ -144,6 +218,10 @@ const LayoutPostList = props => {
         <BlogListScroll {...props} />
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

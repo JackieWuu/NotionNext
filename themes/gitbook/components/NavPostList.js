@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import NavPostListEmpty from './NavPostListEmpty'
+import { useRouter } from 'next/router'
+import NavPostItem from './NavPostItem'
+import CONFIG from '../config'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { useRouter } from 'next/router'
@@ -5,6 +14,10 @@ import { useEffect, useState } from 'react'
 import CONFIG from '../config'
 import BlogPostCard from './BlogPostCard'
 import NavPostItem from './NavPostItem'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 博客列表滚动分页
@@ -125,8 +138,18 @@ function groupArticles(filteredNavPages) {
     const categoryName = item?.category ? item?.category : '' // 将category转换为字符串
 
     let existingGroup = null
+<<<<<<< HEAD
     // 开启自动分组排序；将同分类的自动归到同一个文件夹，忽略Notion中的排序
     if (AUTO_SORT) {
+=======
+<<<<<<< HEAD
+    // 开启自动分组排序
+    if (JSON.parse(CONFIG.AUTO_SORT)) {
+=======
+    // 开启自动分组排序；将同分类的自动归到同一个文件夹，忽略Notion中的排序
+    if (AUTO_SORT) {
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
       existingGroup = groups.find(group => group.category === categoryName) // 搜索同名的最后一个分组
     } else {
       existingGroup = groups[groups.length - 1] // 获取最后一个分组

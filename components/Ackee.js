@@ -22,6 +22,19 @@ const Ackee = () => {
          */
         detailed: true,
         /*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        * Enable or disable tracking when on localhost.
+        */
+        ignoreLocalhost: false,
+        /*
+        * Enable or disable the tracking of your own visits.
+        * This is enabled by default, but should be turned off when using a wildcard Access-Control-Allow-Origin header.
+        * Some browsers strictly block third-party cookies. The option won't have an impact when this is the case.
+        */
+=======
+>>>>>>> tangly1024-main
          * Enable or disable tracking when on localhost.
          */
         ignoreLocalhost: false,
@@ -30,6 +43,10 @@ const Ackee = () => {
          * This is enabled by default, but should be turned off when using a wildcard Access-Control-Allow-Origin header.
          * Some browsers strictly block third-party cookies. The option won't have an impact when this is the case.
          */
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         ignoreOwnVisits: false
       }
     )

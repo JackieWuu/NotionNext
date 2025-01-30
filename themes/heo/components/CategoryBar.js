@@ -28,6 +28,13 @@ export default function CategoryBar(props) {
       setScrollRight(!scrollRight)
     }
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return <div id='category-bar' className={`flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full lg:bg-white dark:lg:bg-[#1e1e1e]  
+  ${border ? 'lg:border lg:hover:border dark:lg:border-gray-800 hover:border-indigo-600 dark:hover:border-yellow-600 ' : ''}  py-2 lg:px-2 rounded-xl transition-colors duration-200`}>
+=======
+>>>>>>> tangly1024-main
 
   return (
     <div
@@ -43,6 +50,10 @@ export default function CategoryBar(props) {
           <MenuItem key={index} href={`/category/${c.name}`} name={c.name} />
         ))}
       </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
       <div id='category-bar-next' className='flex items-center justify-center'>
         <div
@@ -72,12 +83,24 @@ export default function CategoryBar(props) {
  */
 const MenuItem = ({ href, name }) => {
   const router = useRouter()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const selected = router.pathname === href
+  return <div className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-md text-gray-900 dark:text-white hover:text-white hover:bg-indigo-600 dark:hover:bg-yellow-600 ${selected ? 'text-white bg-indigo-600 dark:bg-yellow-600' : ''}`}>
+        <Link href={href}>{name}</Link>
+=======
+>>>>>>> tangly1024-main
   const { category } = router.query
   const selected = category === name
   return (
     <div
       className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-md text-gray-900 dark:text-white hover:text-white hover:bg-indigo-600 dark:hover:bg-yellow-600 ${selected ? 'text-white bg-indigo-600 dark:bg-yellow-600' : ''}`}>
       <Link href={href}>{name}</Link>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </div>
   )
 }

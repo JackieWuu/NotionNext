@@ -1,6 +1,21 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import throttle from 'lodash.throttle'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import BlogPostCard from './BlogPostCard'
+import BlogPostListEmpty from './BlogPostListEmpty'
+import { useGlobal } from '@/lib/global'
+import throttle from 'lodash.throttle'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import throttle from 'lodash.throttle'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useRouter } from 'next/router'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import BlogPostCard from './BlogPostCard'
@@ -14,8 +29,17 @@ import BlogPostListEmpty from './BlogPostListEmpty'
  * @constructor
  */
 const BlogPostListScroll = ({ posts = [], currentSearch }) => {
+<<<<<<< HEAD
   const { NOTION_CONFIG } = useGlobal()
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
+=======
+<<<<<<< HEAD
+  const postsPerPage = BLOG.POSTS_PER_PAGE
+=======
+  const { NOTION_CONFIG } = useGlobal()
+  const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const [page, updatePage] = useState(1)
   let filteredPosts = Object.assign(posts)
   const searchKey = getSearchKey()

@@ -10,6 +10,24 @@ import { useEffect } from 'react'
 
 const Artalk = ({ siteInfo }) => {
   useEffect(() => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    loadExternalResource(BLOG.COMMENT_ARTALK_CSS, 'css')
+    window?.Artalk?.init({
+      server: BLOG.COMMENT_ARTALK_SERVER, // 后端地址
+      el: '#artalk', // 容器元素
+      locale: BLOG.LANG,
+      //   pageKey: '/post/1', // 固定链接 (留空自动获取)
+      //   pageTitle: '关于引入 Artalk 的这档子事', // 页面标题 (留空自动获取)
+      site: siteInfo?.title // 你的站点名
+    })
+  }, [])
+  return (
+        <div id="artalk"></div>
+  )
+=======
+>>>>>>> tangly1024-main
     initArtalk()
   }, [])
 
@@ -41,6 +59,10 @@ const Artalk = ({ siteInfo }) => {
   }
 
   return <div id="artalk"></div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 export default Artalk

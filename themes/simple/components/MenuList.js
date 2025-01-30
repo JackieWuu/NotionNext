@@ -29,6 +29,15 @@ export const MenuList = ({ customNav, customMenu }) => {
   })
 
   let links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { icon: 'fas fa-search', name: locale.NAV.SEARCH, to: '/search', show: CONFIG.MENU_SEARCH },
+    { icon: 'fas fa-archive', name: locale.NAV.ARCHIVE, to: '/archive', show: CONFIG.MENU_ARCHIVE },
+    { icon: 'fas fa-folder', name: locale.COMMON.CATEGORY, to: '/category', show: CONFIG.MENU_CATEGORY },
+    { icon: 'fas fa-tag', name: locale.COMMON.TAGS, to: '/tag', show: CONFIG.MENU_TAG }
+=======
+>>>>>>> tangly1024-main
     {
       icon: 'fas fa-search',
       name: locale.NAV.SEARCH,
@@ -53,6 +62,10 @@ export const MenuList = ({ customNav, customMenu }) => {
       href: '/tag',
       show: siteConfig('SIMPLE_MENU_TAG', null, CONFIG)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
 
   if (customNav) {
@@ -68,6 +81,15 @@ export const MenuList = ({ customNav, customMenu }) => {
     return null
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return (<>
+        {/* 大屏模式菜单 */}
+        <div id='nav-menu-pc' className='hidden md:flex my-auto'>
+            {links?.map(link => <MenuItemDrop key={link?.id} link={link} />)}
+=======
+>>>>>>> tangly1024-main
   return (
     <>
       {/* 大屏模式菜单 */}
@@ -87,8 +109,22 @@ export const MenuList = ({ customNav, customMenu }) => {
             className={`${isOpen && 'rotate-90'} transition-all duration-200 fa fa-bars mr-3`}
           />
           <span>{!isOpen ? 'MENU' : 'CLOSE'}</span>
+<<<<<<< HEAD
         </div>
 
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+        </div>
+
+<<<<<<< HEAD
+            <Collapse collapseRef={collapseRef} className='absolute w-full top-12 left-0' isOpen={isOpen}>
+                <div id='menu-wrap' className='bg-white dark:border-hexo-black-gray border'>
+                {links?.map(link => <MenuItemCollapse key={link?.id} link={link} onHeightChange={(param) => collapseRef.current?.updateCollapseHeight(param)}/>)}
+                </div>
+            </Collapse>
+        </div>
+=======
+>>>>>>> tangly1024-main
         <Collapse
           collapseRef={collapseRef}
           className='absolute w-full top-12 left-0'
@@ -108,6 +144,10 @@ export const MenuList = ({ customNav, customMenu }) => {
           </div>
         </Collapse>
       </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   )
 }

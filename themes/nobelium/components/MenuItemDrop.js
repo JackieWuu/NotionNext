@@ -49,11 +49,42 @@ export const MenuItemDrop = ({ link }) => {
                     </span>
                   </Link>
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            }
+
+            {hasSubMenu &&
+                <div className='block text-black dark:text-gray-50 nav'>
+                    {link?.icon && <i className={link?.icon} />} {link?.name}
+                    <i className={`px-2 fas fa-chevron-down duration-500 transition-all ${show ? ' rotate-180' : ''}`}></i>
+                </div>
+            }
+
+            {/* 子菜单 */}
+            {hasSubMenu && <ul className={`${show ? 'visible opacity-100 top-12 ' : 'invisible opacity-0 top-10 '} border-gray-100  bg-white  dark:bg-black dark:border-gray-800 transition-all duration-300 z-20 absolute block drop-shadow-lg `}>
+                {link.subMenus.map(sLink => {
+                  return <li key={sLink.id} className='not:last-child:border-b-0 border-b text-gray-700 dark:text-gray-200  hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200  dark:border-gray-800 py-3 pr-6 pl-3'>
+                        <Link href={sLink.to} target={link?.to?.indexOf('http') === 0 ? '_blank' : '_self'} >
+                            <span className='text-sm text-nowrap font-extralight'>{link?.icon && <i className={sLink?.icon} > &nbsp; </i>}{sLink.title}</span>
+                        </Link>
+                    </li>
+                })}
+            </ul>}
+
+        </div>
+
+=======
+>>>>>>> tangly1024-main
               )
             })}
           </ul>
         )}
       </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </li>
   )
 }

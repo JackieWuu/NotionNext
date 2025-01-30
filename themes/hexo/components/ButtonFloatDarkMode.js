@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { saveDarkModeToLocalStorage } from '@/themes/theme'
+=======
+<<<<<<< HEAD:themes/hexo/components/FloatDarkModeButton.js
+import { useGlobal } from '@/lib/global'
+import { saveDarkModeToCookies } from '@/themes/theme'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import { saveDarkModeToLocalStorage } from '@/themes/theme'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0:themes/hexo/components/ButtonFloatDarkMode.js
+>>>>>>> tangly1024-main
 import CONFIG from '../config'
 
 /**

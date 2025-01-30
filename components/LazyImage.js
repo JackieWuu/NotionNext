@@ -24,9 +24,19 @@ export default function LazyImage({
   const maxWidth = siteConfig('IMAGE_COMPRESS_WIDTH')
   const defaultPlaceholderSrc = siteConfig('IMG_LAZY_LOAD_PLACEHOLDER')
   const imageRef = useRef(null)
+<<<<<<< HEAD
   const [currentSrc, setCurrentSrc] = useState(
     placeholderSrc || defaultPlaceholderSrc
   )
+=======
+<<<<<<< HEAD
+  const [imageLoaded, setImageLoaded] = useState(false)
+=======
+  const [currentSrc, setCurrentSrc] = useState(
+    placeholderSrc || defaultPlaceholderSrc
+  )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   /**
    * 占位图加载成功

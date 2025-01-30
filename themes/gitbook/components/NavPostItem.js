@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 import Badge from '@/components/Badge'
+=======
+<<<<<<< HEAD
+import BlogPostCard from './BlogPostCard'
+import React, { useState } from 'react'
+=======
+import Badge from '@/components/Badge'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Collapse from '@/components/Collapse'
 import { siteConfig } from '@/lib/config'
 import { useEffect, useState } from 'react'

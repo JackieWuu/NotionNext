@@ -1,10 +1,28 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import BlogPostCard from './BlogPostCard'
+import BlogPostListEmpty from './BlogPostListEmpty'
+=======
+import { siteConfig } from '@/lib/config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import throttle from 'lodash.throttle'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import CONFIG from '../config'
+<<<<<<< HEAD
 import BlogPostCard from './BlogPostCard'
 import BlogPostListEmpty from './BlogPostListEmpty'
+=======
+<<<<<<< HEAD
+=======
+import BlogPostCard from './BlogPostCard'
+import BlogPostListEmpty from './BlogPostListEmpty'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 博客列表滚动分页
@@ -13,6 +31,13 @@ import BlogPostListEmpty from './BlogPostListEmpty'
  * @returns {JSX.Element}
  * @constructor
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const BlogPostListScroll = ({ posts = [], currentSearch, showSummary = CONFIG.POST_LIST_SUMMARY }) => {
+  const postsPerPage = BLOG.POSTS_PER_PAGE
+=======
+>>>>>>> tangly1024-main
 const BlogPostListScroll = ({
   posts = [],
   currentSearch,
@@ -20,6 +45,10 @@ const BlogPostListScroll = ({
 }) => {
   const { NOTION_CONFIG } = useGlobal()
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const [page, updatePage] = useState(1)
   const postsToShow = getPostByPage(page, posts, POSTS_PER_PAGE)
 

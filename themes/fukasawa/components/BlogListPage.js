@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 import { AdSlot } from '@/components/GoogleAdsense'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+import { AdSlot } from '@/components/GoogleAdsense'
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { deepClone, isBrowser } from '@/lib/utils'
 import { debounce } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -16,11 +26,21 @@ import PaginationSimple from './PaginationSimple'
  * @constructor
  */
 const BlogListPage = ({ page = 1, posts = [], postCount, siteInfo }) => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const totalPage = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
+=======
+>>>>>>> tangly1024-main
   const { NOTION_CONFIG } = useGlobal()
   const postsPerPage = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   const totalPage = Math.ceil(
     postCount / postsPerPage
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const showNext = page < totalPage
 
   const [columns, setColumns] = useState(calculateColumns())

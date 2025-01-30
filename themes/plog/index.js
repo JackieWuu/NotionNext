@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+import { createContext, useContext, useEffect, useState } from 'react'
+import Header from './components/Nav'
+import { useGlobal } from '@/lib/global'
+
+import BLOG from '@/blog.config'
+=======
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
@@ -13,6 +24,10 @@ import { ArticleFooter } from './components/ArticleFooter'
 import { ArticleInfo } from './components/ArticleInfo'
 import { ArticleLock } from './components/ArticleLock'
 import BlogArchiveItem from './components/BlogArchiveItem'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { BlogListPage } from './components/BlogListPage'
 import { BlogListScroll } from './components/BlogListScroll'
 import BottomNav from './components/BottomNav'
@@ -34,6 +49,38 @@ export const usePlogGlobal = () => useContext(ThemeGlobalPlog)
  * @constructor
  */
 const LayoutBase = props => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const { children, topSlot, meta } = props
+  const { onLoading, updateDarkMode } = useGlobal()
+  const [showModal, setShowModal] = useState(false)
+  const [modalContent, setModalContent] = useState(null)
+
+  // 用户手动设置主题
+  const setDarkMode = () => {
+    saveDarkModeToCookies(true)
+    updateDarkMode(true)
+    const htmlElement = document.getElementsByTagName('html')[0]
+    htmlElement.classList?.remove('light')
+    htmlElement.classList?.add('dark')
+  }
+
+  // plog主题默认 深色模式
+  useEffect(() => {
+    setTimeout(() => {
+      setDarkMode()
+    }, 100)
+  }, [])
+
+  return (
+    <ThemeGlobalPlog.Provider value={{ showModal, setShowModal, modalContent, setModalContent }}>
+        <div id='theme-plog' className='plog relative dark:text-gray-300 w-full bg-black min-h-screen'>
+            {/* SEO相关 */}
+            <CommonHead meta={meta}/>
+            <Style/>
+=======
+>>>>>>> tangly1024-main
   const { children, topSlot } = props
   const { onLoading } = useGlobal()
   const [showModal, setShowModal] = useState(false)
@@ -59,6 +106,10 @@ const LayoutBase = props => {
         id='theme-plog'
         className={`${siteConfig('FONT_STYLE')} plog relative dark:text-gray-300 w-full dark:bg-black min-h-screen scroll-smooth`}>
         <Style />
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
         {/* 移动端顶部导航栏 */}
         <Header {...props} />
@@ -112,6 +163,14 @@ const LayoutIndex = props => {
  */
 const LayoutPostList = props => {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props}>
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       {siteConfig('POST_LIST_STYLE') === 'page' ? (
         <BlogListPage {...props} />
@@ -119,6 +178,10 @@ const LayoutPostList = props => {
         <BlogListScroll {...props} />
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

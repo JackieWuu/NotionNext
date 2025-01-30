@@ -1,17 +1,50 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+>>>>>>> tangly1024-main
 import NotionIcon from '@/components/NotionIcon'
 import NotionPage from '@/components/NotionPage'
 import TwikooCommentCount from '@/components/TwikooCommentCount'
 import { siteConfig } from '@/lib/config'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import { formatDateFmt } from '@/lib/utils/formatDate'
 import Image from 'next/image'
 import Link from 'next/link'
+<<<<<<< HEAD
 import CONFIG from '../config'
 import Card from './Card'
 import TagItemMini from './TagItemMini'
 
 const BlogPostCard = ({ post, index, showSummary }) => {
   const { locale } = useGlobal()
+=======
+<<<<<<< HEAD
+import React from 'react'
+import Card from './Card'
+import TagItemMini from './TagItemMini'
+import CONFIG from '../config'
+import NotionPage from '@/components/NotionPage'
+import NotionIcon from '@/components/NotionIcon'
+import TwikooCommentCount from '@/components/TwikooCommentCount'
+import { formatDateFmt } from '@/lib/formatDate'
+=======
+import CONFIG from '../config'
+import Card from './Card'
+import TagItemMini from './TagItemMini'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+
+const BlogPostCard = ({ post, index, showSummary }) => {
+  const { locale } = useGlobal()
+<<<<<<< HEAD
+  const showPreview = CONFIG.POST_LIST_PREVIEW && post.blockMap
+=======
+>>>>>>> tangly1024-main
   const showPreview =
     siteConfig('NEXT_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
   // 动画样式  首屏卡片不用，后面翻出来的加动画
@@ -25,6 +58,10 @@ const BlogPostCard = ({ post, index, showSummary }) => {
       }
       : {}
 
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   return (
     <Card className='w-full'>
       <div
@@ -33,8 +70,17 @@ const BlogPostCard = ({ post, index, showSummary }) => {
         <div className='lg:p-8 p-4 flex flex-col w-full'>
           {/* 文章标题 */}
           <Link
+<<<<<<< HEAD
             {...aosProps}
             href={post?.href}
+=======
+<<<<<<< HEAD
+            href={`${BLOG.SUB_PATH}/${post.slug}`}
+=======
+            {...aosProps}
+            href={post?.href}
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
             passHref
             className={`cursor-pointer text-3xl ${showPreview ? 'text-center' : ''} leading-tight text-gray-700 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400`}>
             {siteConfig('POST_TITLE_ICON') && (
@@ -104,14 +150,44 @@ const BlogPostCard = ({ post, index, showSummary }) => {
 
           <div className='text-right border-t pt-8 border-dashed'>
             <Link
+<<<<<<< HEAD
               href={post?.href}
               className='hover:bg-opacity-100 hover:underline transform duration-300 p-3 text-white bg-gray-800 cursor-pointer'>
+=======
+<<<<<<< HEAD
+              href={`${BLOG.SUB_PATH}/${post.slug}`}
+              className="hover:bg-opacity-100 hover:underline transform duration-300 p-3 text-white bg-gray-800 cursor-pointer">
+
+=======
+              href={post?.href}
+              className='hover:bg-opacity-100 hover:underline transform duration-300 p-3 text-white bg-gray-800 cursor-pointer'>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
               {locale.COMMON.ARTICLE_DETAIL}
               <i className='ml-1 fas fa-angle-right' />
             </Link>
           </div>
         </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        {CONFIG.POST_LIST_COVER && post?.pageCoverThumbnail && (
+          <Link href={`${BLOG.SUB_PATH}/${post.slug}`} passHref legacyBehavior>
+            <div className="h-72 w-full relative duration-200 cursor-pointer transform overflow-hidden">
+              <Image
+                className="hover:scale-105 transform duration-500"
+                src={post?.pageCoverThumbnail}
+                alt={post.title}
+                layout="fill"
+                objectFit="cover"
+                loading="lazy"
+              />
+            </div>
+          </Link>
+        )}
+=======
+>>>>>>> tangly1024-main
         {siteConfig('NEXT_POST_LIST_COVER', null, CONFIG) &&
           post?.pageCoverThumbnail && (
             <Link href={post?.href} passHref legacyBehavior>
@@ -127,6 +203,10 @@ const BlogPostCard = ({ post, index, showSummary }) => {
               </div>
             </Link>
           )}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
       </div>
     </Card>
   )

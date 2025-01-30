@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import Link from 'next/link'
+import BLOG from '@/blog.config'
+
+const BlogPost = ({ post }) => {
+  return (
+    (<Link href={`${BLOG.SUB_PATH}/${post.slug}`}>
+=======
+>>>>>>> tangly1024-main
 import NotionIcon from '@/components/NotionIcon'
 import NotionPage from '@/components/NotionPage'
 import { siteConfig } from '@/lib/config'
@@ -8,6 +19,10 @@ const BlogPost = ({ post }) => {
   const { NOTION_CONFIG } = useGlobal()
   const showPreview =
     siteConfig('POST_LIST_PREVIEW', false, NOTION_CONFIG) && post?.blockMap
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   return (
     <Link href={post?.href}>

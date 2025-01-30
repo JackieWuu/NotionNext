@@ -1,11 +1,54 @@
 'use client'
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+import { useRouter } from 'next/router'
+import { useEffect, useState, createContext, useContext } from 'react'
+import { isBrowser } from '@/lib/utils'
+import Footer from './components/Footer'
+import InfoCard from './components/InfoCard'
+import RevolverMaps from './components/RevolverMaps'
+import TopNavBar from './components/TopNavBar'
+import SearchInput from './components/SearchInput'
+import { useGlobal } from '@/lib/global'
+import Live2D from '@/components/Live2D'
+import BLOG from '@/blog.config'
+import NavPostList from './components/NavPostList'
+import ArticleInfo from './components/ArticleInfo'
+import Catalog from './components/Catalog'
+import Announcement from './components/Announcement'
+import PageNavDrawer from './components/PageNavDrawer'
+import FloatTocButton from './components/FloatTocButton'
+import { AdSlot } from '@/components/GoogleAdsense'
+import JumpToTopButton from './components/JumpToTopButton'
+import ShareBar from '@/components/ShareBar'
+import CategoryItem from './components/CategoryItem'
+import TagItemMini from './components/TagItemMini'
+import ArticleAround from './components/ArticleAround'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import { AdSlot } from '@/components/GoogleAdsense'
 import Live2D from '@/components/Live2D'
 import LoadingCover from '@/components/LoadingCover'
 import NotionIcon from '@/components/NotionIcon'
 import NotionPage from '@/components/NotionPage'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { ArticleLock } from './components/ArticleLock'
+import { Transition } from '@headlessui/react'
+import { Style } from './style'
+import CommonHead from '@/components/CommonHead'
+import BlogArchiveItem from './components/BlogArchiveItem'
+import BlogPostListPage from './components/BlogPostListPage'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+=======
+>>>>>>> tangly1024-main
 import ShareBar from '@/components/ShareBar'
 import DashboardBody from '@/components/ui/dashboard/DashboardBody'
 import DashboardHeader from '@/components/ui/dashboard/DashboardHeader'
@@ -43,6 +86,10 @@ const AlgoliaSearchModal = dynamic(
   () => import('@/components/AlgoliaSearchModal'),
   { ssr: false }
 )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 const WWAds = dynamic(() => import('@/components/WWAds'), { ssr: false })
 
 // 主题全局变量
@@ -141,6 +188,99 @@ const LayoutBase = props => {
         className={`${siteConfig('FONT_STYLE')} pb-16 md:pb-0 scroll-smooth bg-white dark:bg-black w-full h-full min-h-screen justify-center dark:text-gray-300`}>
         <AlgoliaSearchModal cRef={searchModal} {...props} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + 'relative flex justify-between w-full h-full mx-auto'}>
+
+                    {/* 左侧推拉抽屉 */}
+                    <div className={'font-sans hidden md:block border-r dark:border-transparent relative z-10 '}>
+                        <div className='w-72 py-14 px-6 sticky top-0 overflow-y-scroll h-screen scroll-hidden'>
+                            {slotLeft}
+                            <SearchInput className='my-3 rounded-md' />
+                            <div className='mb-20'>
+                                {/* 所有文章列表 */}
+                                <NavPostList filteredNavPages={filteredNavPages} />
+                            </div>
+
+                        </div>
+
+                        <div className='w-72 fixed left-0 bottom-0 z-20 bg-white'>
+                            <Footer {...props} />
+                        </div>
+                    </div>
+
+                    <div id='center-wrapper' className='flex flex-col justify-between w-full relative z-10 pt-14 min-h-screen'>
+
+                        <div id='container-inner' className='w-full px-7 max-w-3xl justify-center mx-auto'>
+                            {slotTop}
+                            <WWAds className='w-full' orientation='horizontal'/>
+
+                            <Transition
+                                show={!onLoading}
+                                appear={true}
+                                enter="transition ease-in-out duration-700 transform order-first"
+                                enterFrom="opacity-0 translate-y-16"
+                                enterTo="opacity-100"
+                                leave="transition ease-in-out duration-300 transform"
+                                leaveFrom="opacity-100 translate-y-0"
+                                leaveTo="opacity-0 -translate-y-16"
+                                unmount={false}
+                            >
+                                {children}
+                            </Transition>
+
+                            {/* Google广告 */}
+                            <AdSlot type='in-article' />
+                            <WWAds className='w-full' orientation='horizontal'/>
+
+                            {/* 回顶按钮 */}
+                            <JumpToTopButton />
+                        </div>
+
+                        {/* 底部 */}
+                        <div className='md:hidden'>
+                            <Footer {...props} />
+                        </div>
+                    </div>
+
+                    {/*  右侧侧推拉抽屉 */}
+                    <div style={{ width: '32rem' }} className={'hidden xl:block dark:border-transparent relative z-10 '}>
+                        <div className='py-14 px-6 sticky top-0'>
+                            <ArticleInfo post={props?.post ? props?.post : props.notice} />
+
+                            <div className='py-4'>
+                                <Catalog {...props} />
+                                {slotRight}
+                                {router.route === '/' && <>
+                                    <InfoCard {...props} />
+                                    {CONFIG.WIDGET_REVOLVER_MAPS === 'true' && <RevolverMaps />}
+                                    <Live2D />
+                                </>}
+                                {/* gitbook主题首页只显示公告 */}
+                                <Announcement {...props} />
+                            </div>
+
+                            <AdSlot type='in-article' />
+                            <Live2D />
+
+                        </div>
+                    </div>
+
+                </main>
+
+                {/* 移动端悬浮目录按钮 */}
+                {showTocButton && !tocVisible && <div className='md:hidden fixed right-0 bottom-52 z-30 bg-white border-l border-t border-b dark:border-gray-800 rounded'>
+                    <FloatTocButton {...props} />
+                </div>}
+
+                {/* 移动端导航抽屉 */}
+                <PageNavDrawer {...props} filteredNavPages={filteredNavPages} />
+
+                {/* 移动端底部导航栏 */}
+                {/* <BottomMenuBar {...props} className='block md:hidden' /> */}
+=======
+>>>>>>> tangly1024-main
         {/* 顶部导航栏 */}
         <Header {...props} />
 
@@ -155,6 +295,10 @@ const LayoutBase = props => {
                 <div className='overflow-y-scroll scroll-hidden pt-10 pl-5'>
                   {/* 嵌入 */}
                   {slotLeft}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
                   {/* 所有文章列表 */}
                   <NavPostList filteredNavPages={filteredNavPages} {...props} />
@@ -246,8 +390,32 @@ const LayoutBase = props => {
  */
 const LayoutIndex = props => {
   const router = useRouter()
+<<<<<<< HEAD
   const index = siteConfig('GITBOOK_INDEX_PAGE', 'about', CONFIG)
   const [hasRedirected, setHasRedirected] = useState(false) // 添加状态追踪是否已重定向
+=======
+<<<<<<< HEAD
+  useEffect(() => {
+    router.push(CONFIG.INDEX_PAGE).then(() => {
+      // console.log('跳转到指定首页', CONFIG.INDEX_PAGE)
+      setTimeout(() => {
+        if (isBrowser) {
+          const article = document.getElementById('notion-article')
+          if (!article) {
+            console.log('请检查您的Notion数据库中是否包含此slug页面： ', CONFIG.INDEX_PAGE)
+            const containerInner = document.querySelector('#theme-gitbook #container-inner')
+            const newHTML = `<h1 class="text-3xl pt-12  dark:text-gray-300">配置有误</h1><blockquote class="notion-quote notion-block-ce76391f3f2842d386468ff1eb705b92"><div>请在您的notion中添加一个slug为${CONFIG.INDEX_PAGE}的文章</div></blockquote>`
+            containerInner?.insertAdjacentHTML('afterbegin', newHTML)
+          }
+        }
+      }, 7 * 1000)
+    })
+  }, [])
+=======
+  const index = siteConfig('GITBOOK_INDEX_PAGE', 'about', CONFIG)
+  const [hasRedirected, setHasRedirected] = useState(false) // 添加状态追踪是否已重定向
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   useEffect(() => {
     const tryRedirect = async () => {
@@ -363,6 +531,20 @@ const LayoutSlug = props => {
                 <NotionPage post={post} />
               </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                    {/* 分享 */}
+                    <ShareBar post={post} />
+                    {/* 文章分类和标签信息 */}
+                    <div className='flex justify-between'>
+                        {CONFIG.POST_DETAIL_CATEGORY && post?.category && <CategoryItem category={post.category} />}
+                        <div>
+                            {CONFIG.POST_DETAIL_TAG && post?.tagItems?.map(tag => <TagItemMini key={tag.name} tag={tag} />)}
+                        </div>
+                    </div>
+=======
+>>>>>>> tangly1024-main
               {/* 分享 */}
               <ShareBar post={post} />
               {/* 文章分类和标签信息 */}
@@ -377,6 +559,10 @@ const LayoutSlug = props => {
                     ))}
                 </div>
               </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
               {post?.type === 'Post' && (
                 <ArticleAround prev={prev} next={next} />

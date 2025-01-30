@@ -1,15 +1,48 @@
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { useRouter } from 'next/router'
+import { getLayoutByTheme } from '@/themes/theme'
+=======
+>>>>>>> tangly1024-main
 import { getDataFromCache } from '@/lib/cache/cache_manager'
 import { siteConfig } from '@/lib/config'
 import { getGlobalData } from '@/lib/db/getSiteData'
 import { DynamicLayout } from '@/themes/theme'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 const Index = props => {
   const { keyword } = props
   props = { ...props, currentSearch: keyword }
 
+<<<<<<< HEAD
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
   return <DynamicLayout theme={theme} layoutName='LayoutSearch' {...props} />
+=======
+<<<<<<< HEAD
+  // 根据页面路径加载不同Layout文件
+  const Layout = getLayoutByTheme(useRouter())
+
+  const meta = {
+    title: `${keyword || ''}${keyword ? ' | ' : ''}${locale.NAV.SEARCH} | ${siteInfo?.title}`,
+    description: siteInfo?.title,
+    image: siteInfo?.pageCover,
+    slug: 'search/' + (keyword || ''),
+    type: 'website'
+  }
+
+  props = { ...props, meta, currentSearch: keyword }
+
+  return <Layout {...props} />
+=======
+  const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
+  return <DynamicLayout theme={theme} layoutName='LayoutSearch' {...props} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**

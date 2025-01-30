@@ -1,10 +1,24 @@
 'use client'
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+import TopNav from './components/TopNav'
+import AsideLeft from './components/AsideLeft'
+import BLOG from '@/blog.config'
+import { isBrowser } from '@/lib/utils'
+=======
+>>>>>>> tangly1024-main
 import AlgoliaSearchModal from '@/components/AlgoliaSearchModal'
 import { AdSlot } from '@/components/GoogleAdsense'
 import replaceSearchResult from '@/components/Mark'
 import WWAds from '@/components/WWAds'
 import { siteConfig } from '@/lib/config'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
@@ -22,6 +36,14 @@ import Header from './components/Header'
 import TagItemMini from './components/TagItemMini'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+import CommonHead from '@/components/CommonHead'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 const Live2D = dynamic(() => import('@/components/Live2D'))
 
@@ -46,8 +68,33 @@ export const useFukasawaGlobal = () => useContext(ThemeGlobalFukasawa)
 const LayoutBase = props => {
   const { children, headerSlot } = props
   const leftAreaSlot = <Live2D />
+<<<<<<< HEAD
   const { onLoading, fullWidth } = useGlobal()
   const searchModal = useRef(null)
+=======
+<<<<<<< HEAD
+  const { onLoading } = useGlobal()
+
+  // 侧边栏折叠从 本地存储中获取 open 状态的初始值
+  const [isCollapsed, setIsCollapse] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('fukasawa-sidebar-collapse') === 'true' || CONFIG.SIDEBAR_COLLAPSE_SATUS_DEFAULT
+    }
+    return CONFIG.SIDEBAR_COLLAPSE_SATUS_DEFAULT
+  })
+
+  // 在组件卸载时保存 open 状态到本地存储中
+  useEffect(() => {
+    if (isBrowser) {
+      localStorage.setItem('fukasawa-sidebar-collapse', isCollapsed)
+    }
+  }, [isCollapsed])
+
+=======
+  const { onLoading, fullWidth } = useGlobal()
+  const searchModal = useRef(null)
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   return (
     <ThemeGlobalFukasawa.Provider value={{ searchModal }}>
       <div
@@ -66,6 +113,44 @@ const LayoutBase = props => {
           {/* 侧边抽屉 */}
           <AsideLeft {...props} slot={leftAreaSlot} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <TopNav {...props} />
+
+                <div className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' flex'}>
+                    {/* 侧边抽屉 */}
+                    <AsideLeft {...props} slot={leftAreaSlot} />
+
+                    <main id='wrapper' className='relative flex w-full py-8 justify-center bg-day dark:bg-night'>
+                        <div id='container-inner' className='2xl:max-w-6xl md:max-w-4xl w-full relative z-10'>
+                            <Transition
+                                show={!onLoading}
+                                appear={true}
+                                className="w-full"
+                                enter="transition ease-in-out duration-700 transform order-first"
+                                enterFrom="opacity-0 translate-y-16"
+                                enterTo="opacity-100"
+                                leave="transition ease-in-out duration-300 transform"
+                                leaveFrom="opacity-100 translate-y-0"
+                                leaveTo="opacity-0 -translate-y-16"
+                                unmount={false}
+                            >
+                                <div> {headerSlot} </div>
+                                <div> {children} </div>
+
+                            </Transition>
+
+                            <div className='mt-2'>
+                              <AdSlot type='native' />
+                            </div>
+
+                        </div>
+                    </main>
+
+                </div>
+=======
+>>>>>>> tangly1024-main
           <main
             id='wrapper'
             className='relative flex w-full py-8 justify-center bg-day dark:bg-night'>
@@ -86,6 +171,10 @@ const LayoutBase = props => {
                 <div> {headerSlot} </div>
                 <div> {children} </div>
               </Transition>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
               <div className='mt-2'>
                 <AdSlot type='native' />
@@ -112,6 +201,16 @@ const LayoutIndex = props => {
 /**
  * 博客列表
  * @param {*} props
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            */
+const LayoutPostList = (props) => {
+  return <LayoutBase {...props}>
+        {BLOG.POST_LIST_STYLE === 'page' ? <BlogListPage {...props} /> : <BlogListScroll {...props} />}
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
  */
 const LayoutPostList = props => {
   const POST_LIST_STYLE = siteConfig('POST_LIST_STYLE')
@@ -127,6 +226,10 @@ const LayoutPostList = props => {
       )}
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**

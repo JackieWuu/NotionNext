@@ -1,10 +1,26 @@
+<<<<<<< HEAD
 import FullScreenButton from '@/components/FullScreenButton'
 import { siteConfig } from '@/lib/config'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+import FullScreenButton from '@/components/FullScreenButton'
+import { siteConfig } from '@/lib/config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
 import InformationButton from './InformationButton'
 import LogoBar from './LogoBar'
+<<<<<<< HEAD
 import { MenuItemDrop } from './MenuItemDrop'
+=======
+<<<<<<< HEAD
+=======
+import { MenuItemDrop } from './MenuItemDrop'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 桌面端底部导航
@@ -12,6 +28,18 @@ import { MenuItemDrop } from './MenuItemDrop'
  * @returns
  */
 const BottomNav = props => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  return <>
+        <div id="bottom-nav" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }} className={'z-20 px-4 hidden glassmorphism md:fixed bottom-0 w-screen py-4 md:flex flex-row justify-between items-center'}>
+            {/* 左侧logo文字栏 */}
+            <LogoBar {...props}/>
+            {/* 右下角菜单栏 */}
+            <MenuList {...props} />
+        </div>
+=======
+>>>>>>> tangly1024-main
   return (
     <>
       <div
@@ -24,6 +52,10 @@ const BottomNav = props => {
         {/* 右下角菜单栏 */}
         <MenuList {...props} />
       </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   )
 }
@@ -38,6 +70,16 @@ const MenuList = props => {
 
   const { locale } = useGlobal()
   let links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { id: 2, name: locale.NAV.RSS, to: '/feed', show: BLOG.ENABLE_RSS && CONFIG.MENU_RSS, target: '_blank' },
+    { icon: 'fas fa-search', name: locale.NAV.SEARCH, to: '/search', show: CONFIG.MENU_SEARCH },
+    { icon: 'fas fa-archive', name: locale.NAV.ARCHIVE, to: '/archive', show: CONFIG.MENU_ARCHIVE },
+    { icon: 'fas fa-folder', name: locale.COMMON.CATEGORY, to: '/category', show: CONFIG.MENU_CATEGORY },
+    { icon: 'fas fa-tag', name: locale.COMMON.TAGS, to: '/tag', show: CONFIG.MENU_TAG }
+=======
+>>>>>>> tangly1024-main
     {
       id: 2,
       name: locale.NAV.RSS,
@@ -71,6 +113,10 @@ const MenuList = props => {
       href: '/tag',
       show: siteConfig('NOBELIUM_MENU_TAG', null, CONFIG)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
   if (customNav) {
     links = links.concat(customNav)
@@ -86,6 +132,22 @@ const MenuList = props => {
   }
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <div className="flex-shrink-0">
+            <ul className="hidden md:flex flex-row">
+                {links?.map(link => <MenuItemDrop key={link?.id} link={link} />)}
+                <li className='my-auto px-2'>
+                    <FullScreenButton />
+                </li>
+                <li className='my-auto px-2'>
+                    <InformationButton/>
+                </li>
+            </ul>
+        </div>
+=======
+>>>>>>> tangly1024-main
     <div className='flex-shrink-0'>
       <ul className='hidden md:flex flex-row'>
         {links?.map((link, index) => (
@@ -99,6 +161,10 @@ const MenuList = props => {
         </li>
       </ul>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

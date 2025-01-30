@@ -8,11 +8,22 @@ import Swipe from './Swipe'
  * 通知横幅
  */
 export function NoticeBar() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const notices = CONFIG.NOTICE_BAR
+
+=======
+>>>>>>> tangly1024-main
   let notices = siteConfig('HEO_NOTICE_BAR', null, CONFIG)
   const { locale } = useGlobal()
   if (typeof notices === 'string') {
     notices = JSON.parse(notices)
   }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   if (!notices || notices?.length === 0) {
     return <></>
   }

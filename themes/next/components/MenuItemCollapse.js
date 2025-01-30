@@ -55,6 +55,15 @@ export const MenuItemCollapse = props => {
         )}
       </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        {/* 折叠子菜单 */}
+        {hasSubMenu && <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
+            {link.subMenus.map(sLink => {
+              return <div key={sLink.id} className='whitespace-nowrap   dark:text-gray-200
+=======
+>>>>>>> tangly1024-main
       {/* 折叠子菜单 */}
       {hasSubMenu && (
         <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
@@ -63,6 +72,10 @@ export const MenuItemCollapse = props => {
               <div
                 key={index}
                 className='whitespace-nowrap   dark:text-gray-200
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
               not:last-child:border-b-0 border-b dark:border-gray-800 py-2 px-14 cursor-pointer hover:bg-gray-100
               font-extralight dark:bg-black text-left justify-start text-gray-600 bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200'>
                 <Link href={sLink.href} target={link?.target}>

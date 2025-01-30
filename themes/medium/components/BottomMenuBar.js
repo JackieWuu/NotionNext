@@ -1,5 +1,14 @@
 import Link from 'next/link'
+<<<<<<< HEAD
 import { useMediumGlobal } from '..'
+=======
+<<<<<<< HEAD
+import React from 'react'
+import { useMediumGlobal } from '@/themes/medium'
+=======
+import { useMediumGlobal } from '..'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import JumpToTopButton from './JumpToTopButton'
 
 export default function BottomMenuBar({ post, className }) {

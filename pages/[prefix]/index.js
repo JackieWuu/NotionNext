@@ -1,4 +1,20 @@
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { getPostBlocks } from '@/lib/notion'
+import { getGlobalData } from '@/lib/notion/getNotionData'
+import { useEffect, useState } from 'react'
+import { idToUuid } from 'notion-utils'
+import { useRouter } from 'next/router'
+import { getNotion } from '@/lib/notion/getNotion'
+import { getPageTableOfContents } from '@/lib/notion/getPageTableOfContents'
+import { getLayoutByTheme } from '@/themes/theme'
+import md5 from 'js-md5'
+import { isBrowser } from '@/lib/utils'
+import { uploadDataToAlgolia } from '@/lib/algolia'
+=======
+>>>>>>> tangly1024-main
 import useNotification from '@/components/Notification'
 import OpenWrite from '@/components/OpenWrite'
 import { siteConfig } from '@/lib/config'
@@ -12,6 +28,10 @@ import md5 from 'js-md5'
 import { useRouter } from 'next/router'
 import { idToUuid } from 'notion-utils'
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 根据notion的slug访问页面
@@ -66,6 +86,24 @@ const Slug = props => {
     }
   }, [post])
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const meta = {
+    title: post ? `${post?.title} | ${siteInfo?.title}` : `${props?.siteInfo?.title || BLOG.TITLE} | loading`,
+    description: post?.summary,
+    type: post?.type,
+    slug: post?.slug,
+    image: post?.pageCoverThumbnail || (siteInfo?.pageCover || BLOG.HOME_BANNER_IMAGE),
+    category: post?.category?.[0],
+    tags: post?.tags
+  }
+  props = { ...props, lock, meta, setLock, validPassword }
+  // 根据页面路径加载不同Layout文件
+  const Layout = getLayoutByTheme(useRouter())
+  return <Layout {...props} />
+=======
+>>>>>>> tangly1024-main
   // 文章加载
   useEffect(() => {
     if (lock) {
@@ -92,6 +130,10 @@ const Slug = props => {
       <OpenWrite />
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 export async function getStaticPaths() {

@@ -1,10 +1,23 @@
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { useRouter } from 'next/router'
+import { getLayoutByTheme } from '@/themes/theme'
+import { isBrowser } from '@/lib/utils'
+import { formatDateFmt } from '@/lib/formatDate'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { getGlobalData } from '@/lib/db/getSiteData'
 import { isBrowser } from '@/lib/utils'
 import { formatDateFmt } from '@/lib/utils/formatDate'
 import { DynamicLayout } from '@/themes/theme'
 import { useEffect } from 'react'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 归档首页
@@ -12,6 +25,18 @@ import { useEffect } from 'react'
  * @returns
  */
 const ArchiveIndex = props => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const { siteInfo } = props
+  const { locale } = useGlobal()
+
+  // 根据页面路径加载不同Layout文件
+  const Layout = getLayoutByTheme(useRouter())
+
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   useEffect(() => {
     if (isBrowser) {
       const anchor = window.location.hash
@@ -26,8 +51,27 @@ const ArchiveIndex = props => {
     }
   }, [])
 
+<<<<<<< HEAD
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
   return <DynamicLayout theme={theme} layoutName='LayoutArchive' {...props} />
+=======
+<<<<<<< HEAD
+  const meta = {
+    title: `${locale.NAV.ARCHIVE} | ${siteInfo?.title}`,
+    description: siteInfo?.description,
+    image: siteInfo?.pageCover,
+    slug: 'archive',
+    type: 'website'
+  }
+
+  props = { ...props, meta }
+
+  return <Layout {...props} />
+=======
+  const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
+  return <DynamicLayout theme={theme} layoutName='LayoutArchive' {...props} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 export async function getStaticProps({ locale }) {

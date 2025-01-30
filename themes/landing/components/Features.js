@@ -32,8 +32,18 @@ export default function Features() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+<<<<<<< HEAD
             <h1 className="h2 mb-4 dark:text-white">{siteConfig('LANDING_FEATURES_HEADER_1', null, CONFIG)}</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: siteConfig('LANDING_FEATURES_HEADER_1_P', null, CONFIG) }}></p>
+=======
+<<<<<<< HEAD
+            <h1 className="h2 mb-4">{CONFIG.FEATURES_HEADER_1}</h1>
+            <p className="text-xl text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: CONFIG.FEATURES_HEADER_1_P }}></p>
+=======
+            <h1 className="h2 mb-4 dark:text-white">{siteConfig('LANDING_FEATURES_HEADER_1', null, CONFIG)}</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: siteConfig('LANDING_FEATURES_HEADER_1_P', null, CONFIG) }}></p>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
           </div>
 
           {/* Section content */}
@@ -42,8 +52,18 @@ export default function Features() {
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
+<<<<<<< HEAD
                 <h3 className="h3 mb-3 dark:text-white">{siteConfig('LANDING_FEATURES_HEADER_2', null, CONFIG)}</h3>
                 <p className="text-xl text-gray-600  dark:text-gray-400">{siteConfig('LANDING_FEATURES_HEADER_2_P', null, CONFIG)}</p>
+=======
+<<<<<<< HEAD
+                <h3 className="h3 mb-3">{CONFIG.FEATURES_HEADER_2}</h3>
+                <p className="text-xl text-gray-600">{CONFIG.FEATURES_HEADER_2_P}</p>
+=======
+                <h3 className="h3 mb-3 dark:text-white">{siteConfig('LANDING_FEATURES_HEADER_2', null, CONFIG)}</h3>
+                <p className="text-xl text-gray-600  dark:text-gray-400">{siteConfig('LANDING_FEATURES_HEADER_2_P', null, CONFIG)}</p>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">

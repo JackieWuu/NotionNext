@@ -38,6 +38,7 @@ const BlogPost = (props) => {
 
       <LazyImage src={pageThumbnail} className='aspect-[16/9] w-full h-full object-cover filter contrast-120' />
 
+<<<<<<< HEAD
       <h2 className="text-md absolute left-0 bottom-0 m-4 text-gray-100 shadow-text">
         {siteConfig('POST_TITLE_ICON') && <NotionIcon icon={post.pageIcon} />} {post?.title}
       </h2>
@@ -46,6 +47,21 @@ const BlogPost = (props) => {
           {post?.category}
         </Link>
       </div>}
+=======
+<<<<<<< HEAD
+            <h2 className="text-md absolute left-0 bottom-0 m-4 text-black dark:text-gray-100 text-shadow">
+                {post?.title}
+=======
+            <h2 className="text-md absolute left-0 bottom-0 m-4 text-gray-100 shadow-text">
+                {siteConfig('POST_TITLE_ICON') && <NotionIcon icon={post.pageIcon} />} {post?.title}
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+            </h2>
+            {post?.category && <div className='text-xs rounded-lg absolute left-0 top-0 m-4 px-2 py-1 bg-black bg-opacity-25 hover:bg-blue-700 hover:text-white duration-200'>
+                <Link href={`/category/${post?.category}`}>
+                {post?.category}
+                </Link>
+            </div>}
+>>>>>>> tangly1024-main
 
     </article>
 

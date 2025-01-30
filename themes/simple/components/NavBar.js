@@ -9,7 +9,15 @@ import { MenuList } from './MenuList'
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
 export default function NavBar(props) {
+=======
+<<<<<<< HEAD
+export const NavBar = (props) => {
+=======
+export default function NavBar(props) {
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const [showSearchInput, changeShowSearchInput] = useState(false)
   const router = useRouter()
   const { searchModal } = useSimpleGlobal()

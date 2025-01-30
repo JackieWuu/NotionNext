@@ -1,8 +1,18 @@
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { getLayoutByTheme } from '@/themes/theme'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { getGlobalData } from '@/lib/db/getSiteData'
 import { DynamicLayout } from '@/themes/theme'
 import { useRouter } from 'next/router'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 搜索路由
@@ -10,7 +20,19 @@ import { useRouter } from 'next/router'
  * @returns
  */
 const Search = props => {
+<<<<<<< HEAD
   const { posts } = props
+=======
+<<<<<<< HEAD
+  const { posts, siteInfo } = props
+  const { locale } = useGlobal()
+
+  // 根据页面路径加载不同Layout文件
+  const Layout = getLayoutByTheme(useRouter())
+=======
+  const { posts } = props
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   const router = useRouter()
   const keyword = router?.query?.s
@@ -29,7 +51,21 @@ const Search = props => {
     filteredPosts = []
   }
 
+<<<<<<< HEAD
   props = { ...props, posts: filteredPosts }
+=======
+<<<<<<< HEAD
+  const meta = {
+    title: `${keyword || ''}${keyword ? ' | ' : ''}${locale.NAV.SEARCH} | ${siteInfo?.title}`,
+    description: siteInfo?.description,
+    image: siteInfo?.pageCover,
+    slug: 'search',
+    type: 'website'
+  }
+=======
+  props = { ...props, posts: filteredPosts }
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
   return <DynamicLayout theme={theme} layoutName='LayoutSearch' {...props} />

@@ -1,4 +1,15 @@
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { getPostBlocks } from '@/lib/notion'
+import { getGlobalData } from '@/lib/notion/getNotionData'
+import { generateRss } from '@/lib/rss'
+import { generateRobotsTxt } from '@/lib/robots.txt'
+import { useRouter } from 'next/router'
+import { getLayoutByTheme } from '@/themes/theme'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { getGlobalData, getPostBlocks } from '@/lib/db/getSiteData'
 import { generateRobotsTxt } from '@/lib/robots.txt'
@@ -6,6 +17,10 @@ import { generateRss } from '@/lib/rss'
 import { generateSitemapXml } from '@/lib/sitemap.xml'
 import { DynamicLayout } from '@/themes/theme'
 import { generateRedirectJson } from '@/lib/redirect'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 首页布局
@@ -13,8 +28,19 @@ import { generateRedirectJson } from '@/lib/redirect'
  * @returns
  */
 const Index = props => {
+<<<<<<< HEAD
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
   return <DynamicLayout theme={theme} layoutName='LayoutIndex' {...props} />
+=======
+<<<<<<< HEAD
+  // 根据页面路径加载不同Layout文件
+  const Layout = getLayoutByTheme(useRouter())
+  return <Layout {...props} />
+=======
+  const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
+  return <DynamicLayout theme={theme} layoutName='LayoutIndex' {...props} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -24,6 +50,15 @@ const Index = props => {
 export async function getStaticProps(req) {
   const { locale } = req
   const from = 'index'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const props = await getGlobalData({ from })
+
+  const { siteInfo } = props
+  props.posts = props.allPages?.filter(page => page.type === 'Post' && page.status === 'Published')
+=======
+>>>>>>> tangly1024-main
   const props = await getGlobalData({ from, locale })
   const POST_PREVIEW_LINES = siteConfig(
     'POST_PREVIEW_LINES',
@@ -33,6 +68,10 @@ export async function getStaticProps(req) {
   props.posts = props.allPages?.filter(
     page => page.type === 'Post' && page.status === 'Published'
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   const meta = {
     title: `${siteInfo?.title} | ${siteInfo?.description}`,
@@ -78,14 +117,32 @@ export async function getStaticProps(req) {
   delete props.allPages
 
   return {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    props: {
+      meta,
+      ...props
+    },
+    revalidate: parseInt(BLOG.NEXT_REVALIDATE_SECOND)
+=======
+>>>>>>> tangly1024-main
     props,
     revalidate: process.env.EXPORT
       ? undefined
       : siteConfig(
+<<<<<<< HEAD
         'NEXT_REVALIDATE_SECOND',
         BLOG.NEXT_REVALIDATE_SECOND,
         props.NOTION_CONFIG
       )
+=======
+          'NEXT_REVALIDATE_SECOND',
+          BLOG.NEXT_REVALIDATE_SECOND,
+          props.NOTION_CONFIG
+        )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 }
 

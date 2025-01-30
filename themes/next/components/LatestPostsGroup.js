@@ -26,6 +26,38 @@ const LatestPostsGroup = ({ latestPosts }) => {
           {locale.COMMON.LATEST_POSTS}
         </div>
       </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    </div>
+    {latestPosts.map(post => {
+      const selected = currentPath === `${BLOG.SUB_PATH}/${post.slug}`
+      return (
+        (<Link
+          key={post.id}
+          title={post.title}
+          href={`${BLOG.SUB_PATH}/${post.slug}`}
+          passHref
+          className={'my-1 flex font-light'}>
+
+          <div
+            className={
+              (selected
+                ? 'text-white  bg-gray-600 '
+                : 'text-gray-500 dark:text-gray-400 ') +
+              ' text-xs py-1.5 flex hover:bg-gray-500 px-2 duration-200 w-full ' +
+              'hover:text-white dark:hover:text-white cursor-pointer'
+            }
+          >
+            <li className="line-clamp-2">{post.title}</li>
+          </div>
+
+        </Link>)
+      )
+    })}
+  </>
+=======
+>>>>>>> tangly1024-main
       {latestPosts.map(post => {
         const selected =
           currentPath === `${siteConfig('SUB_PATH', '')}/${post.slug}`
@@ -51,5 +83,9 @@ const LatestPostsGroup = ({ latestPosts }) => {
       })}
     </>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 export default LatestPostsGroup

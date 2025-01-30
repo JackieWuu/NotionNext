@@ -26,6 +26,24 @@ const GiscusComponent = () => {
   }, [isDarkMode])
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Giscus
+      repo={BLOG.COMMENT_GISCUS_REPO}
+      repoId={BLOG.COMMENT_GISCUS_REPO_ID}
+      categoryId={BLOG.COMMENT_GISCUS_CATEGORY_ID}
+      mapping={BLOG.COMMENT_GISCUS_MAPPING}
+      reactionsEnabled={BLOG.COMMENT_GISCUS_REACTIONS_ENABLED}
+      emitMetadata={BLOG.COMMENT_GISCUS_EMIT_METADATA}
+      theme={theme}
+      inputPosition={BLOG.COMMENT_GISCUS_INPUT_POSITION}
+      lang={BLOG.COMMENT_GISCUS_LANG}
+      loading={BLOG.COMMENT_GISCUS_LOADING}
+      crossorigin={BLOG.COMMENT_GISCUS_CROSSORIGIN}
+    />
+=======
+>>>>>>> tangly1024-main
     <div
       id='giscus'
       data-repo={siteConfig('COMMENT_GISCUS_REPO')}
@@ -42,6 +60,10 @@ const GiscusComponent = () => {
       data-loading={siteConfig('COMMENT_GISCUS_LOADING')}
     //   crossorigin={siteConfig('COMMENT_GISCUS_CROSSORIGIN')}
     ></div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

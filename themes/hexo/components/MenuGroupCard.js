@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import Link from 'next/link'
+=======
+<<<<<<< HEAD
+import React from 'react'
+import Link from 'next/link'
+import { useGlobal } from '@/lib/global'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import Link from 'next/link'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import CONFIG from '../config'
 
 const MenuGroupCard = props => {
@@ -13,6 +25,14 @@ const MenuGroupCard = props => {
   const tagSlot = <div className='text-center'>{tagOptions?.length}</div>
 
   const links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { name: locale.COMMON.ARTICLE, to: '/archive', slot: archiveSlot, show: CONFIG.MENU_ARCHIVE },
+    { name: locale.COMMON.CATEGORY, to: '/category', slot: categorySlot, show: CONFIG.MENU_CATEGORY },
+    { name: locale.COMMON.TAGS, to: '/tag', slot: tagSlot, show: CONFIG.MENU_TAG }
+=======
+>>>>>>> tangly1024-main
     {
       name: locale.COMMON.ARTICLE,
       href: '/archive',
@@ -31,6 +51,10 @@ const MenuGroupCard = props => {
       slot: tagSlot,
       show: siteConfig('HEXO_MENU_TAG', null, CONFIG)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
 
   return (

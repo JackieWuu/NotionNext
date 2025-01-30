@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { useGlobal } from '@/lib/global'
+=======
+<<<<<<< HEAD
+import React, { useEffect, useRef, useState } from 'react'
+=======
+import { useGlobal } from '@/lib/global'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import throttle from 'lodash.throttle'
 import { uuidToId } from 'notion-utils'
 import { useEffect, useRef, useState } from 'react'

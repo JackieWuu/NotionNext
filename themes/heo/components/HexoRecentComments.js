@@ -1,16 +1,41 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import React from 'react'
+import BLOG from '@/blog.config'
+import Card from '@/themes/hexo/components/Card'
+import { useGlobal } from '@/lib/global'
+import Link from 'next/link'
+import { RecentComments } from '@waline/client'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { RecentComments } from '@waline/client'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * @see https://waline.js.org/guide/get-started.html
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
 const HexoRecentComments = props => {
   const [comments, updateComments] = useState([])
+=======
+<<<<<<< HEAD
+const HexoRecentComments = (props) => {
+  const [comments, updateComments] = React.useState([])
+=======
+const HexoRecentComments = props => {
+  const [comments, updateComments] = useState([])
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const { locale } = useGlobal()
   const [onLoading, changeLoading] = React.useState(true)
   React.useEffect(() => {

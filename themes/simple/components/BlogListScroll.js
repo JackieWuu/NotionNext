@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import { useGlobal } from '@/lib/global'
+import React from 'react'
+import throttle from 'lodash.throttle'
+import { BlogItem } from './BlogItem'
+
+export const BlogListScroll = props => {
+  const { posts } = props
+  const { locale } = useGlobal()
+
+  const [page, updatePage] = React.useState(1)
+
+  let hasMore = false
+  const postsToShow = posts
+    ? Object.assign(posts).slice(0, BLOG.POSTS_PER_PAGE * page)
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import throttle from 'lodash.throttle'
@@ -17,11 +37,23 @@ export default function BlogListScroll(props) {
   let hasMore = false
   const postsToShow = posts
     ? Object.assign(posts).slice(0, POSTS_PER_PAGE * page)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     : []
 
   if (posts) {
     const totalCount = posts.length
+<<<<<<< HEAD
     hasMore = page * POSTS_PER_PAGE < totalCount
+=======
+<<<<<<< HEAD
+    hasMore = page * BLOG.POSTS_PER_PAGE < totalCount
+=======
+    hasMore = page * POSTS_PER_PAGE < totalCount
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
   const handleGetMore = () => {
     if (!hasMore) return
@@ -31,6 +63,18 @@ export default function BlogListScroll(props) {
   const targetRef = React.useRef(null)
 
   // 监听滚动自动分页加载
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const scrollTrigger = React.useCallback(throttle(() => {
+    const scrollS = window.scrollY + window.outerHeight
+    const clientHeight = targetRef ? (targetRef.current ? (targetRef.current.clientHeight) : 0) : 0
+    if (scrollS > clientHeight + 100) {
+      handleGetMore()
+    }
+  }, 500))
+=======
+>>>>>>> tangly1024-main
   const scrollTrigger = useCallback(
     throttle(() => {
       const scrollS = window.scrollY + window.outerHeight
@@ -44,6 +88,10 @@ export default function BlogListScroll(props) {
       }
     }, 500)
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollTrigger)

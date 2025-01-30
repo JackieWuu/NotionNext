@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
+=======
+<<<<<<< HEAD
+import React from 'react'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import CONFIG from '../config'
@@ -15,6 +24,16 @@ const MenuList = props => {
   )
 
   let links = [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    { icon: 'fas fa-home', name: locale.NAV.INDEX, to: '/' || '/', show: true },
+    { icon: 'fas fa-th', name: locale.COMMON.CATEGORY, to: '/category', show: CONFIG.MENU_CATEGORY },
+    { icon: 'fas fa-tag', name: locale.COMMON.TAGS, to: '/tag', show: CONFIG.MENU_TAG },
+    { icon: 'fas fa-archive', name: locale.NAV.ARCHIVE, to: '/archive', slot: archiveSlot, show: CONFIG.MENU_ARCHIVE },
+    { icon: 'fas fa-search', name: locale.NAV.SEARCH, to: '/search', show: CONFIG.MENU_SEARCH }
+=======
+>>>>>>> tangly1024-main
     {
       icon: 'fas fa-home',
       name: locale.NAV.INDEX,
@@ -46,6 +65,10 @@ const MenuList = props => {
       href: '/search',
       show: siteConfig('MATERY_MENU_SEARCH', null, CONFIG)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   ]
   if (customNav) {
     links = links.concat(customNav)

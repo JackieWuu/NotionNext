@@ -63,6 +63,21 @@ export const MenuItemCollapse = props => {
         )}
       </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        {/* 折叠子菜单 */}
+        {hasSubMenu && <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
+            {link.subMenus.map(sLink => {
+              return <div key={sLink.id} className='font-extralight dark:bg-black text-left px-10 justify-start  bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200 border-b dark:border-gray-800 py-3 pr-6'>
+                    <Link href={sLink.to} target={link?.to?.indexOf('http') === 0 ? '_blank' : '_self'}>
+                        <span className='text-xs'>{sLink.title}</span>
+                    </Link>
+                </div>
+            })}
+        </Collapse>}
+=======
+>>>>>>> tangly1024-main
       {/* 折叠子菜单 */}
       {hasSubMenu && (
         <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
@@ -79,6 +94,10 @@ export const MenuItemCollapse = props => {
           })}
         </Collapse>
       )}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   )
 }

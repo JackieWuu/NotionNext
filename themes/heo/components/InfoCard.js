@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 import { ArrowRightCircle } from '@/components/HeroIcons'
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+import { ArrowRightCircle, GlobeAlt } from '@/components/HeroIcons'
+=======
+import { ArrowRightCircle } from '@/components/HeroIcons'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import Link from 'next/link'
@@ -17,6 +26,27 @@ export function InfoCard(props) {
   const { siteInfo, notice } = props
   const router = useRouter()
   // 在文章详情页特殊处理
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const isSlugPage = router.pathname === '/[...slug]'
+
+  return (
+        <Card className='bg-[#4f65f0] dark:bg-yellow-600 text-white flex flex-col w-72 overflow-hidden relative'>
+            {/* 信息卡牌第一行 */}
+            <div className='flex justify-between'>
+                {/* 问候语 */}
+                <GreetingsWords />
+                <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-5 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex dark:text-gray-100 transform transitaion-all duration-200`}>
+                    <LazyImage src={siteInfo?.icon} className='rounded-full' width={isSlugPage ? 100 : 28} alt={BLOG.AUTHOR} />
+                </div>
+            </div>
+
+            <h2 className='text-3xl font-extrabold mt-3'>
+                {BLOG.AUTHOR}
+            </h2>
+=======
+>>>>>>> tangly1024-main
   const isSlugPage = router.pathname.indexOf('/[prefix]') === 0
   const url1 = siteConfig('HEO_INFO_CARD_URL1', null, CONFIG)
   const icon1 = siteConfig('HEO_INFO_CARD_ICON1', null, CONFIG)
@@ -41,10 +71,31 @@ export function InfoCard(props) {
       </div>
 
       <h2 className='text-3xl font-extrabold mt-3'>{siteConfig('AUTHOR')}</h2>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
       {/* 公告栏 */}
       <Announcement post={notice} style={{ color: 'white !important' }} />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <div className='flex justify-between'>
+                <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
+                    {/* 两个社交按钮 */}
+                    <div className='bg-indigo-400 p-2 rounded-full  transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+                        <Link href='/about'><GlobeAlt className={'w-6 h-6'} /></Link>
+                    </div>
+                    <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-yellow-500 dark:hover:bg-black hover:bg-white'>
+                        <Link href={CONFIG.INFO_CARD_URL}><i className='fab fa-github text-xl' />
+                        </Link>
+                    </div>
+                </div>
+                <MoreButton />
+=======
+>>>>>>> tangly1024-main
       <div className='flex justify-between'>
         <div className='flex space-x-3  hover:text-black dark:hover:text-white'>
           {/* 两个社交按钮 */}
@@ -53,6 +104,10 @@ export function InfoCard(props) {
               <Link href={url1}>
                 <i className={icon1} />
               </Link>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
             </div>
           )}
           {url2 && (

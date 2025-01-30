@@ -1,8 +1,24 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+
+import CommonHead from '@/components/CommonHead'
+import { useEffect, useRef } from 'react'
+import Footer from './components/Footer'
+import SideRight from './components/SideRight'
+import TopNav from './components/TopNav'
+=======
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import replaceSearchResult from '@/components/Mark'
 import NotionPage from '@/components/NotionPage'
 import ShareBar from '@/components/ShareBar'
 import { siteConfig } from '@/lib/config'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { useGlobal } from '@/lib/global'
 import BLOG from '@/blog.config'
 import { isBrowser } from '@/lib/utils'
@@ -34,6 +50,12 @@ import TocDrawer from './components/TocDrawer'
 import TocDrawerButton from './components/TocDrawerButton'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+=======
+>>>>>>> tangly1024-main
 
 const AlgoliaSearchModal = dynamic(
   () => import('@/components/AlgoliaSearchModal'),
@@ -43,6 +65,10 @@ const AlgoliaSearchModal = dynamic(
 // 主题全局状态
 const ThemeGlobalHexo = createContext()
 export const useHexoGlobal = () => useContext(ThemeGlobalHexo)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局 采用左右两侧布局，移动端使用顶部导航栏
@@ -51,6 +77,13 @@ export const useHexoGlobal = () => useContext(ThemeGlobalHexo)
  * @constructor
  */
 const LayoutBase = props => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const { children, headerSlot, floatSlot, slotTop, meta, siteInfo, className } = props
+  const { onLoading } = useGlobal()
+=======
+>>>>>>> tangly1024-main
   const { post, children, slotTop, className } = props
   const { onLoading, fullWidth } = useGlobal()
   const router = useRouter()
@@ -85,6 +118,10 @@ const LayoutBase = props => {
 
   // Algolia搜索框
   const searchModal = useRef(null)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   return (
     <ThemeGlobalHexo.Provider value={{ searchModal }}>
@@ -137,17 +174,52 @@ const LayoutBase = props => {
                 {/* 主区上部嵌入 */}
                 {slotTop}
 
+<<<<<<< HEAD
                 {children}
               </Transition>
             </div>
+=======
+<<<<<<< HEAD
+            {/* 主区块 */}
+            <main id="wrapper" className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
+                <div id="container-inner" className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
+                    <div className={`${className || ''} w-full max-w-4xl h-full overflow-hidden`}>
+=======
+                {children}
+              </Transition>
+            </div>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
             {/* 右侧栏 */}
             <SideRight {...props} />
           </div>
         </main>
 
+<<<<<<< HEAD
         <div className='block lg:hidden'>
           <TocDrawer post={post} cRef={drawerRight} targetRef={tocRef} />
+=======
+<<<<<<< HEAD
+                            {children}
+                        </Transition>
+                    </div>
+
+                    {/* 右侧栏 */}
+                    <SideRight {...props} />
+                </div>
+            </main>
+
+            {/* 悬浮菜单 */}
+            <RightFloatArea floatSlot={floatSlot} />
+
+            {/* 页脚 */}
+            <Footer title={siteInfo?.title || BLOG.TITLE} />
+=======
+        <div className='block lg:hidden'>
+          <TocDrawer post={post} cRef={drawerRight} targetRef={tocRef} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         </div>
 
         {/* 悬浮菜单 */}
@@ -169,8 +241,19 @@ const LayoutBase = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
 const LayoutIndex = props => {
   return <LayoutPostList {...props} className='pt-8' />
+=======
+<<<<<<< HEAD
+const LayoutIndex = (props) => {
+  const headerSlot = CONFIG.HOME_BANNER_ENABLE && <Hero {...props} />
+  return <LayoutPostList {...props} headerSlot={headerSlot} className='pt-8' />
+=======
+const LayoutIndex = props => {
+  return <LayoutPostList {...props} className='pt-8' />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -178,6 +261,16 @@ const LayoutIndex = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutPostList = (props) => {
+  return <LayoutBase {...props} className='pt-8'>
+        <SlotBar {...props} />
+        {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 const LayoutPostList = props => {
   return (
     <div className='pt-8'>
@@ -189,6 +282,10 @@ const LayoutPostList = props => {
       )}
     </div>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -215,6 +312,16 @@ const LayoutSearch = props => {
   })
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} currentSearch={currentSearch} className='pt-8'>
+            {!currentSearch
+              ? <SearchNav {...props} />
+              : <div id="posts-wrapper"> {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}  </div>}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <div className='pt-8'>
       {!currentSearch ? (
         <SearchNav {...props} />
@@ -229,6 +336,10 @@ const LayoutSearch = props => {
         </div>
       )}
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -389,12 +500,34 @@ const LayoutCategoryIndex = props => {
                   <i className='mr-4 fas fa-folder' /> {category.name}(
                   {category.count})
                 </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                <div id="category-list" className="duration-200 flex flex-wrap mx-8">
+                    {categoryOptions.map(category => {
+                      return (
+                            <Link key={category.name} href={`/category/${category.name}`} passHref legacyBehavior>
+                                <div className={' duration-300 dark:hover:text-white px-5 cursor-pointer py-2 hover:text-indigo-400'}>
+                                    <i className="mr-4 fas fa-folder" />  {category.name}({category.count})
+                                </div>
+                            </Link>
+                      )
+                    })}
+                </div>
+            </Card>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
               </Link>
             )
           })}
         </div>
       </Card>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

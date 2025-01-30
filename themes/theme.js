@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 import BLOG, { LAYOUT_MAPPINGS } from '@/blog.config'
+=======
+<<<<<<< HEAD
+import cookie from 'react-cookies'
+import BLOG from '@/blog.config'
+import { getQueryParam, getQueryVariable } from '../lib/utils'
+import dynamic from 'next/dynamic'
+import getConfig from 'next/config'
+=======
+import BLOG, { LAYOUT_MAPPINGS } from '@/blog.config'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import * as ThemeComponents from '@theme-components'
 import getConfig from 'next/config'
 import dynamic from 'next/dynamic'
@@ -60,6 +72,18 @@ export const getThemeConfig = async themeQuery => {
  * @param {*} theme
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export const getLayoutByTheme = (router) => {
+  const themeQuery = getQueryParam(router.asPath, 'theme') || BLOG.THEME
+  const layout = getLayoutNameByPath(router.pathname)
+  if (themeQuery !== BLOG.THEME) {
+    return dynamic(() => import(`@/themes/${themeQuery}`).then(m => m[layout]), { ssr: true })
+  } else {
+    return ThemeComponents[layout]
+=======
+>>>>>>> tangly1024-main
 export const getBaseLayoutByTheme = theme => {
   const LayoutBase = ThemeComponents['LayoutBase']
   const isDefaultTheme = !theme || theme === BLOG.THEME
@@ -146,6 +170,10 @@ const fixThemeDOM = () => {
       }
       elements[0]?.scrollIntoView()
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 }
 

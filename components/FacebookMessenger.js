@@ -80,6 +80,10 @@ class MessengerCustomerChat extends Component {
   loadSDKAsynchronously() {
     const { language } = this.props;
     /* eslint-disable */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> tangly1024-main
     (function (d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
@@ -96,6 +100,27 @@ class MessengerCustomerChat extends Component {
       }
     })(document, 'script', 'facebook-jssdk');
     /* eslint-enable */
+<<<<<<< HEAD
+=======
+=======
+        (function (d, s, id) {
+            var js,
+                fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = `https://connect.facebook.net/${language}/sdk/xfbml.customerchat.js`;
+            if (fjs && fjs.parentNode && fjs.parentNode.contains(fjs)) {
+              fjs.parentNode.insertBefore(js, fjs);
+            } else {
+              document.body.appendChild(js);
+            }
+        })(document, 'script', 'facebook-jssdk');
+        /* eslint-enable */
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 
   removeFacebookSDK() {

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import React, { useRef } from 'react'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import throttle from 'lodash.throttle'
 import { uuidToId } from 'notion-utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -27,6 +34,20 @@ const Toc = ({ toc }) => {
   // 同步选中目录事件
   const [activeSection, setActiveSection] = React.useState(null)
   const throttleMs = 200
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const actionSectionScrollSpy = React.useCallback(throttle(() => {
+    const sections = document.getElementsByClassName('notion-h')
+    let prevBBox = null
+    let currentSectionId = activeSection
+    for (let i = 0; i < sections.length; ++i) {
+      const section = sections[i]
+      if (!section || !(section instanceof Element)) continue
+      if (!currentSectionId) {
+        currentSectionId = section.getAttribute('data-id')
+=======
+>>>>>>> tangly1024-main
   const actionSectionScrollSpy = useCallback(
     throttle(() => {
       const sections = document.getElementsByClassName('notion-h')
@@ -49,6 +70,10 @@ const Toc = ({ toc }) => {
         }
         // No need to continue loop, if last element has been detected
         break
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
       }
       setActiveSection(currentSectionId)
       const index = tocIds.indexOf(currentSectionId) || 0

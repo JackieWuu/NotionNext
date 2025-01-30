@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+import CommonHead from '@/components/CommonHead'
+import TopNav from './components/TopNav'
+import Live2D from '@/components/Live2D'
+import { useGlobal } from '@/lib/global'
+import BLOG from '@/blog.config'
+import Footer from './components/Footer'
+import { useEffect } from 'react'
+import RightFloatButtons from './components/RightFloatButtons'
+import { useRouter } from 'next/router'
+import SearchNave from './components/SearchNav'
+import BlogPostListPage from './components/BlogPostListPage'
+import BlogPostListScroll from './components/BlogPostListScroll'
+import Hero from './components/Hero'
+import Announcement from './components/Announcement'
+import CatalogWrapper from './components/CatalogWrapper'
+import TagItemMiddle from './components/TagItemMiddle'
+import PostHeader from './components/PostHeader'
+import Link from 'next/link'
+import ArticleAdjacent from './components/ArticleAdjacent'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Comment from '@/components/Comment'
 import { AdSlot } from '@/components/GoogleAdsense'
 import Live2D from '@/components/Live2D'
@@ -34,6 +60,12 @@ import SearchNave from './components/SearchNav'
 import TagItemMiddle from './components/TagItemMiddle'
 import CONFIG from './config'
 import { Style } from './style'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+=======
+>>>>>>> tangly1024-main
 
 const AlgoliaSearchModal = dynamic(
   () => import('@/components/AlgoliaSearchModal'),
@@ -43,6 +75,10 @@ const AlgoliaSearchModal = dynamic(
 // 主题全局状态
 const ThemeGlobalMatery = createContext()
 export const useMateryGlobal = () => useContext(ThemeGlobalMatery)
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局
@@ -91,6 +127,16 @@ const LayoutBase = props => {
         {/* 顶部嵌入 */}
         {headerSlot}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <main id="wrapper" className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'} flex-1 w-full py-8 md:px-8 lg:px-24 relative`}>
+                {/* 嵌入区域 */}
+                <div id="container-slot" className={`w-full max-w-6xl ${post && ' lg:max-w-3xl 2xl:max-w-4xl '} mt-6 px-3 mx-auto lg:flex lg:space-x-4 justify-center relative z-10`}>
+                    {containerSlot}
+                </div>
+=======
+>>>>>>> tangly1024-main
         <main
           id='wrapper'
           className={`${siteConfig('MATERY_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} flex-1 w-full py-8 md:px-8 lg:px-24 relative`}>
@@ -100,6 +146,10 @@ const LayoutBase = props => {
             className={`w-full ${fullWidth ? '' : 'max-w-6xl'} ${post && ' lg:max-w-3xl 2xl:max-w-4xl '} mt-6 px-3 mx-auto lg:flex lg:space-x-4 justify-center relative z-10`}>
             {containerSlot}
           </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
           <div
             id='container-inner'
@@ -108,9 +158,32 @@ const LayoutBase = props => {
           </div>
         </main>
 
+<<<<<<< HEAD
         {/* 左下角悬浮 */}
         <div className='bottom-4 -left-14 fixed justify-end z-40'>
           <Live2D />
+=======
+<<<<<<< HEAD
+                </div>
+
+            </main>
+
+            {/* 左下角悬浮 */}
+            <div className="bottom-4 -left-14 fixed justify-end z-40">
+                <Live2D />
+            </div>
+
+            {/* 右下角悬浮 */}
+            <RightFloatButtons {...props} />
+
+            {/* 页脚 */}
+            <Footer title={siteInfo?.title || BLOG.TITLE} />
+=======
+        {/* 左下角悬浮 */}
+        <div className='bottom-4 -left-14 fixed justify-end z-40'>
+          <Live2D />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
         </div>
 
         {/* 右下角悬浮 */}
@@ -132,8 +205,18 @@ const LayoutBase = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
 const LayoutIndex = props => {
   return <LayoutPostList {...props} />
+=======
+<<<<<<< HEAD
+const LayoutIndex = (props) => {
+  return <LayoutPostList {...props} containerSlot={<Announcement {...props} />} headerSlot={CONFIG.HOME_BANNER_ENABLE && <Hero {...props} />} />
+=======
+const LayoutIndex = props => {
+  return <LayoutPostList {...props} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -143,6 +226,14 @@ const LayoutIndex = props => {
  */
 const LayoutPostList = props => {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} containerSlot={<BlogListBar {...props} />}>
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       {siteConfig('POST_LIST_STYLE') === 'page' ? (
         <BlogPostListPage {...props} />
@@ -150,6 +241,10 @@ const LayoutPostList = props => {
         <BlogPostListScroll {...props} />
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -176,6 +271,18 @@ const LayoutSearch = props => {
     }
   })
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} currentSearch={currentSearch}>
+            {!currentSearch
+              ? <SearchNave {...props} />
+              : <div id="posts-wrapper">
+                    {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+                </div>}
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       {!currentSearch ? (
         <SearchNave {...props} />
@@ -189,6 +296,10 @@ const LayoutSearch = props => {
         </div>
       )}
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -354,6 +465,26 @@ const LayoutCategoryIndex = props => {
   const { categoryOptions } = props
 
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} headerSlot={<PostHeader {...props} />} >
+
+            <div id='inner-wrapper' className='w-full'>
+                <div className="drop-shadow-xl -mt-32 rounded-md mx-3 px-5 lg:border lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray  dark:border-black dark:text-gray-300">
+                    <div className='flex justify-center flex-wrap'>
+                        {categoryOptions.map(e => {
+                          return (
+                                <Link key={e.name} href={`/category/${e.name}`} passHref legacyBehavior>
+                                    <div className='duration-300 text-md whitespace-nowrap dark:hover:text-white px-5 cursor-pointer py-2 hover:text-indigo-400' >
+                                        <i className={'mr-4 fas fa-folder'} />  {e.name}({e.count})
+                                    </div>
+                                </Link>
+                          )
+                        })}
+                    </div>
+=======
+>>>>>>> tangly1024-main
     <div id='inner-wrapper' className='w-full'>
       <div className='drop-shadow-xl mt-8 rounded-md mx-3 px-5 lg:border lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray  dark:border-black dark:text-gray-300'>
         <div className='flex justify-center flex-wrap'>
@@ -366,6 +497,10 @@ const LayoutCategoryIndex = props => {
                 legacyBehavior>
                 <div className='duration-300 text-md whitespace-nowrap dark:hover:text-white px-5 cursor-pointer py-2 hover:text-indigo-400'>
                   <i className={'mr-4 fas fa-folder'} /> {e.name}({e.count})
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
                 </div>
               </Link>
             )

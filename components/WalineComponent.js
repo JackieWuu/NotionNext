@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { createRef, useEffect } from 'react'
+=======
+<<<<<<< HEAD
+import React from 'react'
+=======
+import  { createRef, useEffect } from 'react'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import { init } from '@waline/client'
 import BLOG from '@/blog.config'
 import { useRouter } from 'next/router'

@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import CONFIG from './config'
+
+import CommonHead from '@/components/CommonHead'
+import { useEffect } from 'react'
+import Footer from './components/Footer'
+import SideRight from './components/SideRight'
+import NavBar from './components/NavBar'
+import { useGlobal } from '@/lib/global'
+import BLOG from '@/blog.config'
+import BlogPostListPage from './components/BlogPostListPage'
+import BlogPostListScroll from './components/BlogPostListScroll'
+import Hero from './components/Hero'
+import { useRouter } from 'next/router'
+import SearchNav from './components/SearchNav'
+import BlogPostArchive from './components/BlogPostArchive'
+import { ArticleLock } from './components/ArticleLock'
+import PostHeader from './components/PostHeader'
+import Comment, { commentEnable } from '@/components/Comment'
+import NotionPage from '@/components/NotionPage'
+import ArticleAdjacent from './components/ArticleAdjacent'
+import ArticleCopyright from './components/ArticleCopyright'
+import ArticleRecommend from './components/ArticleRecommend'
+import ShareBar from '@/components/ShareBar'
+import Link from 'next/link'
+=======
+>>>>>>> tangly1024-main
 /**
  *   HEO 主题说明
  *  > 主题设计者 [张洪](https://zhheo.com/)
@@ -26,8 +55,20 @@ import { useEffect, useState } from 'react'
 import BlogPostArchive from './components/BlogPostArchive'
 import BlogPostListPage from './components/BlogPostListPage'
 import BlogPostListScroll from './components/BlogPostListScroll'
+<<<<<<< HEAD
 import CategoryBar from './components/CategoryBar'
 import FloatTocButton from './components/FloatTocButton'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+import CategoryBar from './components/CategoryBar'
+import FloatTocButton from './components/FloatTocButton'
+<<<<<<< HEAD
+import replaceSearchResult from '@/components/Mark'
+import LazyImage from '@/components/LazyImage'
+import WWAds from '@/components/WWAds'
+import { AdSlot } from '@/components/GoogleAdsense'
+=======
+>>>>>>> tangly1024-main
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -43,6 +84,10 @@ import SideRight from './components/SideRight'
 import CONFIG from './config'
 import { Style } from './style'
 import AISummary from '@/components/AISummary'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
@@ -51,6 +96,18 @@ import AISummary from '@/components/AISummary'
  * @constructor
  */
 const LayoutBase = props => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const { children, headerSlot, slotTop, slotRight, siteInfo, className, meta } = props
+
+  return (
+        <div id='theme-heo' className='bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col'>
+            {/* SEO信息 */}
+            <CommonHead meta={meta} />
+            <Style />
+=======
+>>>>>>> tangly1024-main
   const { children, slotTop, className } = props
 
   // 全屏模式下的最大宽度
@@ -96,10 +153,40 @@ const LayoutBase = props => {
       id='theme-heo'
       className={`${siteConfig('FONT_STYLE')} bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col scroll-smooth`}>
       <Style />
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
       {/* 顶部嵌入 导航栏，首页放hero，文章页放文章详情 */}
       {headerSlot}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            {/* 主区块 */}
+            <main id="wrapper-outer" className={'flex-grow w-full max-w-[86rem] mx-auto relative md:px-5'}>
+
+                <div id="container-inner" className={'w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
+                    <div className={`w-full h-auto ${className || ''}`}>
+                        {/* 主区上部嵌入 */}
+                        {slotTop}
+                        {children}
+                    </div>
+
+                    <div>
+                        {/* 主区快右侧 */}
+                        {slotRight}
+                    </div>
+
+                </div>
+            </main>
+
+            {/* 页脚 */}
+            <Footer title={siteInfo?.title || BLOG.TITLE} />
+        </div>
+=======
+>>>>>>> tangly1024-main
       {/* 主区块 */}
       <main
         id='wrapper-outer'
@@ -127,6 +214,10 @@ const LayoutBase = props => {
 
       {HEO_LOADING_COVER && <LoadingCover />}
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -136,6 +227,33 @@ const LayoutBase = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutIndex = (props) => {
+  const headerSlot = <header>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+        {/* 通知横幅 */}
+        <NoticeBar />
+        <Hero {...props} />
+        <div className='max-w-[86rem] mx-auto px-3'>
+          <WWAds className='w-full' orientation='horizontal' />
+        </div>
+    </header>
+
+  // 右侧栏 用户信息+标签列表
+  const slotRight = <SideRight {...props} />
+
+  return <LayoutBase {...props} slotRight={slotRight} headerSlot={headerSlot}>
+        <div id='post-outer-wrapper' className='px-5 md:px-0'>
+            {/* 文章分类条 */}
+            <CategoryBar {...props} />
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+        </div>
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 const LayoutIndex = props => {
   return (
     <div id='post-outer-wrapper' className='px-5 md:px-0'>
@@ -148,6 +266,10 @@ const LayoutIndex = props => {
       )}
     </div>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -155,6 +277,26 @@ const LayoutIndex = props => {
  * @param {*} props
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const LayoutPostList = (props) => {
+  // 右侧栏
+  const slotRight = <SideRight {...props} />
+  const headerSlot = <header>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+    </header>
+
+  return <LayoutBase {...props} slotRight={slotRight} headerSlot={headerSlot}>
+        <div id='post-outer-wrapper' className='px-5  md:px-0'>
+            {/* 文章分类条 */}
+            <CategoryBar {...props} />
+            {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+        </div>
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 const LayoutPostList = props => {
   return (
     <div id='post-outer-wrapper' className='px-5  md:px-0'>
@@ -167,6 +309,10 @@ const LayoutPostList = props => {
       )}
     </div>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -178,6 +324,17 @@ const LayoutSearch = props => {
   const { keyword } = props
   const router = useRouter()
   const currentSearch = keyword || router?.query?.s
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const headerSlot = <header className='post-bg'>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper'><NavBar {...props} /></div>
+        <PostHeader {...props} />
+    </header>
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   useEffect(() => {
     // 高亮搜索结果
@@ -195,6 +352,20 @@ const LayoutSearch = props => {
     }
   }, [])
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} currentSearch={currentSearch} headerSlot={headerSlot}>
+            <div id='post-outer-wrapper' className='px-5  md:px-0'>
+                {!currentSearch
+                  ? <SearchNav {...props} />
+                  : <div id="posts-wrapper">
+                        {BLOG.POST_LIST_STYLE === 'page' ? <BlogPostListPage {...props} /> : <BlogPostListScroll {...props} />}
+                    </div>}
+            </div>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <div currentSearch={currentSearch}>
       <div id='post-outer-wrapper' className='px-5  md:px-0'>
         {!currentSearch ? (
@@ -210,6 +381,10 @@ const LayoutSearch = props => {
         )}
       </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -221,6 +396,36 @@ const LayoutSearch = props => {
 const LayoutArchive = (props) => {
   const { archivePosts } = props
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  // 右侧栏
+  const slotRight = <SideRight {...props} />
+  const headerSlot = <header>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+    </header>
+
+  // 归档页顶部显示条，如果是默认归档则不显示。分类详情页显示分类列表，标签详情页显示当前标签
+
+  return <LayoutBase {...props} slotRight={slotRight} headerSlot={headerSlot}>
+        <div className='p-5 rounded-xl border dark:border-gray-600 max-w-6xl w-full bg-white dark:bg-[#1e1e1e]'>
+            {/* 文章分类条 */}
+            <CategoryBar {...props} border={false} />
+
+            <div className='px-3'>
+                {Object.keys(archivePosts).map(archiveTitle => (
+                    <BlogPostArchive
+                        key={archiveTitle}
+                        posts={archivePosts[archiveTitle]}
+                        archiveTitle={archiveTitle}
+                    />
+                ))}
+            </div>
+        </div>
+    </LayoutBase>
+=======
+>>>>>>> tangly1024-main
   // 归档页顶部显示条，如果是默认归档则不显示。分类详情页显示分类列表，标签详情页显示当前标签
 
   return (
@@ -239,6 +444,10 @@ const LayoutArchive = (props) => {
       </div>
     </div>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
@@ -250,6 +459,23 @@ const LayoutSlug = props => {
   const { post, lock, validPassword } = props
   const { locale, fullWidth } = useGlobal()
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  // 右侧栏
+  const slotRight = <SideRight {...props} />
+  const headerSlot = <header
+        data-aos="fade-up"
+        data-aos-duration="300"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-bottom"
+        className='post-bg'>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper'><NavBar {...props} /></div>
+        <PostHeader {...props} />
+    </header>
+=======
+>>>>>>> tangly1024-main
   const [hasCode, setHasCode] = useState(false)
 
   useEffect(() => {
@@ -266,6 +492,10 @@ const LayoutSlug = props => {
     siteConfig('COMMENT_UTTERRANCES_REPO') ||
     siteConfig('COMMENT_GITALK_CLIENT_ID') ||
     siteConfig('COMMENT_WEBMENTION_ENABLE')
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
   const router = useRouter()
   const waiting404 = siteConfig('POST_WAITING_TIME_FOR_404') * 1000
@@ -290,6 +520,65 @@ const LayoutSlug = props => {
     }
   }, [post])
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <LayoutBase {...props} headerSlot={headerSlot} showCategory={false} showTag={false} slotRight={slotRight}>
+            <div className="w-full max-w-5xl lg:hover:shadow lg:border rounded-2xl lg:px-2 lg:py-4 bg-white dark:bg-[#18171d] dark:border-gray-600 article">
+
+                {lock && <ArticleLock validPassword={validPassword} />}
+
+                {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
+
+                    <article
+                        data-aos="fade-up"
+                        data-aos-duration="300"
+                        data-aos-once="false"
+                        data-aos-anchor-placement="top-bottom"
+                        itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
+                        {/* Notion文章主体 */}
+                        <section className='px-5 justify-center mx-auto'>
+                            <WWAds orientation='horizontal' className='w-full'/>
+                            {post && <NotionPage post={post} />}
+                            <WWAds orientation='horizontal' className='w-full'/>
+                        </section>
+
+                        {/* 分享 */}
+                        <ShareBar post={post} />
+                        {post?.type === 'Post' && <div className='px-5'>
+
+                            {/* 版权 */}
+                            <ArticleCopyright {...props} />
+                            {/* 文章推荐 */}
+                            <ArticleRecommend {...props} />
+                            {/* 上一篇\下一篇文章 */}
+                            <ArticleAdjacent {...props} />
+                        </div>}
+
+                    </article>
+
+                    <div className={`${commentEnable && post ? '' : 'hidden'}`}>
+
+                        <hr className='my-4 border-dashed' />
+
+                        {/* 评论互动 */}
+                        <div className="duration-200 overflow-x-auto px-5">
+                            <div className='text-2xl dark:text-white'><i className='fas fa-comment mr-1' />{locale.COMMON.COMMENTS}</div>
+                            <Comment frontMatter={post} className='' />
+                            <div className='py-2'>
+                             <AdSlot/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>}
+            </div>
+            <FloatTocButton {...props} />
+
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
     <>
       <div
         className={`article h-full w-full ${fullWidth ? '' : 'xl:max-w-5xl'} ${hasCode ? 'xl:w-[73.15vw]' : ''}  bg-white dark:bg-[#18171d] dark:border-gray-600 lg:hover:shadow lg:border rounded-2xl lg:px-2 lg:py-4 `}>
@@ -352,6 +641,10 @@ const LayoutSlug = props => {
 
       <FloatTocButton {...props} />
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -364,6 +657,64 @@ const Layout404 = props => {
   // const { meta, siteInfo } = props
   const { onLoading, fullWidth } = useGlobal()
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <div id='theme-heo' className='bg-[#f7f9fe] h-full min-h-screen flex flex-col'>
+            {/* 网页SEO */}
+            <CommonHead meta={meta} siteInfo={siteInfo} />
+            <Style />
+
+            {/* 顶部嵌入 导航栏，首页放hero，文章页放文章详情 */}
+            <header>
+                {/* 顶部导航 */}
+                <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+            </header>
+
+            {/* 主区块 */}
+            <main id="wrapper-outer" className={'flex-grow max-w-4xl w-screen mx-auto px-5'}>
+
+                <div id="error-wrapper" className={'w-full mx-auto justify-center'} >
+
+                    <Transition
+                        show={!onLoading}
+                        appear={true}
+                        enter="transition ease-in-out duration-700 transform order-first"
+                        enterFrom="opacity-0 translate-y-16"
+                        enterTo="opacity-100"
+                        leave="transition ease-in-out duration-300 transform"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 -translate-y-16"
+                        unmount={false}
+                    >
+
+                        {/* 404卡牌 */}
+                        <div className='error-content flex flex-col md:flex-row w-full mt-12 h-[30rem] md:h-96 justify-center items-center bg-white border rounded-3xl'>
+                            {/* 左侧动图 */}
+                            <LazyImage className="error-img h-60 md:h-full p-4" src={'https://bu.dusays.com/2023/03/03/6401a7906aa4a.gif'}></LazyImage>
+
+                            {/* 右侧文字 */}
+                            <div className='error-info flex-1 flex flex-col justify-center items-center space-y-4'>
+                                <h1 className='error-title font-extrabold md:text-9xl text-7xl'>404</h1>
+                                <div>请尝试站内搜索寻找文章</div>
+                                <Link href='/'>
+                                    <button className='bg-blue-500 p-2 text-white shadow rounded-lg hover:bg-blue-600 hover:shadow-md duration-200 transition-all'>回到主页</button>
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* 404页面底部显示最新文章 */}
+                        <div className='mt-12'>
+                            <LatestPostsGroup {...props} />
+                        </div>
+
+                    </Transition>
+                </div>
+            </main>
+
+        </div>
+=======
+>>>>>>> tangly1024-main
     <>
       {/* 主区块 */}
       <main
@@ -411,6 +762,10 @@ const Layout404 = props => {
         </div>
       </main>
     </>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -422,6 +777,39 @@ const Layout404 = props => {
 const LayoutCategoryIndex = props => {
   const { categoryOptions } = props
   const { locale } = useGlobal()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const headerSlot = <header>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+    </header>
+
+  return (
+        <LayoutBase {...props} className='mt-8' headerSlot={headerSlot}>
+            <div id='category-outer-wrapper' className='px-5 md:px-0'>
+                <div className="text-4xl font-extrabold dark:text-gray-200 mb-5">
+                    {locale.COMMON.CATEGORY}
+                </div>
+                <div id="category-list" className="duration-200 flex flex-wrap m-10 justify-center">
+                    {categoryOptions.map(category => {
+                      return (
+                            <Link key={category.name} href={`/category/${category.name}`} passHref legacyBehavior>
+                                <div className={'group mr-5 mb-5 flex flex-nowrap items-center border bg-white text-2xl rounded-xl dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-indigo-600 transition-all hover:scale-110 duration-150'}>
+                                    <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
+                                    {category.name}
+                                    <div className='bg-[#f1f3f8] ml-1 px-2 rounded-lg group-hover:text-indigo-600 '>
+                                        {category.count}
+                                    </div>
+                                </div>
+                            </Link>
+                      )
+                    })}
+                </div>
+            </div>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 
   return (
     <div id='category-outer-wrapper' className='mt-8 px-5 md:px-0'>
@@ -453,6 +841,10 @@ const LayoutCategoryIndex = props => {
         })}
       </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 
@@ -464,6 +856,38 @@ const LayoutCategoryIndex = props => {
 const LayoutTagIndex = props => {
   const { tagOptions } = props
   const { locale } = useGlobal()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const headerSlot = <header>
+        {/* 顶部导航 */}
+        <div id='nav-bar-wrapper' className='h-16'><NavBar {...props} /></div>
+    </header>
+  return (
+        <LayoutBase {...props} className='mt-8' headerSlot={headerSlot}>
+            <div id='tag-outer-wrapper' className='px-5  md:px-0'>
+                <div className="text-4xl font-extrabold dark:text-gray-200 mb-5">
+                    {locale.COMMON.TAGS}
+                </div>
+                <div id="tag-list" className="duration-200 flex flex-wrap space-x-5 space-y-5 m-10 justify-center">
+                    {tagOptions.map(tag => {
+                      return (
+                            <Link key={tag.name} href={`/tag/${tag.name}`} passHref legacyBehavior>
+                                <div className={'group flex flex-nowrap items-center border bg-white text-2xl rounded-xl dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-indigo-600 transition-all hover:scale-110 duration-150'}>
+                                    <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
+                                    {tag.name}
+                                    <div className='bg-[#f1f3f8] ml-1 px-2 rounded-lg group-hover:text-indigo-600 '>
+                                        {tag.count}
+                                    </div>
+                                </div>
+                            </Link>
+                      )
+                    })}
+                </div>
+            </div>
+        </LayoutBase>
+=======
+>>>>>>> tangly1024-main
 
   return (
     <div id='tag-outer-wrapper' className='px-5 mt-8 md:px-0'>
@@ -495,6 +919,10 @@ const LayoutTagIndex = props => {
         })}
       </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }
 

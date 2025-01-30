@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import BlogPostCard from './BlogPostCard'
+=======
+<<<<<<< HEAD
+import BlogPostCard from './BlogPostCard'
+import BLOG from '@/blog.config'
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import BlogPostCard from './BlogPostCard'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import BlogPostListEmpty from './BlogPostListEmpty'
 import PaginationSimple from './PaginationSimple'
 
@@ -13,10 +24,21 @@ import PaginationSimple from './PaginationSimple'
  * @constructor
  */
 const BlogPostListPage = ({ page = 1, posts = [], postCount, siteInfo }) => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  const totalPage = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
+  const showPagination = postCount >= BLOG.POSTS_PER_PAGE
+=======
+>>>>>>> tangly1024-main
   const { NOTION_CONFIG } = useGlobal()
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   const totalPage = Math.ceil(postCount / POSTS_PER_PAGE)
   const showPagination = postCount >= POSTS_PER_PAGE
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   if (!posts || posts.length === 0 || page > totalPage) {
     return <BlogPostListEmpty />
   } else {

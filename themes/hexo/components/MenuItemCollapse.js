@@ -7,8 +7,17 @@ import { useState } from 'react'
  * @param {*} param0
  * @returns
  */
+<<<<<<< HEAD
 export const MenuItemCollapse = props => {
   const { link } = props
+=======
+<<<<<<< HEAD
+export const MenuItemCollapse = ({ link }) => {
+=======
+export const MenuItemCollapse = props => {
+  const { link } = props
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const [show, changeShow] = useState(false)
   const hasSubMenu = link?.subMenus?.length > 0
 
@@ -56,6 +65,21 @@ export const MenuItemCollapse = props => {
         )}
       </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        {/* 折叠子菜单 */}
+        {hasSubMenu && <Collapse isOpen={isOpen}>
+            {link.subMenus.map((sLink, index) => {
+              return <div key={index} className='dark:bg-black dark:text-gray-200 text-left px-10 justify-start bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200  py-3 pr-6'>
+                    <Link href={sLink.to} target={link?.to?.indexOf('http') === 0 ? '_blank' : '_self'}>
+                        <span className='text-sm ml-4 whitespace-nowrap'>{link?.icon && <i className={sLink.icon + ' mr-2'} />} {sLink.title}</span>
+                    </Link>
+                </div>
+            })}
+        </Collapse>}
+=======
+>>>>>>> tangly1024-main
       {/* 折叠子菜单 */}
       {hasSubMenu && (
         <Collapse isOpen={isOpen} onHeightChange={props.onHeightChange}>
@@ -75,6 +99,10 @@ export const MenuItemCollapse = props => {
           })}
         </Collapse>
       )}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   )
 }

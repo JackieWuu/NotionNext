@@ -1,3 +1,59 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { NotionRenderer } from 'react-notion-x'
+import dynamic from 'next/dynamic'
+import mediumZoom from '@fisch0920/medium-zoom'
+import React, { useEffect, useRef } from 'react'
+// import { Code } from 'react-notion-x/build/third-party/code'
+import TweetEmbed from 'react-tweet-embed'
+
+import BLOG from '@/blog.config'
+import 'katex/dist/katex.min.css'
+import { mapImgUrl } from '@/lib/notion/mapImage'
+import { isBrowser } from '@/lib/utils'
+
+const Code = dynamic(() =>
+  import('react-notion-x/build/third-party/code').then(async (m) => {
+    return m.Code
+  }), { ssr: false }
+)
+
+const Equation = dynamic(() =>
+  import('@/components/Equation').then(async (m) => {
+    // 化学方程式
+    await import('@/lib/mhchem')
+    return m.Equation
+  }), { ssr: false }
+)
+
+const Pdf = dynamic(
+  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
+  {
+    ssr: false
+  }
+)
+
+// https://github.com/txs
+// import PrismMac from '@/components/PrismMac'
+const PrismMac = dynamic(() => import('@/components/PrismMac'), {
+  ssr: false
+})
+
+const Collection = dynamic(() =>
+  import('react-notion-x/build/third-party/collection').then((m) => m.Collection), { ssr: true }
+)
+
+const Modal = dynamic(
+  () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal), { ssr: false }
+)
+
+const Tweet = ({ id }) => {
+  return <TweetEmbed tweetId={id} />
+}
+
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { compressImage, mapImgUrl } from '@/lib/notion/mapImage'
 import { isBrowser, loadExternalResource } from '@/lib/utils'
@@ -13,6 +69,10 @@ import { NotionRenderer } from 'react-notion-x'
  * @param {*} param0
  * @returns
  */
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 const NotionPage = ({ post, className }) => {
   // 是否关闭数据库和画册的点击跳转
   const POST_DISABLE_GALLERY_CLICK = siteConfig('POST_DISABLE_GALLERY_CLICK')
@@ -37,11 +97,30 @@ const NotionPage = ({ post, className }) => {
 
   // 页面文章发生变化时会执行的勾子
   useEffect(() => {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    // 将相册gallery下的图片加入放大功能
+    if (JSON.parse(BLOG.POST_DISABLE_GALLERY_CLICK)) {
+      setTimeout(() => {
+        if (isBrowser) {
+          const imgList = document?.querySelectorAll('.notion-collection-card-cover img')
+          if (imgList && zoomRef.current) {
+            for (let i = 0; i < imgList.length; i++) {
+              (zoomRef.current).attach(imgList[i])
+            }
+          }
+=======
+>>>>>>> tangly1024-main
     // 相册视图点击禁止跳转，只能放大查看图片
     if (POST_DISABLE_GALLERY_CLICK) {
       // 针对页面中的gallery视图，点击后是放大图片还是跳转到gallery的内部页面
       processGalleryImg(zoomRef?.current)
     }
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
     // 页内数据库点击禁止跳转，只能查看
     if (POST_DISABLE_DATABASE_CLICK) {

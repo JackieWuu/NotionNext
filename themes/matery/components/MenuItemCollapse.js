@@ -65,6 +65,27 @@ export const MenuItemCollapse = ({ link }) => {
         )}
       </div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            {hasSubMenu && <div onClick={hasSubMenu ? toggleOpenSubMenu : null} className='my-auto items-center w-full justify-between flex '>
+                <div className=''><i className={`${link.icon} w-4 mr-6 text-center`} />{link?.name}</div>
+                <i className={`px-2 fas fa-chevron-left transition-all duration-200 ${isOpen ? '-rotate-90' : ''}`}></i>
+            </div>}
+        </div>
+
+        {/* 折叠子菜单 */}
+        {hasSubMenu && <Collapse isOpen={isOpen}>
+            {link.subMenus.map(sLink => {
+              return <div key={sLink.id} className='cursor-pointer whitespace-nowrap dark:text-gray-200  w-full font-extralight dark:bg-black text-left px-5 justify-start bg-gray-100  hover:bg-indigo-700 hover:text-white dark:hover:bg-gray-900 tracking-widest transition-all duration-200 border-b dark:border-gray-800 py-3 pr-6'>
+                    <Link href={sLink.to} target={link?.to?.indexOf('http') === 0 ? '_blank' : '_self'}>
+                        <span className='text-sm'><i className={`${sLink.icon} w-4 mr-3 text-center`} />{sLink.title}</span>
+                    </Link>
+                </div>
+            })}
+        </Collapse>}
+=======
+>>>>>>> tangly1024-main
       {/* 折叠子菜单 */}
       {hasSubMenu && (
         <Collapse isOpen={isOpen}>
@@ -84,6 +105,10 @@ export const MenuItemCollapse = ({ link }) => {
           })}
         </Collapse>
       )}
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     </>
   )
 }

@@ -1,17 +1,43 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+import BLOG from '@/blog.config'
+import { useGlobal } from '@/lib/global'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import BlogPost from './BlogPost'
+import { useEffect, useRef } from 'react'
+=======
+>>>>>>> tangly1024-main
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import BlogPost from './BlogPost'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 export const BlogListPage = props => {
   const { page = 1, posts, postCount } = props
   const { locale } = useGlobal()
   const router = useRouter()
+<<<<<<< HEAD
   const { NOTION_CONFIG } = useGlobal()
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   const totalPage = Math.ceil(postCount / POSTS_PER_PAGE)
+=======
+<<<<<<< HEAD
+  const totalPage = Math.ceil(postCount / BLOG.POSTS_PER_PAGE)
+=======
+  const { NOTION_CONFIG } = useGlobal()
+  const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
+  const totalPage = Math.ceil(postCount / POSTS_PER_PAGE)
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   const currentPage = +page
 
   const showPrev = currentPage > 1

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import BLOG from '@/blog.config'
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 import Link from 'next/link'
 
 /**
@@ -7,6 +14,35 @@ import Link from 'next/link'
  */
 export default function BlogArchiveItem({ archiveTitle, archivePosts }) {
   return (
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <div key={archiveTitle}>
+            <div id={archiveTitle} className="pt-16 pb-4 text-3xl dark:text-gray-300" >
+                {archiveTitle}
+            </div>
+            <ul>
+                {archivePosts[archiveTitle]?.map(post => (
+                    <li key={post.id}
+                        className="border-l-2 p-1 text-xs md:text-base items-center  hover:scale-x-105 hover:border-gray-500 dark:hover:border-gray-300 dark:border-gray-400 transform duration-500"
+                    >
+                        <div id={post?.publishDay}>
+                            <span className="text-gray-400">
+                                {post.date?.start_date}
+                            </span>{' '}
+                            &nbsp;
+
+                            <Link passHref href={`${BLOG.SUB_PATH}/${post.slug}`}
+                                className="dark:text-gray-400  dark:hover:text-gray-300 overflow-x-hidden hover:underline cursor-pointer text-gray-600">
+                                {post.title}
+                            </Link>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+=======
+>>>>>>> tangly1024-main
     <div key={archiveTitle}>
       <div id={archiveTitle} className='pt-16 pb-4 text-3xl dark:text-gray-300'>
         {archiveTitle}
@@ -32,5 +68,9 @@ export default function BlogArchiveItem({ archiveTitle, archivePosts }) {
         })}
       </ul>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   )
 }

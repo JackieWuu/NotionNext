@@ -3,8 +3,16 @@ import Image from 'next/image'
 import BLOG from '@/blog.config'
 import TagItem from './TagItem'
 import md5 from 'js-md5'
+<<<<<<< HEAD
 import { siteConfig } from '@/lib/config'
 import NotionIcon from '@/components/NotionIcon'
+=======
+<<<<<<< HEAD
+=======
+import { siteConfig } from '@/lib/config'
+import NotionIcon from '@/components/NotionIcon'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 export const ArticleInfo = (props) => {
   const { post } = props

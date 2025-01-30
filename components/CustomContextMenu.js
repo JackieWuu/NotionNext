@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState, useRef, useLayoutEffect } from 'react'
+import { useGlobal } from '@/lib/global'
+import { saveDarkModeToCookies, THEMES } from '@/themes/theme'
+import BLOG from '@/blog.config'
+import useWindowSize from '@/hooks/useWindowSize'
+=======
+>>>>>>> tangly1024-main
 import useWindowSize from '@/hooks/useWindowSize'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
@@ -5,6 +17,10 @@ import { THEMES, saveDarkModeToLocalStorage } from '@/themes/theme'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 
 /**
  * 自定义右键菜单
@@ -26,9 +42,21 @@ export default function CustomContextMenu(props) {
    * 随机跳转文章
    */
   function handleJumpToRandomPost() {
+<<<<<<< HEAD
     const randomIndex = Math.floor(Math.random() * allNavPages.length)
     const randomPost = allNavPages[randomIndex]
     router.push(`${siteConfig('SUB_PATH', '')}/${randomPost?.slug}`)
+=======
+<<<<<<< HEAD
+    const randomIndex = Math.floor(Math.random() * latestPosts.length)
+    const randomPost = latestPosts[randomIndex]
+    router.push(`${BLOG.SUB_PATH}/${randomPost?.slug}`)
+=======
+    const randomIndex = Math.floor(Math.random() * allNavPages.length)
+    const randomPost = allNavPages[randomIndex]
+    router.push(`${siteConfig('SUB_PATH', '')}/${randomPost?.slug}`)
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 
   useLayoutEffect(() => {

@@ -60,12 +60,43 @@ function getNodesWithAdsByGoogleClass(node) {
  * 初始化谷歌广告
  * @returns
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export default function GoogleAdsense() {
+  const initGoogleAdsense = () => {
+    loadExternalResource(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${BLOG.ADSENSE_GOOGLE_ID}`, 'js').then(url => {
+      setTimeout(() => {
+        const ads = document.getElementsByClassName('adsbygoogle')
+        const adsbygoogle = window.adsbygoogle
+        if (ads.length > 0) {
+          for (let i = 0; i <= ads.length; i++) {
+            try {
+              adsbygoogle.push(ads[i])
+            } catch (e) {
+
+            }
+          }
+        }
+      }, 100)
+    })
+  }
+
+  const router = useRouter()
+  useEffect(() => {
+    // 延迟3秒加载
+=======
+>>>>>>> tangly1024-main
 export const initGoogleAdsense = async ADSENSE_GOOGLE_ID => {
   console.log('Load Adsense')
   loadExternalResource(
     `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_GOOGLE_ID}`,
     'js'
   ).then(url => {
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     setTimeout(() => {
       // 页面加载完成后加载一次广告
       const ads = document.querySelectorAll('ins.adsbygoogle')
@@ -112,13 +143,35 @@ export const initGoogleAdsense = async ADSENSE_GOOGLE_ID => {
  * 添加 可以在本地调试
  */
 const AdSlot = ({ type = 'show' }) => {
+<<<<<<< HEAD
   const ADSENSE_GOOGLE_ID = siteConfig('ADSENSE_GOOGLE_ID')
   const ADSENSE_GOOGLE_TEST = siteConfig('ADSENSE_GOOGLE_TEST')
   if (!ADSENSE_GOOGLE_ID) {
+=======
+<<<<<<< HEAD
+  if (!BLOG.ADSENSE_GOOGLE_ID) {
+=======
+  const ADSENSE_GOOGLE_ID = siteConfig('ADSENSE_GOOGLE_ID')
+  const ADSENSE_GOOGLE_TEST = siteConfig('ADSENSE_GOOGLE_TEST')
+  if (!ADSENSE_GOOGLE_ID) {
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
     return null
   }
   // 文章内嵌广告
   if (type === 'in-article') {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    return <ins className="adsbygoogle"
+            style={{ display: 'block', textAlign: 'center' }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-adtest={BLOG.ADSENSE_GOOGLE_TEST ? 'on' : 'off'}
+            data-ad-client={BLOG.ADSENSE_GOOGLE_ID}
+            data-ad-slot={BLOG.ADSENSE_GOOGLE_SLOT_IN_ARTICLE}></ins>
+=======
+>>>>>>> tangly1024-main
     return (
       <ins
         className='adsbygoogle'
@@ -129,10 +182,26 @@ const AdSlot = ({ type = 'show' }) => {
         data-ad-client={ADSENSE_GOOGLE_ID}
         data-ad-slot={siteConfig('ADSENSE_GOOGLE_SLOT_IN_ARTICLE')}></ins>
     )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 
   // 信息流广告
   if (type === 'flow') {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    return <ins className="adsbygoogle"
+            data-ad-format="fluid"
+            data-ad-layout-key="-5j+cz+30-f7+bf"
+            style={{ display: 'block' }}
+            data-adtest={BLOG.ADSENSE_GOOGLE_TEST ? 'on' : 'off'}
+            data-ad-client={BLOG.ADSENSE_GOOGLE_ID}
+            data-ad-slot={BLOG.ADSENSE_GOOGLE_SLOT_FLOW}></ins>
+=======
+>>>>>>> tangly1024-main
     return (
       <ins
         className='adsbygoogle'
@@ -143,10 +212,35 @@ const AdSlot = ({ type = 'show' }) => {
         data-ad-client={ADSENSE_GOOGLE_ID}
         data-ad-slot={siteConfig('ADSENSE_GOOGLE_SLOT_FLOW')}></ins>
     )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
   }
 
   // 原生广告
   if (type === 'native') {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    return <ins className="adsbygoogle"
+            style={{ display: 'block', textAlign: 'center' }}
+            data-ad-format="autorelaxed"
+            data-adtest={BLOG.ADSENSE_GOOGLE_TEST ? 'on' : 'off'}
+            data-ad-client={BLOG.ADSENSE_GOOGLE_ID}
+            data-ad-slot={BLOG.ADSENSE_GOOGLE_SLOT_NATIVE}></ins>
+  }
+
+  //  展示广告
+  return <ins className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client={BLOG.ADSENSE_GOOGLE_ID}
+        data-adtest={BLOG.ADSENSE_GOOGLE_TEST ? 'on' : 'off'}
+        data-ad-slot={BLOG.ADSENSE_GOOGLE_SLOT_AUTO}
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+=======
+>>>>>>> tangly1024-main
     return (
       <ins
         className='adsbygoogle'
@@ -169,6 +263,10 @@ const AdSlot = ({ type = 'show' }) => {
       data-ad-format='auto'
       data-full-width-responsive='true'></ins>
   )
+<<<<<<< HEAD
+=======
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
+>>>>>>> tangly1024-main
 }
 
 /**
