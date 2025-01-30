@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Card from './Card'
 import CategoryGroup from './CategoryGroup'
 import LatestPostsGroup from './LatestPostsGroup'
@@ -11,6 +12,21 @@ import dynamic from 'next/dynamic'
 import Announcement from './Announcement'
 import { useGlobal } from '@/lib/global'
 import Live2D from '@/components/Live2D'
+=======
+import Live2D from '@/components/Live2D'
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import dynamic from 'next/dynamic'
+import CONFIG from '../config'
+import { AnalyticsCard } from './AnalyticsCard'
+import Announcement from './Announcement'
+import Card from './Card'
+import Catalog from './Catalog'
+import CategoryGroup from './CategoryGroup'
+import { InfoCard } from './InfoCard'
+import LatestPostsGroup from './LatestPostsGroup'
+import TagGroups from './TagGroups'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
 const HexoRecentComments = dynamic(() => import('./HexoRecentComments'))
 const FaceBookPage = dynamic(
@@ -33,12 +49,28 @@ const FaceBookPage = dynamic(
  */
 export default function SideRight(props) {
   const {
-    post, currentCategory, categories, latestPosts, tags,
-    currentTag, showCategory, showTag, rightAreaSlot, notice
+    post,
+    currentCategory,
+    categories,
+    latestPosts,
+    tags,
+    currentTag,
+    showCategory,
+    showTag,
+    rightAreaSlot,
+    notice,
+    className
   } = props
 
   const { locale } = useGlobal()
+
+  // 文章全屏处理
+  if (post && post?.fullWidth) {
+    return null
+  }
+
   return (
+<<<<<<< HEAD
     <div id='sideRight' className={'space-y-4 lg:w-80 lg:pt-0 px-2 pt-4'}>
       <InfoCard {...props} />
       {CONFIG.WIDGET_ANALYTICS && <AnalyticsCard {...props} />}
@@ -62,21 +94,60 @@ export default function SideRight(props) {
       {CONFIG.WIDGET_LATEST_POSTS && latestPosts && latestPosts.length > 0 && <Card>
         <LatestPostsGroup {...props} />
       </Card>}
+=======
+    <div
+      id='sideRight'
+      className={` lg:w-80 lg:pt-8 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}>
+      <div className='sticky top-8 space-y-4'>
+        {post && post.toc && post.toc.length > 1 && (
+          <Card>
+            <Catalog toc={post.toc} />
+          </Card>
+        )}
 
-      <Announcement post={notice}/>
+        <InfoCard {...props} />
+        {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && (
+          <AnalyticsCard {...props} />
+        )}
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
+        {showCategory && (
+          <Card>
+            <div className='ml-2 mb-1 '>
+              <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
+            </div>
+            <CategoryGroup
+              currentCategory={currentCategory}
+              categories={categories}
+            />
+          </Card>
+        )}
+        {showTag && (
+          <Card>
+            <TagGroups tags={tags} currentTag={currentTag} />
+          </Card>
+        )}
+        {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) &&
+          latestPosts &&
+          latestPosts.length > 0 && (
+            <Card>
+              <LatestPostsGroup {...props} />
+            </Card>
+          )}
+
+<<<<<<< HEAD
       {BLOG.COMMENT_WALINE_SERVER_URL && BLOG.COMMENT_WALINE_RECENT && <HexoRecentComments/>}
+=======
+        <Announcement post={notice} />
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
-      <div className='sticky top-20'>
-        {post && post.toc && post.toc.length > 1 && <Card>
-          <Catalog toc={post.toc} />
-        </Card>}
+        {siteConfig('COMMENT_WALINE_SERVER_URL') &&
+          siteConfig('COMMENT_WALINE_RECENT') && <HexoRecentComments />}
 
         {rightAreaSlot}
-        <FaceBookPage/>
+        <FaceBookPage />
         <Live2D />
       </div>
-
     </div>
   )
 }

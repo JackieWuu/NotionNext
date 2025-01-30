@@ -1,9 +1,12 @@
-import { getGlobalData } from '@/lib/notion/getNotionData'
-import React from 'react'
-import { useGlobal } from '@/lib/global'
 import BLOG from '@/blog.config'
+<<<<<<< HEAD
 import { useRouter } from 'next/router'
 import { getLayoutByTheme } from '@/themes/theme'
+=======
+import { siteConfig } from '@/lib/config'
+import { getGlobalData } from '@/lib/db/getSiteData'
+import { DynamicLayout } from '@/themes/theme'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
 /**
  * 分类首页
@@ -11,6 +14,7 @@ import { getLayoutByTheme } from '@/themes/theme'
  * @returns
  */
 export default function Category(props) {
+<<<<<<< HEAD
   const { locale } = useGlobal()
   const { siteInfo } = props
 
@@ -27,13 +31,25 @@ export default function Category(props) {
   props = { ...props, meta }
 
   return <Layout {...props} />
+=======
+  const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
+  return (
+    <DynamicLayout theme={theme} layoutName='LayoutCategoryIndex' {...props} />
+  )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 }
 
-export async function getStaticProps() {
-  const props = await getGlobalData({ from: 'category-index-props' })
+export async function getStaticProps({ locale }) {
+  const props = await getGlobalData({ from: 'category-index-props', locale })
   delete props.allPages
   return {
     props,
-    revalidate: parseInt(BLOG.NEXT_REVALIDATE_SECOND)
+    revalidate: process.env.EXPORT
+      ? undefined
+      : siteConfig(
+          'NEXT_REVALIDATE_SECOND',
+          BLOG.NEXT_REVALIDATE_SECOND,
+          props.NOTION_CONFIG
+        )
   }
 }

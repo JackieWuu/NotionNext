@@ -3,6 +3,11 @@ import Image from 'next/image'
 import BLOG from '@/blog.config'
 import TagItem from './TagItem'
 import md5 from 'js-md5'
+<<<<<<< HEAD
+=======
+import { siteConfig } from '@/lib/config'
+import NotionIcon from '@/components/NotionIcon'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
 export const ArticleInfo = (props) => {
   const { post } = props
@@ -12,9 +17,15 @@ export const ArticleInfo = (props) => {
   return <section className="flex-wrap flex mt-2 text-gray--600 dark:text-gray-400 font-light leading-8">
         <div>
 
+<<<<<<< HEAD
             <div className="font-bold text-3xl text-black dark:text-white">
             {post?.title}
             </div>
+=======
+            <h1 className="font-bold text-3xl text-black dark:text-white">
+                {siteConfig('POST_TITLE_ICON') && <NotionIcon icon={post?.pageIcon} />}{post?.title}
+            </h1>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
             {post?.type !== 'Page' && <>
             <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">

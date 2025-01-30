@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import BLOG from '@/blog.config'
 import { useGlobal } from '@/lib/global'
 import React from 'react'
@@ -13,11 +14,36 @@ export const BlogListScroll = props => {
   let hasMore = false
   const postsToShow = posts
     ? Object.assign(posts).slice(0, BLOG.POSTS_PER_PAGE * page)
+=======
+import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global'
+import throttle from 'lodash.throttle'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { BlogItem } from './BlogItem'
+
+/**
+ * 滚动博客列表
+ * @param {*} props
+ * @returns
+ */
+export default function BlogListScroll(props) {
+  const { posts } = props
+  const { locale, NOTION_CONFIG } = useGlobal()
+  const [page, updatePage] = useState(1)
+  const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
+  let hasMore = false
+  const postsToShow = posts
+    ? Object.assign(posts).slice(0, POSTS_PER_PAGE * page)
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
     : []
 
   if (posts) {
     const totalCount = posts.length
+<<<<<<< HEAD
     hasMore = page * BLOG.POSTS_PER_PAGE < totalCount
+=======
+    hasMore = page * POSTS_PER_PAGE < totalCount
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
   }
   const handleGetMore = () => {
     if (!hasMore) return
@@ -27,6 +53,7 @@ export const BlogListScroll = props => {
   const targetRef = React.useRef(null)
 
   // 监听滚动自动分页加载
+<<<<<<< HEAD
   const scrollTrigger = React.useCallback(throttle(() => {
     const scrollS = window.scrollY + window.outerHeight
     const clientHeight = targetRef ? (targetRef.current ? (targetRef.current.clientHeight) : 0) : 0
@@ -34,6 +61,21 @@ export const BlogListScroll = props => {
       handleGetMore()
     }
   }, 500))
+=======
+  const scrollTrigger = useCallback(
+    throttle(() => {
+      const scrollS = window.scrollY + window.outerHeight
+      const clientHeight = targetRef
+        ? targetRef.current
+          ? targetRef.current.clientHeight
+          : 0
+        : 0
+      if (scrollS > clientHeight + 100) {
+        handleGetMore()
+      }
+    }, 500)
+  )
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
   React.useEffect(() => {
     window.addEventListener('scroll', scrollTrigger)
@@ -44,17 +86,17 @@ export const BlogListScroll = props => {
   })
 
   return (
-      <div id="posts-wrapper" className="w-full md:pr-8 mb-12" ref={targetRef}>
-              {postsToShow.map(p => (
-                  <BlogItem key={p.id} post={p}/>
-              ))}
+    <div id='posts-wrapper' className='w-full md:pr-8 mb-12' ref={targetRef}>
+      {postsToShow.map(p => (
+        <BlogItem key={p.id} post={p} />
+      ))}
 
-              <div onClick={handleGetMore}
-                   className="w-full my-4 py-4 text-center cursor-pointer ">
-                  {' '}
-                  {hasMore ? locale.COMMON.MORE : `${locale.COMMON.NO_MORE} 😰`}{' '}
-              </div>
-
-          </div>
+      <div
+        onClick={handleGetMore}
+        className='w-full my-4 py-4 text-center cursor-pointer '>
+        {' '}
+        {hasMore ? locale.COMMON.MORE : `${locale.COMMON.NO_MORE} 😰`}{' '}
+      </div>
+    </div>
   )
 }

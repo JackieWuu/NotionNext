@@ -1,17 +1,16 @@
 import BLOG from '@/blog.config'
 import { loadExternalResource } from '@/lib/utils'
-// import { loadExternalResource } from '@/lib/utils'
 import { useEffect } from 'react'
 
 /**
- * Giscus评论 @see https://giscus.app/zh-CN
- * Contribute by @txs https://github.com/txs/NotionNext/commit/1bf7179d0af21fb433e4c7773504f244998678cb
+ * Artalk 自托管评论系统 @see https://artalk.js.org/
  * @returns {JSX.Element}
  * @constructor
  */
 
 const Artalk = ({ siteInfo }) => {
   useEffect(() => {
+<<<<<<< HEAD
     loadExternalResource(BLOG.COMMENT_ARTALK_CSS, 'css')
     window?.Artalk?.init({
       server: BLOG.COMMENT_ARTALK_SERVER, // 后端地址
@@ -25,6 +24,39 @@ const Artalk = ({ siteInfo }) => {
   return (
         <div id="artalk"></div>
   )
+=======
+    initArtalk()
+  }, [])
+
+  const initArtalk = async () => {
+    await loadExternalResource(artalkCss, 'css')
+    const artalk = window?.Artalk?.init({
+      server: artalkServer,
+      el: '#artalk',
+      locale: artalkLocale,
+      site: site,
+      darkMode: document.documentElement.classList.contains('dark')
+    })
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isDark = document.documentElement.classList.contains('dark')
+          artalk?.setDarkMode(isDark)
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+
+    return () => observer.disconnect()
+  }
+
+  return <div id="artalk"></div>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 }
 
 export default Artalk

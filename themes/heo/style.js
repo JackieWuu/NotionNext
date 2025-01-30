@@ -5,11 +5,19 @@
  * @returns
  */
 const Style = () => {
+<<<<<<< HEAD
   return <style jsx global>{`
     body {
         background-color:  #f7f9fe;
         overflow-x: hidden;
     }
+=======
+  return (
+    <style jsx global>{`
+      body {
+        background-color: #f7f9fe;
+      }
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
     // 公告栏中的字体固定白色
     #theme-heo #announcement-content .notion{
@@ -62,3 +70,4 @@ const Style = () => {
 }
 
 export { Style }
+

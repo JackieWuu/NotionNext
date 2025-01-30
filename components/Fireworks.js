@@ -3,11 +3,18 @@
  * custom by hexo-theme-yun @YunYouJun
  */
 import { useEffect } from 'react'
+<<<<<<< HEAD
 import anime from 'animejs'
 import BLOG from 'blog.config'
+=======
+// import anime from 'animejs'
+import { siteConfig } from '@/lib/config'
+import { loadExternalResource } from '@/lib/utils'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
 const Fireworks = () => {
   useEffect(() => {
+<<<<<<< HEAD
     createFireworks({})
   }, [])
   return <canvas id='fireworks' className='fireworks'></canvas>
@@ -163,48 +170,37 @@ function createFireworks(config) {
         ),
         easing: 'easeOutExpo',
         update: renderParticule
+=======
+    // 异步加载
+    async function loadFireworks() {
+      loadExternalResource(
+        'https://cdnjs.snrat.com/ajax/libs/animejs/3.2.1/anime.min.js',
+        'js'
+      ).then(() => {
+        loadExternalResource('/js/fireworks.js', 'js').then(() => {
+          if (window.anime && window.createFireworks) {
+            window.createFireworks({
+              config: { colors: fireworksColor },
+              anime: window.anime
+            })
+          }
+        })
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
       })
-      .add(
-        {
-          targets: circle,
-          radius: anime.random(config.orbitRadius.min, config.orbitRadius.max),
-          lineWidth: 0,
-          alpha: {
-            value: 0,
-            easing: 'linear',
-            duration: anime.random(600, 800)
-          },
-          duration: anime.random(1200, 1800),
-          easing: 'easeOutExpo',
-          update: renderParticule
-        },
-        0
-      )
-  }
-
-  const render = anime({
-    duration: Infinity,
-    update: () => {
-      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
     }
-  })
 
-  document.addEventListener(
-    'mousedown',
-    (e) => {
-      render.play()
-      updateCoords(e)
-      animateParticules(pointerX, pointerY)
-    },
-    false
-  )
+    loadFireworks()
 
-  setCanvasSize(canvasEl)
-  window.addEventListener(
-    'resize',
-    () => {
-      setCanvasSize(canvasEl)
-    },
-    false
-  )
+    return () => {
+      // 在组件卸载时清理资源
+      const fireworksElements = document.getElementsByClassName('fireworks')
+      while (fireworksElements.length > 0) {
+        fireworksElements[0].parentNode.removeChild(fireworksElements[0])
+      }
+    }
+  }, [])
+
+  return <></>
 }
+
+export default Fireworks

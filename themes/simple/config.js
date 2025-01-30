@@ -7,6 +7,8 @@ const CONFIG = {
 
   AUTHOR_LINK: process.env.NEXT_PUBLIC_AUTHOR_LINK || '#',
 
+  SIMPLE_ARTICLE_RECOMMEND_POSTS: process.env.NEXT_PUBLIC_SIMPLE_ARTICLE_RECOMMEND_POSTS || true, // 文章详情底部显示推荐
+
   // 菜单配置
   MENU_CATEGORY: true, // 显示分类
   MENU_TAG: true, // 显示标签

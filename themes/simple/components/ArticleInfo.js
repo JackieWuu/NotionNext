@@ -1,8 +1,14 @@
 import Link from 'next/link'
 import { useGlobal } from '@/lib/global'
 import CONFIG from '../config'
+<<<<<<< HEAD
 import BLOG from '@/blog.config'
 import { formatDateFmt } from '@/lib/formatDate'
+=======
+import { siteConfig } from '@/lib/config'
+import { formatDateFmt } from '@/lib/utils/formatDate'
+import NotionIcon from '@/components/NotionIcon'
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
 export const ArticleInfo = (props) => {
   const { post } = props
@@ -10,12 +16,20 @@ export const ArticleInfo = (props) => {
   const { locale } = useGlobal()
 
   return (
+<<<<<<< HEAD
         <section className="flex-wrap flex mt-2 text-gray-400 dark:text-gray-400 font-light leading-8">
             <div>
                 <h2
                     className="blog-item-title mb-5 font-bold text-black text-xl md:text-2xl no-underline">
                     {post?.title}
                 </h2>
+=======
+        <section className="mt-2 text-gray-600 dark:text-gray-400 leading-8">
+            <h2
+                className="blog-item-title mb-5 font-bold text-black text-xl md:text-2xl no-underline">
+                {siteConfig('POST_TITLE_ICON') && <NotionIcon icon={post?.pageIcon} />}{post?.title}
+            </h2>
+>>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
 
                 {post?.type !== 'Page' && (<>
                     <div className="mb-4 text-sm text-gray-700 dark:text-gray-300">
