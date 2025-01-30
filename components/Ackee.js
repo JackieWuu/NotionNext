@@ -22,14 +22,14 @@ const Ackee = () => {
          */
         detailed: true,
         /*
-        * Enable or disable tracking when on localhost.
-        */
+         * Enable or disable tracking when on localhost.
+         */
         ignoreLocalhost: false,
         /*
-        * Enable or disable the tracking of your own visits.
-        * This is enabled by default, but should be turned off when using a wildcard Access-Control-Allow-Origin header.
-        * Some browsers strictly block third-party cookies. The option won't have an impact when this is the case.
-        */
+         * Enable or disable the tracking of your own visits.
+         * This is enabled by default, but should be turned off when using a wildcard Access-Control-Allow-Origin header.
+         * Some browsers strictly block third-party cookies. The option won't have an impact when this is the case.
+         */
         ignoreOwnVisits: false
       }
     )
@@ -53,7 +53,7 @@ export default Ackee
  * @param {Object} environment - Object containing the URL of the Ackee server and the domain id.
  * @param {?Object} options - Ackee options.
  */
-const handleAckee = async function(pathname, environment, options = {}) {
+const handleAckee = async function (pathname, environment, options = {}) {
   await loadExternalResource(BLOG.ANALYTICS_ACKEE_TRACKER, 'js')
   const ackeeTracker = window.ackeeTracker
 

@@ -5,7 +5,7 @@ import LazyImage from '@/components/LazyImage'
 import CONFIG from '../config'
 
 export default function Testimonials() {
-  return (
+    return (
         <section className="relative">
 
             {/* Illustration behind content */}
@@ -30,8 +30,8 @@ export default function Testimonials() {
 
                     {/* Section header */}
                     <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                        <h2 className="h2 mb-4">{CONFIG.TESTIMONIALS_HEADER}</h2>
-                        <p className="text-xl text-gray-600" data-aos="zoom-y-out">{CONFIG.TESTIMONIALS_P}</p>
+                        <h2 className="h2 mb-4 dark:text-white">{siteConfig('LANDING_TESTIMONIALS_HEADER', null, CONFIG)}</h2>
+                        <p className="text-xl text-gray-600 dark:text-gray-400" data-aos="zoom-y-out">{siteConfig('LANDING_TESTIMONIALS_P', null, CONFIG)}</p>
                     </div>
 
                     {/* Testimonials */}
@@ -61,7 +61,7 @@ export default function Testimonials() {
                 </div>
             </div>
         </section>
-  )
+    )
 }
 
 /**
@@ -70,7 +70,7 @@ export default function Testimonials() {
  */
 // eslint-disable-next-line no-unused-vars
 const brands = () => {
-  return <>
+    return <>
         {/* Items */}
         <div className="max-w-sm md:max-w-4xl mx-auto grid gap-2 grid-cols-4 md:grid-cols-5">
 

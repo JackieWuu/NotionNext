@@ -15,7 +15,7 @@ export default function Messenger() {
  * @see https://github.com/Yoctol/react-messenger-customer-chat
  */
 class MessengerCustomerChat extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       fbLoaded: false,
@@ -89,7 +89,11 @@ class MessengerCustomerChat extends Component {
       js = d.createElement(s);
       js.id = id;
       js.src = `https://connect.facebook.net/${language}/sdk/xfbml.customerchat.js`;
-      fjs.parentNode.insertBefore(js, fjs);
+      if (fjs && fjs.parentNode && fjs.parentNode.contains(fjs)) {
+        fjs.parentNode.insertBefore(js, fjs);
+      } else {
+        document.body.appendChild(js);
+      }
     })(document, 'script', 'facebook-jssdk');
     /* eslint-enable */
   }

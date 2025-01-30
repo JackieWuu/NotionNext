@@ -1,5 +1,8 @@
 const CONFIG = {
-  HOME_BANNER_ENABLE: true,
+  HEO_HOME_POST_TWO_COLS: true, // 首页博客两列显示，若为false则只显示一列
+  HEO_LOADING_COVER: true, // 页面加载的遮罩动画
+
+  HEO_HOME_BANNER_ENABLE: true,
 
   SITE_CREATE_TIME: '2023-03-27', // 建站日期，用于计算网站运行的第几天
 
@@ -9,19 +12,20 @@ const CONFIG = {
     { title: '点击获取技术支持', url: 'https://www.jackiewu.top/paid-service' },
   ],
 
+  // 英雄区左右侧组件颠倒位置
+  HEO_HERO_REVERSE: false,
+  // 博客主体区左右侧组件颠倒位置
+  HEO_HERO_BODY_REVERSE: false,
+
   // 英雄区(首页顶部大卡)
-  HERO_TITLE_1: 'unRAID',
-  HERO_TITLE_2: '教程&资讯',
-  HERO_TITLE_3: 'JACKIEWU.COM',
-  HERO_TITLE_4: 'Welcome to my blog',
-  HERO_TITLE_5: '有问题，找 Jackie',
-  HERO_TITLE_LINK: 'https://www.jackiewu.top',
-  // HERO_TITLE_1: '分享编程',
-  // HERO_TITLE_2: '与思维认知',
-  // HERO_TITLE_3: 'TANGLY1024.COM',
-  // HERO_TITLE_4: '新版上线',
-  // HERO_TITLE_5: 'NotionNext4.0 轻松定制主题',
-  // HERO_TITLE_LINK: 'https://tangly1024.com',
+  HEO_HERO_TITLE_1: '分享编程',
+  HEO_HERO_TITLE_2: '与思维认知',
+  HEO_HERO_TITLE_3: 'TANGLY1024.COM',
+  HEO_HERO_TITLE_4: '新版上线',
+  HEO_HERO_TITLE_5: 'NotionNext4.0 轻松定制主题',
+  HEO_HERO_TITLE_LINK: 'https://tangly1024.com',
+  // 英雄区遮罩文字
+  HEO_HERO_COVER_TITLE: '随便逛逛',
 
   // 英雄区显示三个置顶分类
   HERO_CATEGORY_1: { title: '新手教程', url: '/tag/新手教程' },
@@ -40,7 +44,14 @@ const CONFIG = {
     '👨‍💻 理论与实践',
     '✨ 知其然，知其所以然'
   ],
-  INFO_CARD_URL: 'https://www.jackiewu.top/', // 个人资料底部按钮链接
+
+  // 个人资料底部按钮
+  HEO_INFO_CARD_URL1: '/about',
+  HEO_INFO_CARD_ICON1: 'fas fa-user',
+  HEO_INFO_CARD_URL2: 'https://github.com/tangly1024',
+  HEO_INFO_CARD_ICON2: 'fab fa-github',
+  HEO_INFO_CARD_URL3: 'https://www.tangly1024.com',
+  HEO_INFO_CARD_TEXT3: '了解更多',
 
   // 用户技能图标
   GROUP_ICONS: [
@@ -107,6 +118,12 @@ const CONFIG = {
   SOCIAL_CARD_TITLE_2: '订阅 Unraid 资讯频道',
   SOCIAL_CARD_TITLE_3: '加入 Telegram 资讯频道',
   SOCIAL_CARD_URL: 'https://t.me/unraid_jackiewu',
+
+  // 底部统计面板文案
+  HEO_POST_COUNT_TITLE: '文章数:',
+  HEO_SITE_TIME_TITLE: '建站天数:',
+  HEO_SITE_VISIT_TITLE: '访问量:',
+  HEO_SITE_VISITOR_TITLE: '访客数:',
 
   // *****  以下配置无效，只是预留开发 ****
   // 菜单配置
