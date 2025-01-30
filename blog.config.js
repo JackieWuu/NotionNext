@@ -21,52 +21,6 @@ const BLOG = {
     KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || 'NAS, unRAD, Docker, VM, Homelab', // 网站关键词 英文逗号隔开
     BLOG_FAVICON: process.env.NEXT_PUBLIC_FAVICON || '/favicon.ico', // blog favicon 配置, 默认使用 /public/favicon.ico，支持在线图片，如 https://img.imesong.com/favicon.png
 
-    // START ************网站字体*****************
-    FONT_STYLE: process.env.NEXT_PUBLIC_FONT_STYLE || 'font-sans', // ['font-serif','font-sans'] 两种可选，分别是衬线和无衬线: 参考 https://www.jianshu.com/p/55e410bd2115
-    // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
-    FONT_URL: [
-        // 字体CSS 例如 https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css
-        // 'https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css'
-        'https://fonts.googleapis.com/css?family=Bitter&display=swap',
-        'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap',
-        'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300&display=swap'
-    ],
-    // 无衬线字体 例如'"LXGW WenKai"'
-    FONT_SANS: [
-        // 无衬线字体 例如'LXGW WenKai'
-        //'"Noto Sans SC"',
-        '"PingFang SC"',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Hiragino Sans GB"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Segoe UI"',
-        'HarmonyOS_Regular',
-        '"Microsoft YaHei"',
-        '"Helvetica Neue"',
-        'Helvetica',
-        '"Source Han Sans SC"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"'
-    ],
-    // 衬线字体 例如'"LXGW WenKai"'
-    FONT_SERIF: [
-        // 衬线字体 例如'LXGW WenKai'
-        'Bitter',
-        '"Noto Serif SC"',
-        'SimSun',
-        '"Times New Roman"',
-        'Times',
-        'serif',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Apple Color Emoji"'
-    ],
-    FONT_AWESOME: process.env.NEXT_PUBLIC_FONT_AWESOME_PATH || 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', // font-awesome 字体图标地址; 可选 /css/all.min.css ， https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
-    // END ************网站字体*****************
-
     BEI_AN: process.env.NEXT_PUBLIC_BEI_AN || '', // 备案号 闽ICP备XXXXXX
     BEI_AN_LINK: process.env.NEXT_PUBLIC_BEI_AN_LINK || 'https://beian.miit.gov.cn/', // 备案查询链接，如果用了萌备等备案请在这里填写
 
@@ -110,29 +64,6 @@ const BLOG = {
     GREETING_WORDS:
         process.env.NEXT_PUBLIC_GREETING_WORDS ||
         'Hi，欢迎来到我的博客🎉',
-    // START********代码相关********
-    // PrismJs 代码相关
-    PRISM_JS_PATH: 'https://npm.elemecdn.com/prismjs@1.29.0/components/',
-    PRISM_JS_AUTO_LOADER: 'https://npm.elemecdn.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js',
-
-    // 代码主题 @see https://github.com/PrismJS/prism-themes
-    PRISM_THEME_PREFIX_PATH: process.env.NEXT_PUBLIC_PRISM_THEME_PREFIX_PATH || 'https://npm.elemecdn.com/prism-themes/themes/prism-a11y-dark.min.css', // 代码块默认主题
-    PRISM_THEME_SWITCH: process.env.NEXT_PUBLIC_PRISM_THEME_SWITCH || false, // 是否开启浅色/深色模式代码主题切换； 开启后将显示以下两个主题
-    PRISM_THEME_LIGHT_PATH: process.env.NEXT_PUBLIC_PRISM_THEME_LIGHT_PATH || 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-solarizedlight.css', // 浅色模式主题
-    PRISM_THEME_DARK_PATH: process.env.NEXT_PUBLIC_PRISM_THEME_DARK_PATH || 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css', // 深色模式主题
-
-    CODE_MAC_BAR: process.env.NEXT_PUBLIC_CODE_MAC_BAR || false, // 代码左上角显示mac的红黄绿图标
-    CODE_LINE_NUMBERS: process.env.NEXT_PUBLIC_CODE_LINE_NUMBERS || true, // 是否显示行号
-    CODE_COLLAPSE: process.env.NEXT_PUBLIC_CODE_COLLAPSE || false, // 是否折叠代码框
-    // END********代码相关********
-
-    // 谷歌广告
-    ADSENSE_GOOGLE_ID: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_ID || '', // 谷歌广告ID e.g ca-pub-xxxxxxxxxxxxxxxx
-    ADSENSE_GOOGLE_TEST: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_TEST || false, // 谷歌广告ID测试模式，这种模式获取假的测试广告，用于开发 https://www.tangly1024.com/article/local-dev-google-adsense
-    ADSENSE_GOOGLE_SLOT_IN_ARTICLE: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_IN_ARTICLE || '3806269138', // Google AdScene>广告>按单元广告>新建文章内嵌广告 粘贴html代码中的data-ad-slot值
-    ADSENSE_GOOGLE_SLOT_FLOW: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_FLOW || '1510444138', // Google AdScene>广告>按单元广告>新建信息流广告
-    ADSENSE_GOOGLE_SLOT_NATIVE: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_NATIVE || '4980048999', // Google AdScene>广告>按单元广告>新建原生广告
-    ADSENSE_GOOGLE_SLOT_AUTO: process.env.NEXT_PUBLIC_ADSENSE_GOOGLE_SLOT_AUTO || '8807314373', // Google AdScene>广告>按单元广告>新建展示广告 （自动广告）
 
     // uuid重定向至 slug
     UUID_REDIRECT: process.env.UUID_REDIRECT || true
