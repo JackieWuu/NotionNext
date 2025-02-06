@@ -1,14 +1,6 @@
 {
   "name": "notion-next",
-<<<<<<< HEAD
-  "version": "4.8.2",
-=======
-<<<<<<< HEAD
-  "version": "4.0.14",
-=======
-  "version": "4.8.2",
->>>>>>> eff5b4c022e6c99542a25f282c187e11d9d0f6d0
->>>>>>> tangly1024-main
+  "version": "4.8.3",
   "homepage": "https://github.com/tangly1024/NotionNext.git",
   "license": "MIT",
   "repository": {
