@@ -1,3 +1,4 @@
+import SmartLink from '@/components/SmartLink'
 import { siteConfig } from '@/lib/config'
 import { isBrowser } from '@/lib/utils'
 import throttle from 'lodash.throttle'
@@ -187,6 +188,13 @@ const Header = props => {
               </div>
             )}
             <ReadingProgress />
+
+            {/* 移动端付费入口：<1024px 时桌面导航与右栏公告卡都不渲染，这里补一个常驻可见入口 */}
+            <SmartLink
+              href='/paid-service'
+              className='flex lg:hidden items-center h-7 px-2 mr-1 rounded-full border border-current text-[11px] leading-none whitespace-nowrap'>
+              技术支持
+            </SmartLink>
 
             {/* 移动端菜单按钮 */}
             <div
