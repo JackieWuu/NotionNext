@@ -1,0 +1,19 @@
+# Cloudflare Pages 缓存头（2026-11-15 迁移时新增）
+# 背景：Pages 默认对全部静态资产返回 `cache-control: max-age=0, must-revalidate`，
+# 带内容哈希的 _next/static 资产也会每次回源校验，比 Vercel 的 immutable 策略慢一档。
+# 说明：本文件只在 Cloudflare Pages 生效；Vercel/Netlify 构建时它只是 public 下的一个普通文件。
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800
+
+/svg/*
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
