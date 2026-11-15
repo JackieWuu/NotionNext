@@ -6,6 +6,8 @@ name: Deploy blog to Cloudflare Pages
 # 在 GitHub Actions 里构建（约 4–6 分钟）可控性更好，公开仓库的 Actions 分钟数免费。
 
 on:
+  push:
+    branches: [main]
   schedule:
     # UTC 20:00 = 次日 04:00 CST，避开白天访问高峰
     - cron: '0 20 * * *'
