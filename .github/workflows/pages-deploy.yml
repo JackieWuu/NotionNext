@@ -1,0 +1,63 @@
+name: Deploy blog to Cloudflare Pages
+
+# 2026-11-15：Vercel Hobby 团队因 Fast Origin Transfer 超额被暂停后迁至 Cloudflare Pages。
+# 站点是纯静态导出（EXPORT=true），本工作流 = 定时重建 + 手动触发，产物直传 Pages 项目 jackiewu-blog。
+# 为什么不接 Cloudflare Pages 的 Git 集成：本项目是 direct-upload 项目，且 Pages 构建有 20 分钟上限；
+# 在 GitHub Actions 里构建（约 4–6 分钟）可控性更好，公开仓库的 Actions 分钟数免费。
+
+on:
+  schedule:
+    # UTC 20:00 = 次日 04:00 CST，避开白天访问高峰
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '触发原因（仅记录用）'
+        required: false
+        default: 'manual'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --network-timeout 600000
+
+      - name: Build static export
+        run: yarn export
+        env:
+          # 构建期变量：与 Vercel production 环境保持一致
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+          NEXT_PUBLIC_COMMENT_ENV_ID: ${{ secrets.NEXT_PUBLIC_COMMENT_ENV_ID }}
+          NEXT_PUBLIC_COMMENT_TWIKOO_CDN_URL: ${{ secrets.NEXT_PUBLIC_COMMENT_TWIKOO_CDN_URL }}
+          NEXT_PUBLIC_CUSTOM_RIGHT_CLICK_CONTEXT_MENU: ${{ secrets.NEXT_PUBLIC_CUSTOM_RIGHT_CLICK_CONTEXT_MENU }}
+          NEXT_PUBLIC_POST_SORT_BY: date
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=jackiewu-blog --branch=main
+
+      - name: Summary
+        run: |
+          echo "部署完成：https://www.jackiewu.top" >> "$GITHUB_STEP_SUMMARY"
+          echo "触发方式：${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
