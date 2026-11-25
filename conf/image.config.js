@@ -9,7 +9,7 @@ module.exports = {
   // 文章配图完全加载不出来；NPM 的 `location ^~ /notion-image/` 已反代到 www.notion.so。
   // 回退：改回 'https://www.notion.so' 后重建。
   NOTION_HOST:
-    process.env.NEXT_PUBLIC_NOTION_HOST || 'https://test.jackiewu.top/notion-image', // Notion域名，可用自己的域名做反向代理
+    process.env.NEXT_PUBLIC_NOTION_HOST || 'https://www.jackiewu.top/notion-image', // Notion域名，可用自己的域名做反向代理
   IMAGE_COMPRESS_WIDTH: process.env.NEXT_PUBLIC_IMAGE_COMPRESS_WIDTH || 1080, // 图片压缩宽度默认值，作用于博客封面和文章内容 越小加载图片越快
   IMAGE_ZOOM_IN_WIDTH: process.env.NEXT_PUBLIC_IMAGE_ZOOM_IN_WIDTH || 1920, // 文章图片点击放大后的画质宽度，不代表在网页中的实际展示宽度
   IMAGE_COMPRESS_QUALITY: process.env.NEXT_PUBLIC_IMAGE_COMPRESS_QUALITY || 80, // 图片压缩质量 0-100，数值越小文件越小但质量越低
